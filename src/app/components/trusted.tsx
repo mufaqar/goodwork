@@ -11,15 +11,15 @@ const Trusted = () => {
                     </p>
                 </div>
                 <div className='grid md:grid-cols-5 grid-cols-2 gap-10 justify-center'>
-                    {Partner_Logo.map((item: any) => {
+                    {Partner_Logo.map((item: any, index: any) => {
                         return (
-                            <Image 
-                            src={item.img} 
-                            alt='img' 
-                            width={200} 
-                            height={100} 
-                            className='h-full w-full object-contain'
-                             />
+                            <Image key={index}
+                                src={item.img}
+                                alt='img'
+                                width={200}
+                                height={100}
+                                className='h-full w-full object-contain'
+                            />
                         );
                     })}
                 </div>
