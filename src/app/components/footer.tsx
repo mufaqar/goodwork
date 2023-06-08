@@ -11,7 +11,8 @@ const Footer = () => {
           <Link href="/">
             <Image src="/images/logo.png" alt="logo"
               width={150}
-              height={50} />
+              height={50} 
+             className='w-auto h-auto' />
           </Link>
           <ul className='flex gap-5 my-5 text-white'>
             <li>
