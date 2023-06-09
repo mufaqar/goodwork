@@ -10,9 +10,9 @@ const Footer = () => {
         <div>
           <Link href="/">
             <Image src="/images/logo.png" alt="logo"
-              width={150}
-              height={50} 
-             className='w-auto h-auto' />
+              width={166}
+              height={63} 
+             className=' h-auto' />
           </Link>
           <ul className='flex gap-5 my-5 text-white'>
             <li>
