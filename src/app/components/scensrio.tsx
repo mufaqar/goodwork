@@ -32,7 +32,7 @@ const User_censrio = () => {
                     })}
                 </div>
                 <div className='mt-12 max-w-[750px] mx-auto'>
-                    <p className='text-xl font-normal text-center text-white mb-7'>
+                    <p className='text-xl font-normal text-center text-white/50 mb-7'>
                         Not sure which scenario is right for your business? Get a free consultation by filling out the form below
                     </p>
                     <form action="#">
