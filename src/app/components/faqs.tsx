@@ -3,12 +3,12 @@ import React, { useState } from "react";
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 
 export default function Faqs() {
-    const [dropdown, setDropdown] = useState(1);
-    const handleMenu = (id: any) => {
-        if (dropdown === id) {
-            return setDropdown(1)
+    const [open, setOpen] = useState(1);
+    const handleFaq = (id: any) => {
+        if (open === id) {
+            return setOpen(1)
         }
-        setDropdown(id)
+        setOpen(id)
         //setDropdown(!dropdown)
 
     }
@@ -28,13 +28,13 @@ export default function Faqs() {
                     {Faqs_Data.map((item: any, idx: number) => {
                         return <div key={idx} className="w-full border border-[#F0F0F0] rounded-[10px] p-[30px] drop-shadow-[0_0_0_rgba(0,0,0,0.03)]">
                             <div className="">
-                                <div className="flex justify-between cursor-pointer" onClick={() => handleMenu(item.id)}>
+                                <div className="flex justify-between cursor-pointer" onClick={() => handleFaq(item.id)}>
                                     <p className="text-lg font-semibold text-darkBlue " >
                                         {item.id}. {item.question}
                                     </p>
                                     <span className="text-lightBlue">
                                         {
-                                            dropdown === item.id ? (
+                                            open === item.id ? (
                                                 <BiChevronUp size={24} />
                                             ) :
                                                 (
@@ -44,7 +44,7 @@ export default function Faqs() {
                                     </span>
                                 </div>
                             </div>
-                            <div className={`${dropdown === item.id ? 'flex' : 'hidden'} `}>
+                            <div className={`${open === item.id ? 'flex' : 'hidden'} `}>
                                 <p className="text-base font-medium text-darkBlue mt-5" >
                                     {item.answer}
                                 </p>
