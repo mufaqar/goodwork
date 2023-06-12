@@ -15,7 +15,7 @@ const Get_Started = () => {
                         We offer free evaluation versions so that you can integrate with your existing environment and perform a full proof of concept. We’ll even guide you through the process, free of charge. With the free trial, you’ve got nothing to lose.
                     </p>
 
-                    <div className="aspect-video mx-auto mt-12 max-w-[750px] rounded-[20px]">
+                    <div className="aspect-video mx-auto mt-12 max-w-[750px] rounded-[20px] drop-shadow-[0_0_15px_rgba(0,0,0,0.05)]">
                         <iframe
                             className="w-full h-full rounded-[20px]"
                             src="https://www.youtube.com/embed/FF3fuYLnApQ"
