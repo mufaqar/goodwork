@@ -6,10 +6,10 @@ const Banner = () => {
         <section className='bg-[url("/images/mainBg.png")] bg-top bg-cover bg-no-repeat min-h-[599px] py-60 -mt-36'>
             <div className='container mx-auto px-4'>
                 <div className='max-w-[929px] mx-auto'>
-                    <h1 className='text-6xl font-semibold text-center text-white mb-3'>
+                    <h1 className='md:text-6xl text-5xl font-semibold text-center text-white mb-5'>
                         Simply Sync
                     </h1>
-                    <p className='text-[28px] leading-[40px] font-semibold text-center text-white'>
+                    <p className='md:text-[28px] md:leading-[40px] text-xl font-semibold text-center text-white'>
                         For Fast, Secure Synchronization of your users between multiple directories such as Active Directory, Azure, LDAP, and Google
                     </p>
                     <div className='my-10 text-center flex gap-4 justify-center'>

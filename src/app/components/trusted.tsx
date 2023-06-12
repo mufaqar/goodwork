@@ -6,11 +6,11 @@ const Trusted = () => {
         <section className='py-16 bg-[#44A1E5] bg-opacity-5'>
             <div className='container mx-auto px-4'>
                 <div>
-                    <p className='text-[28px] leading-[40px] font-medium text-center text-darkBlue'>
+                    <p className='md:text-[28px] md:leading-[40px] text-xl font-medium text-center text-darkBlue'>
                         GoodWorks is trusted by these and many more great customers!
                     </p>
                 </div>
-                <div className='grid md:grid-cols-5 grid-cols-2 gap-10 justify-center'>
+                <div className='grid md:grid-cols-5 grid-cols-2 gap-10 justify-center mt-5'>
                     {Partner_Logo.map((item: any, index: any) => {
                         return (
                             <Image key={index}

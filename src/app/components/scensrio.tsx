@@ -7,7 +7,7 @@ const User_censrio = () => {
         <section className='py-16 bg-darkBlue bg-blend-multiply bg-[url("/images/scenarioBg.png")] bg-center bg-cover bg-no-repeat'>
             <div className='container mx-auto md:px-0 px-4'>
                 <div className='mb-12'>
-                    <h2 className='text-[42px] font-medium text-center text-white'>
+                    <h2 className='md:text-[42px] text-4xl font-medium text-center text-white'>
                         Simply Password Sync User Scenario
                     </h2>
                 </div>

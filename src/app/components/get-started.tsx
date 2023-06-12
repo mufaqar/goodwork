@@ -8,7 +8,7 @@ const Get_Started = () => {
         <section className='py-16'>
             <div className='container mx-auto px-4'>
                 <div className='mb-12'>
-                    <h2 className='text-[42px] font-medium text-center text-darkBlue'>
+                    <h2 className='md:text-[42px] text-4xl font-medium text-center text-darkBlue'>
                         Ready to Get Started?
                     </h2>
                     <p className='text-xl font-normal text-center text-darkBlue mt-5'>
@@ -25,7 +25,7 @@ const Get_Started = () => {
                         </iframe>
                     </div>
                     {/* <Image src={Video} alt="thumbnail" className='mx-auto mt-12' /> */}
-                    
+
                     <div className='my-7 text-center flex gap-4 justify-center'>
                         <Link href="#" className='text-lg font-medium px-[30px] py-[14px] bg-Orange text-white rounded-[40px] border border-Orange'>
                             Download

@@ -15,7 +15,7 @@ export default function Home() {
       <section className='py-16'>
         <div>
           <div className='mb-12'>
-            <h2 className='text-[42px] font-medium text-center text-darkBlue'>
+            <h2 className='md:text-[42px] text-4xl font-medium text-center text-darkBlue'>
               Featured Product
             </h2>
           </div>

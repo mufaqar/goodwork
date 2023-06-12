@@ -99,7 +99,7 @@ const Tabs = () => {
             </li>
           </ul>
           <div className="relative flex flex-col min-w-0 mt-12">
-            <div className="px-4 py-5 flex-auto">
+            <div className="py-5 flex-auto">
               <div className="tab-content tab-space">
                 <div className={openTab === 1 ? "block" : "hidden"} id="link1">
                   <Tab_component />
