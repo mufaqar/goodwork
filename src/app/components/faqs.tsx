@@ -34,7 +34,7 @@ export default function Faqs() {
                                     </p>
                                     <span className="text-lightBlue">
                                         {
-                                            dropdown ? (
+                                            dropdown === item.id ? (
                                                 <BiChevronUp size={24} />
                                             ) :
                                                 (

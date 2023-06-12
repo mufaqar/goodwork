@@ -3,7 +3,7 @@ import React from 'react'
 
 const Banner = () => {
     return (
-        <section className='bg-[url("/images/mainBg.png")] bg-top bg-cover bg-no-repeat min-h-[599px] py-40 -mt-36'>
+        <section className='bg-[url("/images/mainBg.png")] bg-top bg-cover bg-no-repeat min-h-[599px] py-60 -mt-36'>
             <div className='container mx-auto px-4'>
                 <div className='max-w-[929px] mx-auto'>
                     <h1 className='text-6xl font-semibold text-center text-white mb-3'>

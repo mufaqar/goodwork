@@ -14,7 +14,18 @@ const Get_Started = () => {
                     <p className='text-xl font-normal text-center text-darkBlue mt-5'>
                         We offer free evaluation versions so that you can integrate with your existing environment and perform a full proof of concept. We’ll even guide you through the process, free of charge. With the free trial, you’ve got nothing to lose.
                     </p>
-                    <Image src={Video} alt="thumbnail" className='mx-auto mt-12' />
+
+                    <div className="aspect-video mx-auto mt-12 max-w-[750px] rounded-[20px]">
+                        <iframe
+                            className="w-full h-full rounded-[20px]"
+                            src="https://www.youtube.com/embed/FF3fuYLnApQ"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen>
+                        </iframe>
+                    </div>
+                    {/* <Image src={Video} alt="thumbnail" className='mx-auto mt-12' /> */}
+                    
                     <div className='my-7 text-center flex gap-4 justify-center'>
                         <Link href="#" className='text-lg font-medium px-[30px] py-[14px] bg-Orange text-white rounded-[40px] border border-Orange'>
                             Download
