@@ -1,7 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { AiFillFacebook, AiFillGoogleCircle, AiFillLinkedin, AiFillTwitterCircle } from 'react-icons/ai';
+import Fb from '../../../public/images/facebook.png';
+import Gogl from '../../../public/images/google.png';
+import Twitr from '../../../public/images/twitter.png';
+import Lnkdn from '../../../public/images/linkedin.png';
 
 const Footer = () => {
   return (
@@ -11,28 +14,28 @@ const Footer = () => {
           <Link href="/">
             <Image src="/images/logo.png" alt="logo"
               width={166}
-              height={63} 
-             className=' h-auto' />
+              height={63}
+              className=' h-auto' />
           </Link>
           <ul className='flex gap-5 my-5 text-white'>
             <li>
               <Link href="#">
-                <AiFillGoogleCircle size={30} />
+                <Image src={Gogl} alt="facebook" className='filter hover:contrast-50' />
               </Link>
             </li>
             <li>
               <Link href="#">
-                <AiFillFacebook size={30} />
+                <Image src={Fb} alt="facebook" className='filter hover:contrast-50' />
               </Link>
             </li>
             <li>
               <Link href="#">
-                <AiFillTwitterCircle size={30} />
+                <Image src={Twitr} alt="facebook" className='filter hover:contrast-50' />
               </Link>
             </li>
             <li>
               <Link href="#">
-                <AiFillLinkedin size={30} />
+                <Image src={Lnkdn} alt="facebook" className='filter hover:contrast-50' />
               </Link>
             </li>
           </ul>

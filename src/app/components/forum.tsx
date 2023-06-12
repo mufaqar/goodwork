@@ -17,10 +17,10 @@ const Forum = () => {
                             Unable to find the information you were looking for, or have a question/comment? Please feel free to contact support via the online ticketing system.
                         </p>
                         <div className='my-7 text-center flex gap-4'>
-                            <Link href="#" className='text-lg font-medium px-[30px] py-[14px] bg-lightBlue text-white rounded-[40px] border border-lightBlue'>
+                            <Link href="#" className='text-lg font-medium px-[30px] py-[14px] bg-lightBlue text-white hover:bg-transparent hover:text-lightBlue border border-lightBlue rounded-[40px] '>
                                 Visit Forum
                             </Link>
-                            <Link href="#" className='text-lg font-medium px-[30px] py-[14px] bg-transparent text-darkBlue rounded-[40px] border border-darkBlue'>
+                            <Link href="#" className='text-lg font-medium px-[30px] py-[14px] bg-transparent text-darkBlue hover:bg-darkBlue hover:text-white border border-darkBlue rounded-[40px] '>
                                 Contact Us
                             </Link>
                         </div>

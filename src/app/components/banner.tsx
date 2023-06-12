@@ -13,10 +13,10 @@ const Banner = () => {
                         For Fast, Secure Synchronization of your users between multiple directories such as Active Directory, Azure, LDAP, and Google
                     </p>
                     <div className='my-10 text-center flex gap-4 justify-center'>
-                        <Link href="#" className='text-lg font-medium px-[30px] py-[14px] bg-Orange text-white rounded-[40px]'>
+                        <Link href="#" className='text-lg font-medium px-[30px] py-[14px] bg-Orange text-white hover:bg-transparent hover:text-Orange border border-Orange rounded-[40px]'>
                             Try for Free
                         </Link>
-                        <Link href="#" className='text-lg font-medium px-[30px] py-[14px] bg-darkBlue text-white rounded-[40px]'>
+                        <Link href="#" className='text-lg font-medium px-[30px] py-[14px] bg-darkBlue text-white hover:bg-transparent hover:text-darkBlue border border-darkBlue rounded-[40px]'>
                             Try for Free
                         </Link>
                     </div>

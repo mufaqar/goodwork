@@ -34,34 +34,34 @@ const Header = () => {
                     <ul className={`flex md:flex-row flex-col gap-7 ${open ? "absolute top-[90px] left-0 h-screen w-screen bg-darkBlue py-8 px-4" : "md:flex hidden"} transition-transform duration-300 ease-in-out `}>
                         <li>
                             <Link href="/"
-                                className='flex gap-1 items-center text-base font-normal text-white'>
+                                className='flex gap-1 items-center text-base font-normal text-white hover:text-Orange'>
                                 Products
                                 <BiChevronDown />
                             </Link>
                         </li>
                         <li>
                             <Link href="#"
-                                className='flex gap-1 items-center text-base font-normal text-white'>
+                                className='flex gap-1 items-center text-base font-normal text-white hover:text-Orange'>
                                 Resources
                                 <BiChevronDown />
                             </Link>
                         </li>
                         <li>
                             <Link href="#"
-                                className='flex gap-1 items-center text-base font-normal text-white'>
+                                className='flex gap-1 items-center text-base font-normal text-white hover:text-Orange'>
                                 About
                                 <BiChevronDown />
                             </Link>
                         </li>
                         <li>
                             <Link href="#"
-                                className='flex gap-1 items-center text-base font-normal text-white'>
+                                className='flex gap-1 items-center text-base font-normal text-white hover:text-Orange'>
                                 Q&A
                             </Link>
                         </li>
                         <li>
                             <Link href="#"
-                                className='flex gap-1 items-center text-base font-normal text-white'>
+                                className='flex gap-1 items-center text-base font-normal text-white hover:text-Orange'>
                                 Contuct Us
                             </Link>
                         </li>
@@ -71,13 +71,13 @@ const Header = () => {
                     <ul className='flex justify-end items-center"'>
                         <li>
                             <Link href="/"
-                                className='flex gap-1 items-center text-base font-medium py-2 px-5 bg-transparent text-lightBlue rounded-[30px]'>
+                                className='flex gap-1 items-center text-base font-medium py-2 px-5 bg-transparent text-lightBlue hover:bg-transparent hover:text-Orange border border-transparent rounded-[30px]'>
                                 <FiLogIn /> Login
                             </Link>
                         </li>
                         <li>
                             <Link href="/"
-                                className='flex gap-1 items-center text-base font-medium py-2 px-5 bg-Orange text-white rounded-[30px]'>
+                                className='flex gap-1 items-center text-base font-medium py-2 px-5 bg-Orange text-white hover:bg-transparent hover:text-Orange border border-Orange rounded-[30px]'>
                                 Sign Up
                             </Link>
                         </li>

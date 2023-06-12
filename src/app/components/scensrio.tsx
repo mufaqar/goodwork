@@ -23,7 +23,7 @@ const User_censrio = () => {
                                     <h3 className='text-2xl font-medium text-center text-white my-5'>
                                         {item.title}
                                     </h3>
-                                    <Link href="#" className='text-base font-normal text-center text-lightBlue'>
+                                    <Link href="#" className='text-base font-normal text-center text-lightBlue hover:text-white'>
                                         {item.btn_txt}
                                     </Link>
                                 </div>
@@ -46,7 +46,7 @@ const User_censrio = () => {
                                 <input className="px-5 py-4 rounded-[30px] text-sm font-normal text-darkBlue focus:outline-none w-full" placeholder="Email" type="email" id="email" required />
                             </div>
                             <div className='md:w-[30%] w-full'>
-                                <button type="submit" className="text-lg font-medium px-[20px] py-[14px] bg-Orange text-white rounded-[40px] w-full">
+                                <button type="submit" className="text-lg font-medium px-[20px] py-[14px] bg-Orange text-white hover:bg-white hover:text-Orange border border-Orange hover:border-white rounded-[40px] w-full">
                                     Get a Consultation
                                 </button>
                             </div>
