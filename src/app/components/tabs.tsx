@@ -46,7 +46,7 @@ const Tabs = () => {
             <li className="flex-auto text-center">
               <Link
                 className={
-                  "py-[14px] md:px-[30px] px-[9px] rounded-[40px] md:text-base text-sm font-semibold  " +
+                  "w-full md:block py-[14px] md:px-[30px] px-[9px] rounded-[40px] md:text-base text-sm font-semibold  " +
                   (openTab === 1
                     ? "text-white bg-lightBlue "
                     : "text-darkBlue bg-white border border-darkBlue/10 hover:bg-lightBlue hover:text-white ")
@@ -65,7 +65,7 @@ const Tabs = () => {
             <li className="flex-auto text-center">
               <Link
                 className={
-                  "py-[14px] md:px-[30px] px-[9px] rounded-[40px] md:text-base text-sm font-semibold " +
+                  "w-full md:block py-[14px] md:px-[30px] px-[9px] rounded-[40px] md:text-base text-sm font-semibold " +
                   (openTab === 2
                     ? "text-white bg-lightBlue "
                     : "text-darkBlue bg-white border border-darkBlue/10 hover:bg-lightBlue hover:text-white ")
@@ -84,7 +84,7 @@ const Tabs = () => {
             <li className="flex-auto text-center">
               <Link
                 className={
-                  "py-[14px] md:px-[30px] px-[9px] rounded-[40px] md:text-base text-sm font-semibold " +
+                  "w-full md:block py-[14px] md:px-[30px] px-[9px] rounded-[40px] md:text-base text-sm font-semibold " +
                   (openTab === 3
                     ? "text-white bg-lightBlue "
                     : "text-darkBlue bg-white border border-darkBlue/10 hover:bg-lightBlue hover:text-white ")
