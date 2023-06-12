@@ -3,7 +3,7 @@ import React from 'react'
 
 const Trusted = () => {
     return (
-        <section className='py-16 bg-[#44A1E5] bg-opacity-5'>
+        <section className='py-16 bg-[#F6FAFE] '>
             <div className='container mx-auto px-4'>
                 <div>
                     <p className='md:text-[28px] md:leading-[40px] text-xl font-medium text-center text-darkBlue'>
