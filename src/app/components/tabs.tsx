@@ -40,10 +40,10 @@ const Tabs = () => {
             className="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row gap-8"
             role="tablist"
           >
-            <li className="mr-2 last:mr-0 flex-auto text-center">
+            <li className="flex-auto text-center">
               <Link
                 className={
-                  "py-[14px] md:px-[30px] px-[10px] rounded-[40px] text-base font-semibold  " +
+                  "py-[14px] md:px-[30px] px-[9px] rounded-[40px] text-base font-semibold  " +
                   (openTab === 1
                     ? "text-white bg-lightBlue "
                     : "text-darkBlue bg-white border border-darkBlue/10")
@@ -59,10 +59,10 @@ const Tabs = () => {
                 Simply Sync to Active Directory
               </Link>
             </li>
-            <li className="mr-2 last:mr-0 flex-auto text-center">
+            <li className="flex-auto text-center">
               <Link
                 className={
-                  "py-[14px] md:px-[30px] px-[10px] rounded-[40px] text-base font-semibold " +
+                  "py-[14px] md:px-[30px] px-[9px] rounded-[40px] text-base font-semibold " +
                   (openTab === 2
                     ? "text-white bg-lightBlue "
                     : "text-darkBlue bg-white border border-darkBlue/10")
@@ -78,10 +78,10 @@ const Tabs = () => {
                 Simply Sync for Services Providers Components
               </Link>
             </li>
-            <li className="mr-2 last:mr-0 flex-auto text-center">
+            <li className="flex-auto text-center">
               <Link
                 className={
-                  "py-[14px] md:px-[30px] px-[10px] rounded-[40px] text-base font-semibold " +
+                  "py-[14px] md:px-[30px] px-[9px] rounded-[40px] text-base font-semibold " +
                   (openTab === 3
                     ? "text-white bg-lightBlue "
                     : "text-darkBlue bg-white border border-darkBlue/10")
