@@ -18,7 +18,7 @@ const Trusted = () => {
                                 alt='img'
                                 width={200}
                                 height={100}
-                                className='h-full w-full object-contain'
+                                className='h-full w-full object-contain filter grayscale hover:grayscale-0'
                             />
                         );
                     })}

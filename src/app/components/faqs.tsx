@@ -26,7 +26,7 @@ export default function Faqs() {
                 </div>
                 <div className="grid gap-5">
                     {Faqs_Data.map((item: any, idx: number) => {
-                        return <div key={idx} className="w-full border border-[#F0F0F0] rounded-[10px] p-[30px] ">
+                        return <div key={idx} className="w-full border border-[#F0F0F0] rounded-[10px] p-[30px] drop-shadow-[0_0_0_rgba(0,0,0,0.03)]">
                             <div className="">
                                 <div className="flex justify-between cursor-pointer" onClick={() => handleMenu(item.id)}>
                                     <p className="text-lg font-semibold text-darkBlue " >
