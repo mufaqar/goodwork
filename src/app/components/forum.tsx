@@ -5,8 +5,12 @@ import Article1 from '../../../public/images/forum.png';
 
 const Forum = () => {
     return (
-        <section className='py-16'>
-            <div className='container mx-auto px-4'>
+        <section className='py-16 relative bg-[#F6FAFE] overflow-hidden'>
+            <Image src="/images/frame.png"
+                width={1152}
+                height={557}
+                alt="fram" className='absolute left-0 inset-y-0 md:block hidden z-auto' />
+            <div className='container mx-auto px-4 relative z-10'>
                 <div className="grid md:grid-cols-2 grid-cols-1 gap-12">
                     <div>
                         <h2 className="text-3xl font-semibold text-darkBlue mb-4">
@@ -30,6 +34,10 @@ const Forum = () => {
                     </div>
                 </div>
             </div>
+            <Image src="/images/frame-1.png"
+                width={333}
+                height={500}
+                alt="fram1" className='absolute right-0 inset-y-0 md:block hidden z-auto' />
         </section>
     )
 }
