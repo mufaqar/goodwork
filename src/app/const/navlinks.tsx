@@ -2,7 +2,7 @@ export const NavLinks = [
     {
         id: 1,
         name: 'Products',
-        link: '/',
+        link: '#products',
         sub_menu: [
             {
                 name: 'Products',
@@ -29,7 +29,7 @@ export const NavLinks = [
     {
         id: 2,
         name: 'Resources',
-        link: '#',
+        link: '#resources',
         sub_menu: [
             {
                 name: 'Products',
@@ -56,7 +56,7 @@ export const NavLinks = [
     {
         id: 3,
         name: 'About',
-        link: '#',
+        link: '#about',
         sub_menu: [
             {
                 name: 'Products',
@@ -83,12 +83,12 @@ export const NavLinks = [
     {
         id: 4,
         name: ' Q&A',
-        link: '/blogs',
+        link: '#faqs',
     },
     {
         id: 5,
         name: 'Contuct Us',
-        link: '#',
+        link: '#contact-us',
     },
 ]
 

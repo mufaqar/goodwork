@@ -46,7 +46,7 @@ const Header = () => {
                             {NavLinks.map((item: NavLinksType, idx: number) => {
                                 return <li key={idx}>
                                     <span className="flex items-center justify-between">
-                                        <Link href="#"
+                                        <Link href={item.link}
                                             onClick={() => { setDropdown(null), setOpen(false) }}
                                             className='flex gap-1 items-center text-base font-normal text-white hover:text-Orange'>
                                             {item.name}

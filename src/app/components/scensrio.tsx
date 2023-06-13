@@ -4,7 +4,7 @@ import React from 'react'
 
 const User_censrio = () => {
     return (
-        <section className='py-16 bg-darkBlue bg-blend-multiply bg-[url("/images/scenarioBg.png")] bg-center bg-cover bg-no-repeat'>
+        <section id='resources' className='py-16 bg-darkBlue bg-blend-multiply bg-[url("/images/scenarioBg.png")] bg-center bg-cover bg-no-repeat'>
             <div className='container mx-auto md:px-0 px-4'>
                 <div className='mb-12'>
                     <h2 className='md:text-[42px] text-4xl font-medium text-center text-white'>

@@ -12,7 +12,7 @@ export default function Home() {
     <main>
       <Banner />
       <Trusted />
-      <section className='py-16'>
+      <section className='py-16' id="products">
         <div>
           <div className='mb-12'>
             <h2 className='md:text-[42px] text-4xl font-medium text-center text-darkBlue'>

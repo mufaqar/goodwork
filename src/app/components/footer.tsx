@@ -8,7 +8,7 @@ import Lnkdn from '../../../public/images/linkedin.png';
 
 const Footer = () => {
   return (
-    <footer className='bg-darkBlue py-14'>
+    <footer id='contact-us' className='bg-darkBlue py-14'>
       <div className='container mx-auto px-4 grid md:grid-cols-4 grid-cols-1 gap-14'>
         <div>
           <Link href="/">

@@ -14,7 +14,7 @@ export default function Faqs() {
     }
 
     return (
-        <section className="py-16">
+        <section id="faqs" className="py-16">
             <div className="container mx-auto px-4">
                 <div className='mb-12'>
                     <h2 className='md:text-[42px] text-4xl font-medium text-center text-darkBlue'>
