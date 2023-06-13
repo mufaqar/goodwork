@@ -16,7 +16,7 @@ const User_censrio = () => {
                         return (
                             <div key={index}
                                 className='bg-darkBlue/50 p-5 rounded-[20px]'>
-                                <div className='bg-[#152B64] p-7 rounded-[20px] h-[130px]'>
+                                <div className='bg-[#152B64] p-7 rounded-[20px] h-[120px]'>
                                     <Image src={item.img} alt="img" width={200} height={20} className='mx-auto h-full w-full object-contain ' />
                                 </div>
                                 <div className='text-center'>
