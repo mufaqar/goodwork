@@ -83,7 +83,7 @@ const Header = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link href="/"
+                            <Link href="/register"
                                 className='flex gap-1 items-center text-base font-medium py-2 px-5 bg-Orange text-white hover:bg-transparent hover:text-Orange border border-Orange rounded-[30px]'>
                                 Sign Up
                             </Link>
