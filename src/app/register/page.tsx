@@ -11,7 +11,7 @@ const Register = () => {
     return (
         <main className='bg-darkBlue bg-[url("/images/register-bg.png")] bg-blend-multiply bg-center bg-cover bg-no-repeat min-h-screen'>
             <Header />
-            <section className="min-h-screen flex items-center justify-center md:mt-0 mt-12">
+            <section className="min-h-screen flex items-center justify-center mt-12">
                 <div className='container mx-auto px-4'>
                     <div className='max-w-[499px] m-auto bg-white md:p-[50px] p-5 rounded-[20px]  shadow-[0_15px_30px_rgba(0,0,0,0.05)]'>
                         <h1 className='md:text-[32px] text-2xl font-semibold text-center text-darkBlue mb-2'>

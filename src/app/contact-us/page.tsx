@@ -11,7 +11,7 @@ const Contact_Us = () => {
     return (
         <main className='bg-darkBlue bg-[url("/images/contact-bg.png")] bg-blend-multiply bg-center bg-cover bg-no-repeat min-h-screen'>
             <Header />
-            <section className="min-h-screen flex items-center justify-center md:mt-0 mt-12">
+            <section className="min-h-screen flex items-center justify-center mt-12">
                 <div className='container mx-auto px-4 grid md:grid-cols-2 grid-cols-1 gap-7 items-center'>
                     <div>
                         <h1 className='md:text-6xl text-5xl font-semibold text-white mb-5'>
