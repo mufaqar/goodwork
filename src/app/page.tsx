@@ -15,7 +15,7 @@ export default function Home() {
       <section className='py-16' id="products">
         <div>
           <div className='mb-12'>
-            <h2 className='md:text-[42px] text-4xl font-medium text-center text-darkBlue'>
+            <h2 className='md:text-[42px] md:leading-[49px] text-4xl font-medium text-center text-darkBlue'>
               Featured Product
             </h2>
           </div>
@@ -28,7 +28,7 @@ export default function Home() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className='mb-12'>
-            <h2 className='md:text-[42px] text-4xl font-medium text-center text-darkBlue'>
+            <h2 className='md:text-[42px] md:leading-[49px] text-4xl font-medium text-center text-darkBlue'>
               Frequently Asked Questions
             </h2>
             <p className='text-xl font-normal text-center text-darkBlue mt-5'>

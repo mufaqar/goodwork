@@ -32,33 +32,33 @@ export default Trusted
 
 export const Partner_Logo = [
     {
-        img: "/images/trusted1.png",
+        img: "/images/firstnet.png",
     },
     {
-        img: "/images/trusted2.png",
+        img: "/images/openhost.png",
     },
     {
-        img: "/images/trusted3.png",
+        img: "/images/mandic.png",
     },
     {
-        img: "/images/trusted4.png",
+        img: "/images/citymd.png",
     },
     {
-        img: "/images/trusted5.png",
+        img: "/images/civeo.png",
     },
     {
-        img: "/images/trusted6.png",
+        img: "/images/pierpoint.png",
     },
     {
-        img: "/images/trusted7.png",
+        img: "/images/tribune.png",
     },
     {
-        img: "/images/trusted8.png",
+        img: "/images/skymail.png",
     },
     {
-        img: "/images/trusted9.png",
+        img: "/images/redblade.png",
     },
     {
-        img: "/images/trusted10.png",
+        img: "/images/warnerbros.png",
     },
 ];

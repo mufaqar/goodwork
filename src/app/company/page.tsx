@@ -16,7 +16,7 @@ const Company = () => {
             <section className="py-16">
                 <div className='container mx-auto px-4 flex md:flex-row flex-col gap-12 items-center'>
                     <div className='md:w-7/12 w-full'>
-                        <h2 className="text-3xl font-semibold mb-5">
+                        <h2 className="md:text-[42px] md:leading-[49px] text-4xl font-semibold mb-5">
                             <span className="text-darkBlue">
                                 About </span> <span className="text-Orange"> Us</span>
                         </h2>
@@ -56,7 +56,7 @@ const Company = () => {
                         <Image src={Who_We_are} alt="about" className='w-full' />
                     </div>
                     <div className='md:w-7/12 w-full'>
-                        <h2 className="text-3xl font-semibold mb-5">
+                        <h2 className="md:text-[42px] md:leading-[49px] text-4xl font-semibold mb-5">
                             <span className="text-darkBlue">
                                 Who are </span> <span className="text-Orange"> we?</span>
                         </h2>
@@ -70,7 +70,7 @@ const Company = () => {
             <section className="py-16">
                 <div className='container mx-auto px-4 flex md:flex-row flex-col gap-12 items-center'>
                     <div className='md:w-7/12 w-full'>
-                        <h2 className="text-3xl font-semibold mb-5">
+                        <h2 className="md:text-[42px] md:leading-[49px] text-4xl font-semibold mb-5">
                             <span className="text-darkBlue">
                                 Interested in </span> <span className="text-Orange"> Partnering?</span>
                         </h2>
