@@ -22,7 +22,7 @@ const Customers = () => {
                         </h2>
                     </div>
                     <div className='grid md:grid-cols-4 grid-cols-2 gap-10 justify-center mt-5'>
-                        {Partners_Logo.map((item: any, index: any) => {
+                        {Partners_Logo.map((item: Logo_Type, index: any) => {
                             return (
                                 <Image key={index}
                                     src={item.img}
@@ -111,3 +111,8 @@ export const Partners_Logo = [
         img: "/images/warnerbros.png",
     },
 ];
+
+export type Logo_Type = {
+    img: string
+
+}
