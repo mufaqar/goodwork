@@ -38,11 +38,11 @@ const User_censrio = () => {
                     <form action="#">
                         <div className="items-center flex sm:flex-row flex-col gap-2">
                             <div className="relative md:w-[30%] w-full">
-                                <label htmlFor="name" className="hidden mb-2">Email address</label>
+                                <label htmlFor="name" className="hidden mb-2">Name</label>
                                 <input className="px-5 py-4 rounded-[30px] text-sm font-normal text-darkBlue focus:outline-none w-full" placeholder="Name" type="text" id="name" required />
                             </div>
                             <div className="relative md:w-[40%] w-full">
-                                <label htmlFor="email" className="hidden mb-2">Email address</label>
+                                <label htmlFor="email" className="hidden mb-2">Email</label>
                                 <input className="px-5 py-4 rounded-[30px] text-sm font-normal text-darkBlue focus:outline-none w-full" placeholder="Email" type="email" id="email" required />
                             </div>
                             <div className='md:w-[30%] w-full'>
