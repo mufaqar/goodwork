@@ -2,7 +2,7 @@ export const NavLinks = [
     {
         id: 1,
         name: 'Products',
-        link: '#products',
+        link: '/products',
         sub_menu: [
             {
                 name: 'Products',

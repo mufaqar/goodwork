@@ -10,9 +10,17 @@ import Faqs_Sec from './components/faqs';
 export default function Home() {
   return (
     <main>
-      <Banner />
+      <Banner
+        title="Simply Sync"
+        subTitle="For Fast, Secure Synchronization of your users between multiple directories such as Active Directory, Azure, LDAP, and Google"
+        buttontext="Try for Free"
+        buttonLink="#"
+        buttontext2="Talk to Us"
+        buttonLink2="#"
+        image="/images/mainBg.png"
+      />
       <Trusted />
-      <section className='py-16' id="products">
+      <section className='py-16'>
         <div>
           <div className='mb-12'>
             <h2 className='md:text-[42px] md:leading-[49px] text-4xl font-medium text-center text-darkBlue'>
