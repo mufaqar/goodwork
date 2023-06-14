@@ -83,7 +83,7 @@ export const NavLinks = [
     {
         id: 4,
         name: ' Q&A',
-        link: '/faqs',
+        link: '#',
     },
     {
         id: 5,

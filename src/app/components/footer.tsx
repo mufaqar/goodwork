@@ -81,7 +81,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-base font-normal text-white'>
+              <Link href="/faqs" className='text-base font-normal text-white'>
                 Frequently Asked Questions
               </Link>
             </li>
@@ -93,7 +93,7 @@ const Footer = () => {
           </h3>
           <ul className='mt-7 grid gap-3'>
             <li>
-              <Link href="#" className='text-base font-normal text-white'>
+              <Link href="/company" className='text-base font-normal text-white'>
                 About Us
               </Link>
             </li>

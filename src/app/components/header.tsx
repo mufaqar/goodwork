@@ -77,7 +77,7 @@ const Header = () => {
                 <div className="w-3/12 md:block hidden">
                     <ul className='flex justify-end items-center"'>
                         <li>
-                            <Link href="/"
+                            <Link href="/login"
                                 className='flex gap-1 items-center text-base font-medium py-2 px-5 bg-transparent text-lightBlue hover:bg-transparent hover:text-Orange border border-transparent rounded-[30px]'>
                                 <FiLogIn /> Login
                             </Link>

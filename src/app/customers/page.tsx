@@ -1,10 +1,13 @@
 import React from 'react'
 import Page_Banner from '../components/page-banner'
 import Image from 'next/image';
+import Header from '../components/header';
+import Footer from '../components/footer';
 
 const Customers = () => {
     return (
         <main>
+            <Header />
             <Page_Banner
                 title="Company"
                 image="/images/customer-bg.png"
@@ -69,6 +72,7 @@ const Customers = () => {
                     </div>
                 </div>
             </section>
+            <Footer />
         </main>
     )
 }

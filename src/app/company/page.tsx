@@ -5,10 +5,13 @@ import About from '../../../public/images/about.png';
 import Who_We_are from '../../../public/images/who-we-are.png';
 import Partnering from '../../../public/images/partnering.png';
 import Link from 'next/link';
+import Header from '../components/header';
+import Footer from '../components/footer';
 
 const Company = () => {
     return (
         <main>
+            <Header />
             <Page_Banner
                 title="Company"
                 image="/images/company-bg.png"
@@ -86,6 +89,7 @@ const Company = () => {
                     </div>
                 </div>
             </section>
+            <Footer />
         </main>
     )
 }

@@ -7,10 +7,13 @@ import Icon1 from '../../../public/images/pro-icon1.png';
 import Icon2 from '../../../public/images/pro-icon2.png';
 import Icon3 from '../../../public/images/pro-icon3.png';
 import Link from 'next/link';
+import Header from '../components/header';
+import Footer from '../components/footer';
 
 const Partner_with_Us = () => {
     return (
         <main>
+            <Header />
             <Page_Banner
                 title="Partner With Us"
                 image="/images/partner-bg.png"
@@ -98,6 +101,7 @@ const Partner_with_Us = () => {
                     </div>
                 </div>
             </section>
+            <Footer />
         </main>
     )
 }

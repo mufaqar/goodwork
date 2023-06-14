@@ -5,10 +5,13 @@ import Product1 from '../../../public/images/product1.png';
 import Product2 from '../../../public/images/product2.png';
 import Product3 from '../../../public/images/product3.png';
 import Image from 'next/image';
+import Header from '../components/header';
+import Footer from '../components/footer';
 
 const Products = () => {
     return (
         <main>
+            <Header />
             <Banner
                 title="Products"
                 subTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
@@ -92,6 +95,7 @@ const Products = () => {
                     </div>
                 </div>
             </section>
+            <Footer />
         </main>
     )
 }

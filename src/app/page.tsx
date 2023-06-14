@@ -6,10 +6,13 @@ import User_censrio from './components/scensrio';
 import Get_Started from './components/get-started';
 import Forum from './components/forum';
 import Faqs_Sec from './components/faqs';
+import Header from './components/header';
+import Footer from './components/footer';
 
 export default function Home() {
   return (
     <main>
+      <Header />
       <Banner
         title="Simply Sync"
         subTitle="For Fast, Secure Synchronization of your users between multiple directories such as Active Directory, Azure, LDAP, and Google"
@@ -48,7 +51,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      <Footer />
     </main>
   )
 }
