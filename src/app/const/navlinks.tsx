@@ -56,7 +56,7 @@ export const NavLinks = [
     {
         id: 3,
         name: 'About',
-        link: '#about',
+        link: '/company',
         sub_menu: [
             {
                 name: 'Products',
