@@ -75,12 +75,12 @@ const Contact_Us = () => {
                                 </div>
                                 <div className='w-full mt-7'>
                                     <button type="submit" className="text-lg font-medium px-[20px] py-[14px] bg-Orange text-white hover:bg-white hover:text-Orange border border-Orange rounded-[40px] w-full">
-                                        Register
+                                        Send
                                     </button>
                                 </div>
                                 <div className="max-w-[359px] mx-auto w-full">
                                     <p className='text-sm font-normal text-darkBlue'>
-                                    I have read and agree to the <Link href="#" className='text-lightBlue font-medium underline'>Privacy Policy</Link> and <Link href="#" className='text-lightBlue font-medium underline'>Terms of Service.</Link>
+                                        I have read and agree to the <Link href="#" className='text-lightBlue font-medium underline'>Privacy Policy</Link> and <Link href="#" className='text-lightBlue font-medium underline'>Terms of Service.</Link>
                                     </p>
                                 </div>
                             </div>
