@@ -81,6 +81,12 @@ export default Customers
 
 export const Partners_Logo = [
     {
+        img: "/images/firstnet.png",
+    },
+    {
+        img: "/images/openhost.png",
+    },
+    {
         img: "/images/mandic.png",
     },
     {
