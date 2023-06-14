@@ -51,7 +51,7 @@ const Company = () => {
             </section>
 
             <section className="py-16">
-                <div className='container mx-auto px-4 flex md:flex-row flex-col gap-12 items-center'>
+                <div className='container mx-auto px-4 flex md:flex-row flex-col-reverse gap-12 items-center'>
                     <div className='md:w-5/12 w-full'>
                         <Image src={Who_We_are} alt="about" className='w-full' />
                     </div>
