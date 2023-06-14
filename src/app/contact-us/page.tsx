@@ -44,7 +44,7 @@ const Contact_Us = () => {
                             </li>
                         </ul>
                     </div>
-                    <div className='max-w-[499px] m-auto bg-white p-[50px] rounded-[20px]  shadow-[0_15px_30px_rgba(0,0,0,0.05)]'>
+                    <div className='max-w-[499px] m-auto bg-white md:p-[50px] p-5 rounded-[20px]  shadow-[0_15px_30px_rgba(0,0,0,0.05)]'>
                         <h1 className='md:text-[32px] text-2xl font-semibold text-center text-darkBlue mb-2'>
                             <span className="text-darkBlue">
                                 Reach out to Good </span> <span className="text-Orange"> Works</span> <span className="text-darkBlue"> to get started </span>
