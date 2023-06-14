@@ -30,10 +30,10 @@ const Products = () => {
                         </p>
                         <div className='mt-7 text-center flex gap-4'>
                             <Link href="#" className='text-lg font-medium px-[30px] py-[14px] bg-Orange text-white hover:bg-transparent hover:text-Orange border border-Orange rounded-[40px] '>
-                                Try for Free
+                                Try it Now
                             </Link>
                             <Link href="#" className='text-lg font-medium px-[30px] py-[14px] bg-transparent text-darkBlue hover:bg-darkBlue hover:text-white rounded-[40px] border border-darkBlue'>
-                                Learn More
+                               Read More
                             </Link>
                         </div>
                     </div>
@@ -58,10 +58,10 @@ const Products = () => {
                         </p>
                         <div className='mt-7 text-center flex gap-4'>
                             <Link href="#" className='text-lg font-medium px-[30px] py-[14px] bg-[#00AC4F] text-white hover:bg-transparent hover:text-[#00AC4F] border border-[#00AC4F] rounded-[40px] '>
-                                Try for Free
+                                Try it Now
                             </Link>
                             <Link href="#" className='text-lg font-medium px-[30px] py-[14px] bg-transparent text-darkBlue hover:bg-darkBlue hover:text-white rounded-[40px] border border-darkBlue'>
-                                Learn More
+                               Read More
                             </Link>
                         </div>
                     </div>
@@ -80,10 +80,10 @@ const Products = () => {
                         </p>
                         <div className='mt-7 text-center flex gap-4'>
                             <Link href="#" className='text-lg font-medium px-[30px] py-[14px] bg-lightBlue text-white hover:bg-transparent hover:text-lightBlue border border-lightBlue rounded-[40px] '>
-                                Try for Free
+                                Try it Now
                             </Link>
                             <Link href="#" className='text-lg font-medium px-[30px] py-[14px] bg-transparent text-darkBlue hover:bg-darkBlue hover:text-white rounded-[40px] border border-darkBlue'>
-                                Learn More
+                               Read More
                             </Link>
                         </div>
                     </div>
