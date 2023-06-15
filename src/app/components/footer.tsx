@@ -54,7 +54,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-base font-normal text-white'>
+              <Link href="/simply-simp-agent" className='text-base font-normal text-white'>
                 Simply SNMP Agent
               </Link>
             </li>
