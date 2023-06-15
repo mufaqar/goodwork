@@ -18,7 +18,7 @@ const Login = () => {
                             Login
                         </h1>
                         <p className='text-lg font-normal text-darkBlue text-center'>
-                            Please enter your user name and password.  <Link href="#" className='font-medium text-lightBlue'>
+                            Please enter your user name and password.  <Link href="/login" className='font-medium text-lightBlue'>
                                 Register
                             </Link> if you don't have an account.
                         </p>
