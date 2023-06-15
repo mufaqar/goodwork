@@ -71,7 +71,7 @@ const Footer = () => {
           </h3>
           <ul className='mt-7 grid gap-3'>
             <li>
-              <Link href="#" className='text-base font-normal text-white'>
+              <Link href="/download-software" className='text-base font-normal text-white'>
                 Download Software
               </Link>
             </li>
