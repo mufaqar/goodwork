@@ -4,6 +4,10 @@ import Image from 'next/image';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
+
+interface Logo_Type {
+    image: string;
+}
 const Customers = () => {
     return (
         <main>
@@ -25,8 +29,8 @@ const Customers = () => {
                         {Partners_Logo.map((item: Logo_Type, index: any) => {
                             return (
                                 <Image key={index}
-                                    src={item.img}
-                                    alt='img'
+                                    src={item.image}
+                                    alt='image'
                                     width={200}
                                     height={100}
                                     className='h-full w-full object-contain filter grayscale hover:grayscale-0'
@@ -81,38 +85,27 @@ export default Customers
 
 export const Partners_Logo = [
     {
-        img: "/images/firstnet.png",
+        image: "/images/mandic.png",
     },
     {
-        img: "/images/openhost.png",
+        image: "/images/citymd.png",
     },
     {
-        img: "/images/mandic.png",
+        image: "/images/civeo.png",
     },
     {
-        img: "/images/citymd.png",
+        image: "/images/pierpoint.png",
     },
     {
-        img: "/images/civeo.png",
+        image: "/images/tribune.png",
     },
     {
-        img: "/images/pierpoint.png",
+        image: "/images/skymail.png",
     },
     {
-        img: "/images/tribune.png",
+        image: "/images/redblade.png",
     },
     {
-        img: "/images/skymail.png",
-    },
-    {
-        img: "/images/redblade.png",
-    },
-    {
-        img: "/images/warnerbros.png",
+        image: "/images/warnerbros.png",
     },
 ];
-
-export type Logo_Type = {
-    img: string
-
-}
