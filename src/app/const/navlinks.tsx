@@ -5,25 +5,18 @@ export const NavLinks = [
         link: '/products',
         sub_menu: [
             {
-                name: 'Products',
-                link: '#',
+                name: 'Simply Sync Password',
+                link: '/',
             },
             {
-                name: 'Resources',
-                link: '#',
+                name: 'Simply SIMP Agent',
+                link: '/simply-simp-agent',
             },
             {
-                name: 'About',
+                name: '  Simply Exhange Transport Agent',
                 link: '#',
-            },
-            {
-                name: 'Q&A',
-                link: '#',
-            },
-            {
-                name: 'Contuct Us',
-                link: '#',
-            },
+            }
+
         ]
     },
     {
@@ -32,25 +25,18 @@ export const NavLinks = [
         link: '#resources',
         sub_menu: [
             {
-                name: 'Products',
+                name: 'Download Software',
+                link: '/download-software',
+            },
+            {
+                name: 'Documentation',
                 link: '#',
             },
             {
-                name: 'Resources',
-                link: '#',
-            },
-            {
-                name: 'About',
-                link: '#',
-            },
-            {
-                name: 'Q&A',
-                link: '#',
-            },
-            {
-                name: 'Contuct Us',
-                link: '#',
-            },
+                name: 'Frequently Asked Questions',
+                link: '/faqs',
+            }
+
         ]
     },
     {
@@ -58,26 +44,16 @@ export const NavLinks = [
         name: 'About',
         link: '/company',
         sub_menu: [
+
             {
-                name: 'Products',
-                link: '#',
+                name: 'Partner with Us',
+                link: '/partner-with-us',
             },
             {
-                name: 'Resources',
-                link: '#',
-            },
-            {
-                name: 'About',
-                link: '#',
-            },
-            {
-                name: 'Q&A',
-                link: '#',
-            },
-            {
-                name: 'Contuct Us',
-                link: '#',
-            },
+                name: 'Customers',
+                link: '/customers',
+            }
+
         ]
     },
     {

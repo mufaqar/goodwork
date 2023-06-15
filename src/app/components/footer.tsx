@@ -55,7 +55,7 @@ const Footer = () => {
             </li>
             <li>
               <Link href="/simply-simp-agent" className='text-base font-normal text-white'>
-                Simply SNMP Agent
+                Simply SIMP Agent
               </Link>
             </li>
             <li>
