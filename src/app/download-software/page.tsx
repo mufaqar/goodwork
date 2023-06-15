@@ -4,6 +4,8 @@ import Header from '../components/header'
 import Footer from '../components/footer'
 import { BsFillCheckCircleFill } from 'react-icons/bs'
 import { AiOutlineClose } from 'react-icons/ai'
+import Link from 'next/link'
+import { IoMdDownload } from 'react-icons/io'
 
 const Download_Software = () => {
     return (
@@ -756,6 +758,24 @@ const Download_Software = () => {
                         <p className='text-lg font-normal text-darkBlue/50 text-right mt-5'>
                             The new version of Simply Sync Server supports the legacy Simply Sync Clients.
                         </p>
+                    </div>
+                </div>
+            </section>
+
+            <section className="py-16">
+                <div className='container mx-auto px-4'>
+                    <div className='max-w-[378px] bg-[#F0F0F0] p-4 rounded-[10px] border-l-[9px] border-[#219FFF]  shadow-[0_15px_30px_rgba(0,0,0,0.03)]'>
+                        <p className='text-lg font-normal text-darkBlue mb-6'>
+                            Simply Sync Tool Version 3.8 new feature
+                        </p>
+                        <ul className='list-disc list-inside marker:text-Orange'>
+                            <li className='text-lg font-normal text-lightBlue'>
+                                TLS1.3 support
+                            </li>
+                            <li className='text-lg font-normal text-lightBlue'>
+                                Consolidated Management Tool
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </section>
