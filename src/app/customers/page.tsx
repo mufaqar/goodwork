@@ -11,7 +11,7 @@ const Customers = () => {
         <main>
             <Header />
             <Page_Banner
-                title="Company"
+                title="Customers"
                 image="/images/customer-bg.png"
             />
             <section className="py-16">
