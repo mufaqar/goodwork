@@ -3,11 +3,9 @@ import Page_Banner from '../components/page-banner'
 import Image from 'next/image';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import Customers_Sec from '../components/customers';
 
 
-interface Logo_Type {
-    image: string;
-}
 const Customers = () => {
     return (
         <main>
@@ -25,20 +23,14 @@ const Customers = () => {
 
                         </h2>
                     </div>
-                    <div className='grid md:grid-cols-4 grid-cols-2 gap-10 justify-center mt-5'>
-                        {Partners_Logo.map((item: Logo_Type, index: any) => {
-                            return (
-                                <Image key={index}
-                                    src={item.image}
-                                    alt='image'
-                                    width={200}
-                                    height={100}
-                                    className='h-full w-full object-contain filter grayscale hover:grayscale-0'
-                                />
-                            );
-                        })}
-                    </div>
-                    <div className='grid md:grid-cols-2 grid-cols-1 gap-7 mt-20'>
+
+                    <Customers_Sec />
+                </div>
+            </section>
+
+            <section className="py-16">
+                <div className='container mx-auto px-4'>
+                    <div className='grid md:grid-cols-2 grid-cols-1 gap-7'>
                         <div className='bg-[#F6FAFE] p-7 rounded-[20px] border border-[#F0F0F0] shadow-[0_15px_30px_0_rgba(0,0,0,0.05)] grid content-between'>
                             <div>
                                 <Image
@@ -82,30 +74,3 @@ const Customers = () => {
 }
 
 export default Customers
-
-export const Partners_Logo = [
-    {
-        image: "/images/mandic.png",
-    },
-    {
-        image: "/images/citymd.png",
-    },
-    {
-        image: "/images/civeo.png",
-    },
-    {
-        image: "/images/pierpoint.png",
-    },
-    {
-        image: "/images/tribune.png",
-    },
-    {
-        image: "/images/skymail.png",
-    },
-    {
-        image: "/images/redblade.png",
-    },
-    {
-        image: "/images/warnerbros.png",
-    },
-];
