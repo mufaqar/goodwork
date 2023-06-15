@@ -26,7 +26,7 @@ const Customers = () => {
                         </h2>
                     </div>
                     <div className='grid md:grid-cols-4 grid-cols-2 gap-10 justify-center mt-5'>
-                        {/* {Partners_Logo.map((item: Logo_Type, index: any) => {
+                        {Partners_Logo.map((item: Logo_Type, index: any) => {
                             return (
                                 <Image key={index}
                                     src={item.image}
@@ -36,7 +36,7 @@ const Customers = () => {
                                     className='h-full w-full object-contain filter grayscale hover:grayscale-0'
                                 />
                             );
-                        })} */}
+                        })}
                     </div>
                     <div className='grid md:grid-cols-2 grid-cols-1 gap-7 mt-20'>
                         <div className='bg-[#F6FAFE] p-7 rounded-[20px] border border-[#F0F0F0] shadow-[0_15px_30px_0_rgba(0,0,0,0.05)] grid content-between'>
@@ -83,29 +83,29 @@ const Customers = () => {
 
 export default Customers
 
-// export const Partners_Logo = [
-//     {
-//         image: "/images/mandic.png",
-//     },
-//     {
-//         image: "/images/citymd.png",
-//     },
-//     {
-//         image: "/images/civeo.png",
-//     },
-//     {
-//         image: "/images/pierpoint.png",
-//     },
-//     {
-//         image: "/images/tribune.png",
-//     },
-//     {
-//         image: "/images/skymail.png",
-//     },
-//     {
-//         image: "/images/redblade.png",
-//     },
-//     {
-//         image: "/images/warnerbros.png",
-//     },
-// ];
+export const Partners_Logo = [
+    {
+        image: "/images/mandic.png",
+    },
+    {
+        image: "/images/citymd.png",
+    },
+    {
+        image: "/images/civeo.png",
+    },
+    {
+        image: "/images/pierpoint.png",
+    },
+    {
+        image: "/images/tribune.png",
+    },
+    {
+        image: "/images/skymail.png",
+    },
+    {
+        image: "/images/redblade.png",
+    },
+    {
+        image: "/images/warnerbros.png",
+    },
+];
