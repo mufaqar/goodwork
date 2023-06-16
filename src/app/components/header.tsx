@@ -44,48 +44,54 @@ const Header = () => {
                     <ul className={`flex md:flex-row flex-col gap-7 ${open ? "absolute top-[90px] left-0 h-screen w-screen bg-darkBlue py-8 px-4" : "md:flex hidden"} transition-transform duration-300 ease-in-out `}>
                         {NavLinks.map((item: NavLinksType, idx: number) => {
                             return <li key={idx}>
-                                <span className="flex items-center justify-between">
+                                <span className="flex items-center justify-between ">
                                     <Link href={item.link}
                                         onMouseEnter={() => handleMenu(item.id)}
                                         onClick={() => { setDropdown(null), setOpen(false) }}
-                                        className='flex gap-1 items-center text-base font-normal text-white hover:text-Orange'>
+                                        className='flex gap-1 items-center text-base font-normal text-white hover:font-bold'>
                                         {item.name}
                                     </Link>
                                     {
                                         item.sub_menu ? (
                                             <span className="cursor-pointer text-white">
-                                                <BiChevronDown />
+                                                <BiChevronDown onMouseEnter={() => setDropdown(item.id)} />
                                             </span>
                                         ) :
                                             ''
                                     }
                                 </span>
-                                <ul onMouseLeave={() => setDropdown(null)} className={` flex-col md:absolute md:px-5 md:pb-5 pb-0 pt-5 2xl:top-[81px] top-[71px] gap-4 bg-darkBlue ${dropdown === item.id ? 'flex' : 'hidden'} `}>
-                                    {item.sub_menu?.map((sub_item: any, _idx: any) => {
-                                        return <li key={_idx}>
-                                            <Link
-                                                onClick={() => { setDropdown(null), setOpen(false) }}
-                                                href={sub_item.link} className="text-base font-normal text-white hover:text-Orange" >
-                                                {sub_item.name}
-                                            </Link>
-                                        </li>
-                                    })}
-                                </ul>
+                                {
+                                    item.sub_menu ? (
+                                        <ul onMouseLeave={() => setDropdown(null)} className={` flex-col md:absolute md:px-5 md:pb-5 pb-0 pt-5 2xl:top-[81px] top-[71px] gap-4 bg-darkBlue ${dropdown === item.id ? 'flex' : 'hidden'} `}>
+                                            {item.sub_menu?.map((sub_item: any, _idx: any) => {
+                                                return <li key={_idx}>
+                                                    <Link
+                                                        onClick={() => { setDropdown(null), setOpen(false) }}
+                                                        href={sub_item.link} className="text-base font-normal text-white hover:text-Orange" >
+                                                        {sub_item.name}
+                                                    </Link>
+                                                </li>
+                                            })}
+                                        </ul>
+                                    ) :
+                                        ''
+                                }
                             </li>
                         })}
                     </ul>
+
                 </div>
                 <div className="w-3/12 md:block hidden">
                     <ul className='flex justify-end items-center"'>
                         <li>
                             <Link href="/login"
-                                className='flex gap-1 items-center text-base font-medium py-2 px-5 bg-transparent text-lightBlue hover:bg-transparent hover:text-Orange border border-transparent rounded-[30px]'>
+                                className='flex gap-1 items-center text-base font-medium py-2 px-5 bg-transparent text-lightBlue hover:bg-transparent hover:text-white border border-transparent rounded-[30px]'>
                                 <FiLogIn /> Login
                             </Link>
                         </li>
                         <li>
                             <Link href="/register"
-                                className='flex gap-1 items-center text-base font-medium py-2 px-5 bg-Orange text-white hover:bg-transparent hover:text-Orange border border-Orange rounded-[30px]'>
+                                className='flex gap-1 items-center text-base font-medium py-2 px-5 bg-Orange text-white hover:bg-white hover:text-Orange border border-Orange hover:border-white rounded-[30px]'>
                                 Sign Up
                             </Link>
                         </li>

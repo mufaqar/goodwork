@@ -29,10 +29,10 @@ const Banner = ({ title, subTitle, buttontext, buttonLink, buttontext2, buttonLi
                     )}
                     {buttontext && (
                         <div className='mt-10 mb-20 text-center flex gap-4 justify-center'>
-                            <Link href={buttonLink} className='text-lg font-medium px-[30px] py-[14px] bg-Orange text-white hover:bg-transparent hover:text-Orange border border-Orange rounded-[40px]'>
+                            <Link href={buttonLink} className='text-lg font-medium px-[30px] py-[14px] bg-Orange text-white hover:bg-white hover:text-Orange border border-Orange hover:border-white rounded-[40px]'>
                                 {buttontext}
                             </Link>
-                            <Link href={buttonLink2} className='text-lg font-medium px-[30px] py-[14px] bg-darkBlue text-white hover:bg-transparent hover:text-darkBlue border border-darkBlue rounded-[40px]'>
+                            <Link href={buttonLink2} className='text-lg font-medium px-[30px] py-[14px] bg-darkBlue text-white hover:bg-white hover:text-darkBlue border border-darkBlue hover:border-white rounded-[40px]'>
                                 {buttontext2}
                             </Link>
                         </div>
