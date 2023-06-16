@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import React from 'react'
 import Image from 'next/image';
-import Article1 from '../../../public/images/setup1.png'
 import { BsInfoSquare } from 'react-icons/bs';
 import { IoMdDownload } from 'react-icons/io';
 import Setup1 from '../../../public/images/setup1.png';

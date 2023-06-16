@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import React from 'react';
-import Video from '../../../public/images/video.png';
 import Link from 'next/link';
 
 const Get_Started = () => {

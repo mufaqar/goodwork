@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AiOutlineClose, AiOutlinePlus } from "react-icons/ai";
+import { AiOutlinePlus } from "react-icons/ai";
 import { Faqs_Data } from "../const/faqsData";
 
 export default function Faqs_Sec() {
