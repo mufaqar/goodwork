@@ -15,7 +15,7 @@ const Faqs = () => {
             />
             <section className="py-20">
                 <div className="container mx-auto px-4">
-                    <div className="grid md:grid-cols-2 grid-cols-1 gap-7">
+                    <div className="grid gap-5">
                         <Faqs_Sec />
                     </div>
                 </div>

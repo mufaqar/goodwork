@@ -25,7 +25,7 @@ export default function Faqs_Sec() {
                             <span className="text-lightBlue">
                                 
                                         <AiOutlinePlus size={24} 
-                                        className={`${ open === item.id ? "rotate-45 transform transition duration-200" : "rotate-0 transform transition duration-200"}`} />
+                                        className={`${ open === item.id ? "rotate-45 transform transition duration-200 text-darkBlue" : "rotate-0 transform transition duration-200"}`} />
                                    
                             </span>
                         </div>
