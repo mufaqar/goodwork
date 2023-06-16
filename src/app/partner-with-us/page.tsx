@@ -90,7 +90,7 @@ const Partner_with_Us = () => {
             <section className="py-16">
                 <div className='container mx-auto px-4'>
                     <div>
-                        <p className='text-xl font-medium text-darkBlue text-center '>
+                        <p className='text-xl font-medium text-darkBlue text-center'>
                             Applying for our partner program is easy, contact us to find out more. Meet few of our partner requirements and we’ll work closely with you to develop a plan for success!
                         </p>
                         <div className='text-center mt-7'>
