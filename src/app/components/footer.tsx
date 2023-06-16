@@ -54,12 +54,12 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/simply-simp-agent" className='text-base font-normal text-white'>
+              <Link href="#" className='text-base font-normal text-white'>
                 Simply SIMP Agent
               </Link>
             </li>
             <li>
-              <Link href="/simple-transport-agent" className='text-base font-normal text-white'>
+              <Link href="#" className='text-base font-normal text-white'>
                 Simply Exhange Transport Agent
               </Link>
             </li>
@@ -93,17 +93,17 @@ const Footer = () => {
           </h3>
           <ul className='mt-7 grid gap-3'>
             <li>
-              <Link href="/company" className='text-base font-normal text-white'>
+              <Link href="#" className='text-base font-normal text-white'>
                 About Us
               </Link>
             </li>
             <li>
-              <Link href="/partner-with-us" className='text-base font-normal text-white'>
+              <Link href="#" className='text-base font-normal text-white'>
                 Partner with Us
               </Link>
             </li>
             <li>
-              <Link href="/customers" className='text-base font-normal text-white'>
+              <Link href="#" className='text-base font-normal text-white'>
                 Customers
               </Link>
             </li>
