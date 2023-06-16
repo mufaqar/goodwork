@@ -14,7 +14,7 @@ export const NavLinks = [
             },
             {
                 name: '  Simply Exhange Transport Agent',
-                link: '#',
+                link: '/simple-transport-agent',
             }
 
         ]

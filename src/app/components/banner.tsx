@@ -23,7 +23,7 @@ const Banner = ({ title, subTitle, buttontext, buttonLink, buttontext2, buttonLi
                         </h1>
                     )}
                     {subTitle && (
-                        <p className='md:text-[28px] md:leading-[40px] text-xl font-semibold text-center text-white'>
+                        <p className='md:text-[28px] md:leading-[40px] text-xl font-normal text-center text-white'>
                             {subTitle}
                         </p>
                     )}

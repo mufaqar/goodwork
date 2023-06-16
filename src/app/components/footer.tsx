@@ -59,7 +59,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-base font-normal text-white'>
+              <Link href="/simple-transport-agent" className='text-base font-normal text-white'>
                 Simply Exhange Transport Agent
               </Link>
             </li>
