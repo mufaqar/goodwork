@@ -76,7 +76,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-base font-normal text-white'>
+              <Link href="/download-document" className='text-base font-normal text-white'>
                 Documentation
               </Link>
             </li>

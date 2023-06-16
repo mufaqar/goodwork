@@ -46,6 +46,7 @@ const Header = () => {
                             return <li key={idx}>
                                 <span className="flex items-center justify-between">
                                     <Link href={item.link}
+                                        onMouseEnter={() => handleMenu(item.id)}
                                         onClick={() => { setDropdown(null), setOpen(false) }}
                                         className='flex gap-1 items-center text-base font-normal text-white hover:text-Orange'>
                                         {item.name}
@@ -53,7 +54,7 @@ const Header = () => {
                                     {
                                         item.sub_menu ? (
                                             <span className="cursor-pointer text-white">
-                                                <BiChevronDown onMouseEnter={() => handleMenu(item.id)} />
+                                                <BiChevronDown />
                                             </span>
                                         ) :
                                             ''

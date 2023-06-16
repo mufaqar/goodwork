@@ -30,7 +30,7 @@ export const NavLinks = [
             },
             {
                 name: 'Documentation',
-                link: '#',
+                link: '/download-document',
             },
             {
                 name: 'Frequently Asked Questions',
