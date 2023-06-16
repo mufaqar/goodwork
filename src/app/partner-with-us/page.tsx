@@ -94,7 +94,7 @@ const Partner_with_Us = () => {
                             Applying for our partner program is easy, contact us to find out more. Meet few of our partner requirements and we’ll work closely with you to develop a plan for success!
                         </p>
                         <div className='text-center mt-7'>
-                            <Link href="#" className='text-lg font-medium px-[30px] py-[10px] bg-[#00AC4F] text-white hover:bg-transparent hover:text-[#00AC4F] border border-[#00AC4F] rounded-[40px]'>
+                            <Link href="#" className='text-lg font-medium px-[30px] py-[10px] bg-darkGreen text-white hover:bg-transparent hover:text-darkGreen border border-darkGreen rounded-[40px]'>
                                 INQUIRE ABOUT OUR PARTNER PROGRAM
                             </Link>
                         </div>

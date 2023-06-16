@@ -48,7 +48,7 @@ const SnmpTabs = () => {
                         <div className="tab-content tab-space">
                             {Tabs_Data.map((item: any, idx: number) => {
                                 return <div key={idx} className={openTab === item.id ? "block" : "hidden"} id="link1">
-                                    <div className="grid md:grid-cols-2 grid-cols-1 gap-7 items-center">
+                                    <div className="grid md:grid-cols-2 grid-cols-1 gap-7 items-center mb-9 ">
                                         <div>
                                             <h2 className="text-3xl font-semibold text-darkBlue mb-4">
                                                 {item.title}
@@ -58,7 +58,7 @@ const SnmpTabs = () => {
                                                     {item.para}
                                                 </p>
                                             })}
-                                            <ol className='mt-12 mb-9 grid gap-3 list-decimal list-inside'>
+                                            <ol className='mt-12 grid gap-3 list-decimal list-inside'>
                                                 <li className="text-lg font-semibold text-darkBlue">
                                                     Logon to the Server as Domain Administrator.
                                                 </li>

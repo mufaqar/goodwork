@@ -53,14 +53,14 @@ const Products = () => {
                     </div>
                     <div className='md:w-1/2 w-full'>
                         <h2 className="md:text-[32px] md:leading-[38px] text-2xl font-semibold mb-5">
-                            <span className="text-[#00AC4F]">
+                            <span className="text-darkGreen">
                                 Simply </span> <span className="text-darkBlue"> Transport Agent</span>
                         </h2>
                         <p className='text-lg font-normal text-darkBlue'>
                             Our team is comprised of several Microsoft employees with decades of experience building world-class products. Among those, we have done extensive development on Microsoft® Exchange and SharePoint platforms. The company is based out of Seattle, Washington.
                         </p>
                         <div className='mt-7 text-center flex gap-4'>
-                            <Link href="#" className='text-lg font-medium px-[30px] py-[14px] bg-[#00AC4F] text-white hover:bg-transparent hover:text-[#00AC4F] border border-[#00AC4F] rounded-[40px] '>
+                            <Link href="#" className='text-lg font-medium px-[30px] py-[14px] bg-darkGreen text-white hover:bg-transparent hover:text-darkGreen border border-darkGreen rounded-[40px] '>
                                 Try it Now
                             </Link>
                             <Link href="#" className='text-lg font-medium px-[30px] py-[14px] bg-transparent text-darkBlue hover:bg-darkBlue hover:text-white rounded-[40px] border border-darkBlue'>

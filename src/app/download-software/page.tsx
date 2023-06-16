@@ -66,7 +66,7 @@ const Download_Software = () => {
                     </div>
                     <div className='grid md:grid-cols-3 grid-cols-1 justify-between gap-9 items-end mt-16'>
                         <div>
-                            <h3 className='text-2xl font-semibold text-[#00AC4F] mb-6'>
+                            <h3 className='text-2xl font-semibold text-darkGreen mb-6'>
                                 Office 365 Agent
                             </h3>
                             <IconBox
@@ -75,7 +75,7 @@ const Download_Software = () => {
                                 link="#" />
                         </div>
                         <div>
-                            <h3 className='text-2xl font-semibold text-[#00AC4F] mb-6'>
+                            <h3 className='text-2xl font-semibold text-darkGreen mb-6'>
                                 Open Ldap Agent
                             </h3>
                             <IconBox
@@ -84,7 +84,7 @@ const Download_Software = () => {
                                 link="#" />
                         </div>
                         <div>
-                            <h3 className='text-2xl font-semibold text-[#00AC4F] mb-6'>
+                            <h3 className='text-2xl font-semibold text-darkGreen mb-6'>
                                 Google Agent
                             </h3>
                             <IconBox
@@ -93,7 +93,7 @@ const Download_Software = () => {
                                 link="#" />
                         </div>
                         <div>
-                            <h3 className='text-2xl font-semibold text-[#00AC4F] mb-6'>
+                            <h3 className='text-2xl font-semibold text-darkGreen mb-6'>
                                 RDBMS Agent (ie. Microsoft SQL Server)
                             </h3>
                             <IconBox
@@ -850,7 +850,7 @@ const Download_Software = () => {
                 <div className='container mx-auto px-4 flex md:flex-row flex-col justify-between gap-7'>
                     <div>
                         <h2 className="md:text-[42px] md:leading-[49px] text-4xl font-semibold mb-5 text-center">
-                            <span className="text-[#00AC4F]">
+                            <span className="text-darkGreen">
                                 Simply Transport </span> <span className="text-darkBlue"> Agent</span>
                         </h2>
                     </div>
@@ -861,7 +861,7 @@ const Download_Software = () => {
                     </div>
                 </div>
                 <div className='container mx-auto px-4 mt-12'>
-                    <h3 className='text-2xl font-semibold text-[#00AC4F]'>
+                    <h3 className='text-2xl font-semibold text-darkGreen'>
                         Exchange 2010
                     </h3>
                     <div className='grid md:grid-cols-3 grid-cols-1 justify-between gap-9 mt-6'>
