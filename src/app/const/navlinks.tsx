@@ -2,7 +2,7 @@ export const NavLinks = [
     {
         id: 1,
         name: 'Products',
-        link: '/products',
+        link: '#',
         sub_menu: [
             {
                 name: 'Simply Sync Password',
@@ -10,11 +10,11 @@ export const NavLinks = [
             },
             {
                 name: 'Simply SIMP Agent',
-                link: '/simply-simp-agent',
+                link: '#',
             },
             {
                 name: '  Simply Exhange Transport Agent',
-                link: '/simple-transport-agent',
+                link: '#',
             }
 
         ]
@@ -47,11 +47,11 @@ export const NavLinks = [
 
             {
                 name: 'Partner with Us',
-                link: '/partner-with-us',
+                link: '#',
             },
             {
                 name: 'Customers',
-                link: '/customers',
+                link: '#',
             }
 
         ]
