@@ -17,7 +17,7 @@ export default function Home() {
         title="Simply Sync"
         subTitle="For Fast, Secure Synchronization of your users between multiple directories such as Active Directory, Azure, LDAP, and Google"
         buttontext="Try for Free"
-        buttonLink="#"
+        buttonLink="/contact"
         buttontext2="Talk to Us"
         buttonLink2="#"
         image="/images/mainBg.png"
