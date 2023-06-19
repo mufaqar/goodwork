@@ -8,7 +8,7 @@ interface IPageBanner {
 
 const Page_Banner = ({ title, image }: IPageBanner) => {
     return (
-        <section className={`bg-darkBlue bg-blend-multiply bg-center bg-cover bg-no-repeat pt-40 pb-12 -mt-36`}
+        <section className={`bg-center bg-cover bg-no-repeat pt-40 pb-12 -mt-36`}
             style={{ backgroundImage: `url(${image})` }}>
             <div className='container mx-auto px-4'>
                 <div className='max-w-[929px] mx-auto'>
