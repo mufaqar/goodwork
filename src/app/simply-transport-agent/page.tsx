@@ -7,7 +7,7 @@ import Overview from '../../../public/images/overview.png';
 import Img_Domain from '../../../public/images/domain.png';
 import Link from 'next/link';
 
-const Simple_Transport_Agent = () => {
+const Simply_Transport_Agent = () => {
     return (
         <main>
             <Header />
@@ -157,4 +157,4 @@ const Simple_Transport_Agent = () => {
     )
 }
 
-export default Simple_Transport_Agent
+export default Simply_Transport_Agent
