@@ -12,8 +12,8 @@ const Contact_Us = () => {
         <main className='bg-darkBlue bg-[url("/images/contact-bg.png")] bg-blend-multiply bg-center bg-cover bg-no-repeat min-h-screen'>
             <Header />
             <section className="min-h-screen flex items-center justify-center mt-12">
-                <div className='container mx-auto px-4 grid md:grid-cols-2 grid-cols-1 gap-7 items-center'>
-                    <div>
+                <div className='container mx-auto px-4 flex md:flex-row flex-col gap-7 items-center'>
+                    <div className='max-w-[488px]'>
                         <h1 className='md:text-6xl text-5xl font-semibold text-white mb-5'>
                             Contact Us
                         </h1>
@@ -44,44 +44,56 @@ const Contact_Us = () => {
                             </li>
                         </ul>
                     </div>
-                    <div className='max-w-[499px] m-auto bg-white md:p-[50px] p-5 rounded-[20px]  shadow-[0_15px_30px_rgba(0,0,0,0.05)]'>
-                        <h1 className='md:text-[32px] text-2xl font-semibold text-center text-darkBlue mb-2'>
+                    <div className=' m-auto bg-white md:py-[50px] md:px-10 p-5 rounded-[20px]  shadow-[0_15px_30px_rgba(0,0,0,0.05)]'>
+                        <h1 className='md:text-[32px] md:leading-[37.12px] text-2xl font-semibold text-center text-darkBlue max-w-[415px] mx-auto mb-2'>
                             <span className="text-darkBlue">
                                 Reach out to Good </span> <span className="text-Orange"> Works</span> <span className="text-darkBlue"> to get started </span>
                         </h1>
-                        <p className='text-lg font-normal text-darkBlue text-center'>
-                            Use the form below to create a new account.
-                        </p>
                         <form action="#" className='mt-7'>
-                            <div className="grid gap-4">
-                                <div className="w-full">
-                                    <label htmlFor="name" className="hidden mb-2">Name</label>
-                                    <input className="px-5 py-4 rounded-[30px] text-sm font-normal text-darkBlue focus:outline-none w-full border border-[#F0F0F0]" placeholder="Your Name*" type="text" id="name" required />
+                            <div className="grid gap-5">
+                                <div className='grid md:grid-cols-2 grid-cols-1 gap-4'>
+                                    <div className="w-full">
+                                        <label htmlFor="name" className="hidden mb-2">Name</label>
+                                        <input className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="Your Name*" type="text" id="name" required />
+                                    </div>
+                                    <div className="w-full">
+                                        <label htmlFor="email" className="hidden mb-2">Email</label>
+                                        <input className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="Your Email*" type="email" id="email" required />
+                                    </div>
+                                </div>
+                                <div className='grid md:grid-cols-2 grid-cols-1 gap-4'>
+                                    <div className="w-full">
+                                        <label htmlFor="phone" className="hidden mb-2">Phone</label>
+                                        <input className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="Phone Number*" type="tel" id="phone" required />
+                                    </div>
+                                    <div className="w-full">
+                                        <label htmlFor="company" className="hidden mb-2">Company Name</label>
+                                        <input className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="Company Name*" type="text" id="company" required />
+                                    </div>
                                 </div>
                                 <div className="w-full">
-                                    <label htmlFor="email" className="hidden mb-2">Email</label>
-                                    <input className="px-5 py-4 rounded-[30px] text-sm font-normal text-darkBlue focus:outline-none w-full border border-[#F0F0F0]" placeholder="Your Email*" type="email" id="email" required />
+                                    <label htmlFor="subject" className="hidden mb-2">Subject</label>
+                                    <input className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="Subject" type="text" id="subject" required />
                                 </div>
                                 <div className="w-full">
-                                    <label htmlFor="phone" className="hidden mb-2">Phone</label>
-                                    <input className="px-5 py-4 rounded-[30px] text-sm font-normal text-darkBlue focus:outline-none w-full border border-[#F0F0F0]" placeholder="Phone Number*" type="tel" id="phone" required />
+                                    <textarea id="message" className="px-5 py-4 rounded-[19px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED] h-[126px]" rows={3} placeholder="Message"></textarea>
                                 </div>
-                                <div className="w-full">
-                                    <label htmlFor="company" className="hidden mb-2">Company Name</label>
-                                    <input className="px-5 py-4 rounded-[30px] text-sm font-normal text-darkBlue focus:outline-none w-full border border-[#F0F0F0]" placeholder="Company Name*" type="text" id="company" required />
-                                </div>
-                                <div className="w-full">
-                                    <textarea id="note" className="px-5 py-4 rounded-[19px] text-sm font-normal text-darkBlue focus:outline-none w-full border border-[#F0F0F0] h-[126px]" rows={3} placeholder="Note"></textarea>
-                                </div>
-                                <div className='w-full mt-7'>
-                                    <button type="submit" className="text-lg font-medium px-[20px] py-[14px] bg-Orange text-white hover:bg-white hover:text-Orange border border-Orange rounded-[40px] w-full">
-                                        Send
-                                    </button>
-                                </div>
-                                <div className="max-w-[359px] mx-auto w-full">
-                                    <p className='text-sm font-normal text-darkBlue'>
-                                        I have read and agree to the <Link href="#" className='text-lightBlue font-medium underline'>Privacy Policy</Link> and <Link href="#" className='text-lightBlue font-medium underline'>Terms of Service.</Link>
-                                    </p>
+                                <div className='grid md:grid-cols-2 grid-cols-1 md:gap-8 gap-4'>
+                                    <div className="max-w-[259px] w-full flex items-center gap-3">
+                                        <input
+                                            className="relative h-6 w-6 border border-[#F0F0F0] outline-0 focus:outline-0 hover:outline-0"
+                                            type="checkbox"
+                                            value=""
+                                            id="remember" />
+                                        <p className='text-sm font-normal text-darkBlue'>
+                                            I have read and agree to the <Link href="#" className='text-lightBlue font-medium underline'>Privacy Policy</Link> and <Link href="#" className='text-lightBlue font-medium underline'>Terms of Service.</Link>
+                                        </p>
+                                    </div>
+                                    <div className='max-w-[200px] ml-auto md:mr-0 mr-auto w-full text-right'>
+                                        <button type="submit" className="text-lg font-medium px-[20px] py-[14px] bg-Orange text-white hover:bg-white hover:text-Orange border border-Orange rounded-[40px] w-full">
+                                            Send
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </form>
