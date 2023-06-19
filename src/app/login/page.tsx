@@ -17,7 +17,7 @@ const Login = () => {
                         <h1 className='md:text-[32px] text-2xl font-semibold text-center text-darkBlue mb-2'>
                             Login
                         </h1>
-                        <p className='text-lg font-normal text-darkBlue text-center'>
+                        <p className='text-lg font-normal text-darkBlue/50 text-center'>
                             Please enter your user name and password.  <Link href="/login" className='font-medium text-lightBlue'>
                                 Register
                             </Link> if you don't have an account.
@@ -26,11 +26,11 @@ const Login = () => {
                             <div className="grid gap-4">
                                 <div className="w-full">
                                     <label htmlFor="email" className="hidden mb-2">User ID (Email)</label>
-                                    <input className="px-5 py-4 rounded-[30px] text-sm font-normal text-darkBlue focus:outline-none w-full border border-[#F0F0F0]" placeholder="User ID (Email)" type="email" id="email" required />
+                                    <input className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="User ID (Email)" type="email" id="email" required />
                                 </div>
                                 <div className="w-full">
                                     <label htmlFor="password" className="hidden mb-2">Password</label>
-                                    <input className="px-5 py-4 rounded-[30px] text-sm font-normal text-darkBlue focus:outline-none w-full border border-[#F0F0F0]" placeholder="Password" type="password" id="password" required />
+                                    <input className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="Password" type="password" id="password" required />
                                 </div>
                                 <div className='w-full my-7'>
                                     <button type="submit" className="text-lg font-medium px-[20px] py-[14px] bg-Orange text-white hover:bg-white hover:text-Orange border border-Orange rounded-[40px] w-full">
