@@ -232,11 +232,10 @@ const Simply_Simp_Agent = () => {
                                         type="checkbox"
                                         value=""
                                         id="remember" />
-                                    <label
-                                        className="hover:cursor-pointer text-sm font-normal text-darkBlue"
-                                        htmlFor="remember">
+                                    <p
+                                        className="hover:cursor-pointer text-sm font-normal text-darkBlue">
                                         I have read and agree to the <Link href="#" className='text-lightBlue font-medium underline'>Privacy Policy</Link> and <Link href="#" className='text-lightBlue font-medium underline'>Terms of Service.</Link>
-                                    </label>
+                                    </p>
                                 </div>
                             </div>
                         </form>
