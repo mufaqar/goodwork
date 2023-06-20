@@ -12,7 +12,7 @@ const Tabs = () => {
     }
     setOpenTab(id)
   }
-  
+
   return (
     <>
       <div className="flex flex-wrap">

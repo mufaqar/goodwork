@@ -37,43 +37,53 @@ const Download_Document = () => {
                         <IconBox
                             title="Simply Sync Password 3.8 Overview"
                             Img_url="/images/eye-blu.png"
-                            link="#" />
+                            link="#"
+                            custm_class="text-lg" />
                         <IconBox
                             title="Simply Sync Password Capture Agent 3.8 Installation"
                             Img_url="/images/pdf-blu.png"
-                            link="#" />
+                            link="#"
+                            custm_class="text-lg" />
                         <IconBox
                             title="Simply Sync AD Plug-In 3.8 Installation"
                             Img_url="/images/pdf-blu.png"
-                            link="#" />
+                            link="#"
+                            custm_class="text-lg" />
                         <IconBox
                             title="Simply Sync Password Server 3.8 Installation"
                             Img_url="/images/pdf-blu.png"
-                            link="#" />
+                            link="#"
+                            custm_class="text-lg" />
                         <IconBox
                             title="Simply Sync Password Upgrade Guide"
                             Img_url="/images/pdf-blu.png"
-                            link="#" />
+                            link="#"
+                            custm_class="text-lg" />
                         <IconBox
                             title="Simply Sync Password Capture Agent Deployment Guide for Hosting Provider"
                             Img_url="/images/pdf-blu.png"
-                            link="#" />
+                            link="#"
+                            custm_class="text-lg" />
                         <IconBox
                             title="Simply Sync Password Office 365 Agent 3.8 Installation"
                             Img_url="/images/pdf-blu.png"
-                            link="#" />
+                            link="#"
+                            custm_class="text-lg" />
                         <IconBox
                             title="Simply Sync Password OpenLdap Agent 3.8 Installation"
                             Img_url="/images/pdf-blu.png"
-                            link="#" />
+                            link="#"
+                            custm_class="text-lg" />
                         <IconBox
                             title="Simply Sync Password Google Agent 3.8 Installation"
                             Img_url="/images/pdf-blu.png"
-                            link="#" />
+                            link="#"
+                            custm_class="text-lg" />
                         <IconBox
                             title="Simply Sync Password RDBMS Agent 3.8 Installation"
                             Img_url="/images/pdf-blu.png"
-                            link="#" />
+                            link="#"
+                            custm_class="text-lg" />
                     </div>
                 </div>
             </section>
@@ -100,15 +110,18 @@ const Download_Document = () => {
                         <IconBox
                             title="Simply Exchange Transport Agent Overview"
                             Img_url="/images/eye-gren.png"
-                            link="#" />
+                            link="#"
+                            custm_class="text-lg" />
                         <IconBox
                             title="Simply Exchange Transport Agent Installation"
                             Img_url="/images/pdf-gren.png"
-                            link="#" />
+                            link="#"
+                            custm_class="text-lg" />
                         <IconBox
                             title="Simply Exchange Transport Agent Administration"
                             Img_url="/images/pdf-gren.png"
-                            link="#" />
+                            link="#"
+                            custm_class="text-lg" />
                     </div>
                 </div>
             </section>
@@ -135,7 +148,8 @@ const Download_Document = () => {
                         <IconBox
                             title="Simply SNMP Agent Installation"
                             Img_url="/images/pdf-blu.png"
-                            link="#" />
+                            link="#"
+                            custm_class="text-lg" />
                     </div>
                 </div>
             </section>

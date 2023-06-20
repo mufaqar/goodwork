@@ -52,15 +52,18 @@ const Download_Software = () => {
                         <IconBox
                             title="Simply sync password server 64 bit"
                             Img_url="/images/file-blu.png"
-                            link="#" />
+                            link="#"
+                            custm_class="text-lg" />
                         <IconBox
                             title="Simply sync password capture agen 64 bit"
                             Img_url="/images/file-blu.png"
-                            link="#" />
+                            link="#"
+                            custm_class="text-lg" />
                         <IconBox
                             title="Simply sync AD Plug-In64 bit"
                             Img_url="/images/file-blu.png"
-                            link="#" />
+                            link="#"
+                            custm_class="text-lg" />
                     </div>
                     <div className='grid md:grid-cols-3 grid-cols-1 justify-between gap-9 items-end mt-16'>
                         <div>
@@ -70,7 +73,8 @@ const Download_Software = () => {
                             <IconBox
                                 title="Simply sync password Office 365 Agent 64 bit"
                                 Img_url="/images/file-blu.png"
-                                link="#" />
+                                link="#"
+                                custm_class="text-lg" />
                         </div>
                         <div>
                             <h3 className='text-2xl font-semibold text-darkGreen mb-6'>
@@ -79,7 +83,8 @@ const Download_Software = () => {
                             <IconBox
                                 title="Simply sync password Open Ldap Agent 64 bit"
                                 Img_url="/images/file-blu.png"
-                                link="#" />
+                                link="#"
+                                custm_class="text-lg" />
                         </div>
                         <div>
                             <h3 className='text-2xl font-semibold text-darkGreen mb-6'>
@@ -88,7 +93,8 @@ const Download_Software = () => {
                             <IconBox
                                 title="Simply sync password Google Agent 64 bit"
                                 Img_url="/images/file-blu.png"
-                                link="#" />
+                                link="#"
+                                custm_class="text-lg" />
                         </div>
                         <div>
                             <h3 className='text-2xl font-semibold text-darkGreen mb-6'>
@@ -97,7 +103,8 @@ const Download_Software = () => {
                             <IconBox
                                 title="Simply sync password RDBMS Agent 64 bit"
                                 Img_url="/images/file-blu.png"
-                                link="#" />
+                                link="#"
+                                custm_class="text-lg" />
                         </div>
                     </div>
                 </div>
@@ -866,23 +873,28 @@ const Download_Software = () => {
                         <IconBox
                             title="Simply Exchange Transport Agent Management 64 bit for Exchange 2010"
                             Img_url="/images/file-gren.png"
-                            link="#" />
+                            link="#"
+                            custm_class="text-lg" />
                         <IconBox
                             title="Simply Exchange Transport Agent 64 bit (Exchange 2010 SP1)"
                             Img_url="/images/file-gren.png"
-                            link="#" />
+                            link="#"
+                            custm_class="text-lg" />
                         <IconBox
                             title="Simply Exchange Transport Agent 64 bit (Exchange 2010 SP2)"
                             Img_url="/images/file-gren.png"
-                            link="#" />
+                            link="#"
+                            custm_class="text-lg" />
                         <IconBox
                             title="Simply Exchange Transport Agent 64 bit (Exchange 2010 SP3)"
                             Img_url="/images/file-gren.png"
-                            link="#" />
+                            link="#"
+                            custm_class="text-lg" />
                         <IconBox
                             title="Simply Exchange Transport Agent 64 bit (Exchange 2010 SP3-RollUp6)"
                             Img_url="/images/file-gren.png"
-                            link="#" />
+                            link="#"
+                            custm_class="text-lg" />
                     </div>
                 </div>
             </section>
@@ -909,23 +921,28 @@ const Download_Software = () => {
                         <IconBox
                             title="Simply SNMP Agent For Windows 2008 64 bit"
                             Img_url="/images/file-blu.png"
-                            link="#" />
+                            link="#"
+                            custm_class="text-lg" />
                         <IconBox
                             title="Simply SNMP Agent For Windows 2008 32 bit"
                             Img_url="/images/file-blu.png"
-                            link="#" />
+                            link="#"
+                            custm_class="text-lg" />
                         <IconBox
                             title="Simply Exchange Transport Agent 64 bit (Exchange 2010 SP2)"
                             Img_url="/images/file-blu.png"
-                            link="#" />
+                            link="#"
+                            custm_class="text-lg" />
                         <IconBox
                             title="Simply Exchange Transport Agent 64 bit (Exchange 2010 SP3)"
                             Img_url="/images/file-blu.png"
-                            link="#" />
+                            link="#"
+                            custm_class="text-lg" />
                         <IconBox
                             title="Simply Exchange Transport Agent 64 bit (Exchange 2010 SP3-RollUp6)"
                             Img_url="/images/file-blu.png"
-                            link="#" />
+                            link="#"
+                            custm_class="text-lg" />
                     </div>
                 </div>
             </section>
