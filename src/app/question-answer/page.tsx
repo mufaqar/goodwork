@@ -1,7 +1,9 @@
+"use client" 
 import React from 'react'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import Page_Banner from '../components/page-banner'
+import QA_Tabs from '../components/qa-tabs'
 
 const Question_Answer = () => {
     return (
@@ -12,13 +14,7 @@ const Question_Answer = () => {
                 image="/images/qa-bg.png"
             />
             <section className="py-16">
-                <div className='container mx-auto px-4'>
-                    <div>
-                        <h2 className='text-[22px] leading-[25.89px] font-medium text-darkBlue'>
-                            Categories
-                        </h2>
-                    </div>
-                </div>
+                <QA_Tabs />
             </section>
             <Footer />
         </main>
