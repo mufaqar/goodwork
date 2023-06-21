@@ -48,18 +48,19 @@ const Footer = () => {
             Products
           </h3>
           <ul className='mt-7 grid gap-3'>
+
             <li>
-              <Link href="#" className='text-base font-normal text-white'>
+              <Link href="/simply-sync" className='text-base font-normal text-white'>
                 Simply Sync Password
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-base font-normal text-white'>
+              <Link href="/simply-simp-agent" className='text-base font-normal text-white'>
                 Simply SIMP Agent
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-base font-normal text-white'>
+              <Link href="/simply-transport-agent" className='text-base font-normal text-white'>
                 Simply Exhange Transport Agent
               </Link>
             </li>

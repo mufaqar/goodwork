@@ -2,19 +2,19 @@ export const NavLinks = [
     {
         id: 1,
         name: 'Products',
-        link: '#',
+        link: '/products',
         sub_menu: [
             {
                 name: 'Simply Sync Password',
-                link: '/',
+                link: '/simply-sync',
             },
             {
                 name: 'Simply SIMP Agent',
-                link: '#',
+                link: '/simply-simp-agent',
             },
             {
-                name: '  Simply Exhange Transport Agent',
-                link: '#',
+                name: 'Simply Exhange Transport Agent',
+                link: '/simply-transport-agent',
             }
 
         ]
