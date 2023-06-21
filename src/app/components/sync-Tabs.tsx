@@ -12,7 +12,7 @@ const SyncTabs = () => {
     const [openTab, setOpenTab] = React.useState(1);
     const handleFaq = (id: any) => {
         if (openTab === id) {
-            return setOpenTab(1)
+            return setOpenTab(id)
         }
         setOpenTab(id)
     }

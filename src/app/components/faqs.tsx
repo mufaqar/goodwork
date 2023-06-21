@@ -6,7 +6,7 @@ export default function Faqs_Sec() {
     const [open, setOpen] = useState(1);
     const handleFaq = (id: any) => {
         if (open === id) {
-            return setOpen(1)
+            return setOpen(id)
         }
         setOpen(id)
         //setDropdown(!dropdown)
