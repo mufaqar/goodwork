@@ -37,32 +37,109 @@ const QA_Tabs = () => {
                             Create a New Thread
                         </button>
                     </div>
-                    {Question_Data?.map((item: any, idx: any) => {
-                        return <ul key={idx} className={`grid gap-4 ${openTab === item.id ? "block" : "hidden"}`}>
-                            {item.answers?.map((sub_item: any, _idx: number) => {
-                                return <li key={_idx} className={`hover:bg-[#F6FAFE] flex md:flex-row flex-col gap-1 justify-between md:items-center border-l-2 md:px-5 px-[5px] border-${item.color}`}>
-                                    <p className='grid gap-1'>
-                                        <span className='md:text-2xl text-base font-medium text-darkBlue'>
-                                            {sub_item.ans}
-                                        </span>
-                                        <span className='md:text-sm text-xs font-medium text-darkBlue/50'>
-                                            {sub_item.meta}
-                                        </span>
-                                    </p>
-                                    <p className='flex gap-5'>
-                                        <span className='flex gap-2 md:text-sm text-xs font-medium text-darkBlue/50'>
-                                            <Image src={View_icon} alt="view-icon" />
-                                            {sub_item.view}
-                                        </span>
-                                        <span className='flex gap-2 md:text-sm text-xs font-medium text-darkBlue/50'>
-                                            <Image src={Cmnt_icon} alt="cmnt-icon" />
-                                            {sub_item.cmnt}
-                                        </span>
-                                    </p>
-                                </li>
-                            })}
-                        </ul>
-                    })}
+                    <ul className={`grid gap-4 `}>
+                        <li className={`hover:bg-[#F6FAFE] flex md:flex-row flex-col gap-1 justify-between md:items-center border-l-2 md:px-5 px-[5px] border-Orange`}>
+                            <p className='grid gap-1'>
+                                <span className='md:text-2xl text-base font-medium text-darkBlue'>
+                                    Issue with simply Sync PW v3.7
+                                </span>
+                                <span className='md:text-sm text-xs font-medium text-darkBlue/50'>
+                                    Created by Raphael. Post at 3/14/2017.
+                                </span>
+                            </p>
+                            <p className='flex gap-5'>
+                                <span className='flex gap-2 md:text-sm text-xs font-medium text-darkBlue/50'>
+                                    <Image src={View_icon} alt="view-icon" />
+                                    4688
+                                </span>
+                                <span className='flex gap-2 md:text-sm text-xs font-medium text-darkBlue/50'>
+                                    <Image src={Cmnt_icon} alt="cmnt-icon" />
+                                    0
+                                </span>
+                            </p>
+                        </li>
+                        <li className={`hover:bg-[#F6FAFE] flex md:flex-row flex-col gap-1 justify-between md:items-center border-l-2 md:px-5 px-[5px] border-darkGreen`}>
+                            <p className='grid gap-1'>
+                                <span className='md:text-2xl text-base font-medium text-darkBlue'>
+                                    Issue with simply Sync PW v3.7
+                                </span>
+                                <span className='md:text-sm text-xs font-medium text-darkBlue/50'>
+                                    Created by Raphael. Post at 3/14/2017.
+                                </span>
+                            </p>
+                            <p className='flex gap-5'>
+                                <span className='flex gap-2 md:text-sm text-xs font-medium text-darkBlue/50'>
+                                    <Image src={View_icon} alt="view-icon" />
+                                    4688
+                                </span>
+                                <span className='flex gap-2 md:text-sm text-xs font-medium text-darkBlue/50'>
+                                    <Image src={Cmnt_icon} alt="cmnt-icon" />
+                                    0
+                                </span>
+                            </p>
+                        </li>
+                        <li className={`hover:bg-[#F6FAFE] flex md:flex-row flex-col gap-1 justify-between md:items-center border-l-2 md:px-5 px-[5px] border-Orange`}>
+                            <p className='grid gap-1'>
+                                <span className='md:text-2xl text-base font-medium text-darkBlue'>
+                                    Issue with simply Sync PW v3.7
+                                </span>
+                                <span className='md:text-sm text-xs font-medium text-darkBlue/50'>
+                                    Created by Raphael. Post at 3/14/2017.
+                                </span>
+                            </p>
+                            <p className='flex gap-5'>
+                                <span className='flex gap-2 md:text-sm text-xs font-medium text-darkBlue/50'>
+                                    <Image src={View_icon} alt="view-icon" />
+                                    4688
+                                </span>
+                                <span className='flex gap-2 md:text-sm text-xs font-medium text-darkBlue/50'>
+                                    <Image src={Cmnt_icon} alt="cmnt-icon" />
+                                    0
+                                </span>
+                            </p>
+                        </li>
+                        <li className={`hover:bg-[#F6FAFE] flex md:flex-row flex-col gap-1 justify-between md:items-center border-l-2 md:px-5 px-[5px] border-lightBlue`}>
+                            <p className='grid gap-1'>
+                                <span className='md:text-2xl text-base font-medium text-darkBlue'>
+                                    Issue with simply Sync PW v3.7
+                                </span>
+                                <span className='md:text-sm text-xs font-medium text-darkBlue/50'>
+                                    Created by Raphael. Post at 3/14/2017.
+                                </span>
+                            </p>
+                            <p className='flex gap-5'>
+                                <span className='flex gap-2 md:text-sm text-xs font-medium text-darkBlue/50'>
+                                    <Image src={View_icon} alt="view-icon" />
+                                    4688
+                                </span>
+                                <span className='flex gap-2 md:text-sm text-xs font-medium text-darkBlue/50'>
+                                    <Image src={Cmnt_icon} alt="cmnt-icon" />
+                                    0
+                                </span>
+                            </p>
+                        </li>
+                        <li className={`hover:bg-[#F6FAFE] flex md:flex-row flex-col gap-1 justify-between md:items-center border-l-2 md:px-5 px-[5px] border-Orange`}>
+                            <p className='grid gap-1'>
+                                <span className='md:text-2xl text-base font-medium text-darkBlue'>
+                                    Issue with simply Sync PW v3.7
+                                </span>
+                                <span className='md:text-sm text-xs font-medium text-darkBlue/50'>
+                                    Created by Raphael. Post at 3/14/2017.
+                                </span>
+                            </p>
+                            <p className='flex gap-5'>
+                                <span className='flex gap-2 md:text-sm text-xs font-medium text-darkBlue/50'>
+                                    <Image src={View_icon} alt="view-icon" />
+                                    4688
+                                </span>
+                                <span className='flex gap-2 md:text-sm text-xs font-medium text-darkBlue/50'>
+                                    <Image src={Cmnt_icon} alt="cmnt-icon" />
+                                    0
+                                </span>
+                            </p>
+                        </li>
+                    </ul>
+
                 </div>
             </div>
         </div>
