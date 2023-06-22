@@ -37,108 +37,34 @@ const QA_Tabs = () => {
                             Create a New Thread
                         </button>
                     </div>
-                    <ul className={`grid gap-4 `}>
-                        <li className={`hover:bg-[#F6FAFE] flex md:flex-row flex-col gap-1 justify-between md:items-center border-l-2 md:px-5 px-[5px] border-Orange`}>
-                            <p className='grid gap-1'>
-                                <span className='md:text-2xl text-base font-medium text-darkBlue'>
-                                    Issue with simply Sync PW v3.7
-                                </span>
-                                <span className='md:text-sm text-xs font-medium text-darkBlue/50'>
-                                    Created by Raphael. Post at 3/14/2017.
-                                </span>
-                            </p>
-                            <p className='flex gap-5'>
-                                <span className='flex gap-2 md:text-sm text-xs font-medium text-darkBlue/50'>
-                                    <Image src={View_icon} alt="view-icon" />
-                                    4688
-                                </span>
-                                <span className='flex gap-2 md:text-sm text-xs font-medium text-darkBlue/50'>
-                                    <Image src={Cmnt_icon} alt="cmnt-icon" />
-                                    0
-                                </span>
-                            </p>
-                        </li>
-                        <li className={`hover:bg-[#F6FAFE] flex md:flex-row flex-col gap-1 justify-between md:items-center border-l-2 md:px-5 px-[5px] border-darkGreen`}>
-                            <p className='grid gap-1'>
-                                <span className='md:text-2xl text-base font-medium text-darkBlue'>
-                                    Issue with simply Sync PW v3.7
-                                </span>
-                                <span className='md:text-sm text-xs font-medium text-darkBlue/50'>
-                                    Created by Raphael. Post at 3/14/2017.
-                                </span>
-                            </p>
-                            <p className='flex gap-5'>
-                                <span className='flex gap-2 md:text-sm text-xs font-medium text-darkBlue/50'>
-                                    <Image src={View_icon} alt="view-icon" />
-                                    4688
-                                </span>
-                                <span className='flex gap-2 md:text-sm text-xs font-medium text-darkBlue/50'>
-                                    <Image src={Cmnt_icon} alt="cmnt-icon" />
-                                    0
-                                </span>
-                            </p>
-                        </li>
-                        <li className={`hover:bg-[#F6FAFE] flex md:flex-row flex-col gap-1 justify-between md:items-center border-l-2 md:px-5 px-[5px] border-Orange`}>
-                            <p className='grid gap-1'>
-                                <span className='md:text-2xl text-base font-medium text-darkBlue'>
-                                    Issue with simply Sync PW v3.7
-                                </span>
-                                <span className='md:text-sm text-xs font-medium text-darkBlue/50'>
-                                    Created by Raphael. Post at 3/14/2017.
-                                </span>
-                            </p>
-                            <p className='flex gap-5'>
-                                <span className='flex gap-2 md:text-sm text-xs font-medium text-darkBlue/50'>
-                                    <Image src={View_icon} alt="view-icon" />
-                                    4688
-                                </span>
-                                <span className='flex gap-2 md:text-sm text-xs font-medium text-darkBlue/50'>
-                                    <Image src={Cmnt_icon} alt="cmnt-icon" />
-                                    0
-                                </span>
-                            </p>
-                        </li>
-                        <li className={`hover:bg-[#F6FAFE] flex md:flex-row flex-col gap-1 justify-between md:items-center border-l-2 md:px-5 px-[5px] border-lightBlue`}>
-                            <p className='grid gap-1'>
-                                <span className='md:text-2xl text-base font-medium text-darkBlue'>
-                                    Issue with simply Sync PW v3.7
-                                </span>
-                                <span className='md:text-sm text-xs font-medium text-darkBlue/50'>
-                                    Created by Raphael. Post at 3/14/2017.
-                                </span>
-                            </p>
-                            <p className='flex gap-5'>
-                                <span className='flex gap-2 md:text-sm text-xs font-medium text-darkBlue/50'>
-                                    <Image src={View_icon} alt="view-icon" />
-                                    4688
-                                </span>
-                                <span className='flex gap-2 md:text-sm text-xs font-medium text-darkBlue/50'>
-                                    <Image src={Cmnt_icon} alt="cmnt-icon" />
-                                    0
-                                </span>
-                            </p>
-                        </li>
-                        <li className={`hover:bg-[#F6FAFE] flex md:flex-row flex-col gap-1 justify-between md:items-center border-l-2 md:px-5 px-[5px] border-Orange`}>
-                            <p className='grid gap-1'>
-                                <span className='md:text-2xl text-base font-medium text-darkBlue'>
-                                    Issue with simply Sync PW v3.7
-                                </span>
-                                <span className='md:text-sm text-xs font-medium text-darkBlue/50'>
-                                    Created by Raphael. Post at 3/14/2017.
-                                </span>
-                            </p>
-                            <p className='flex gap-5'>
-                                <span className='flex gap-2 md:text-sm text-xs font-medium text-darkBlue/50'>
-                                    <Image src={View_icon} alt="view-icon" />
-                                    4688
-                                </span>
-                                <span className='flex gap-2 md:text-sm text-xs font-medium text-darkBlue/50'>
-                                    <Image src={Cmnt_icon} alt="cmnt-icon" />
-                                    0
-                                </span>
-                            </p>
-                        </li>
-                    </ul>
+
+                    {Question_Data?.map((item: any, idx: any) => {
+                        return <ul key={idx} className={`grid gap-4 ${openTab === item.id ? "block" : "hidden"}   [&>*:nth-child(1)]:border-Orange [&>*:nth-child(2)]:border-darkGreen [&>*:nth-child(3)]:border-Orange [&>*:nth-child(4)]:border-lightBlue [&>*:nth-child(5)]:border-Orange`}>
+                            {item.answers?.map((_item: any, _idx: number) => {
+                                return <li key={_idx} className={`hover:bg-[#F6FAFE] flex md:flex-row flex-col gap-1 justify-between md:items-center border-l-2 md:px-5 px-[5px] `}>
+                                    <p className='grid gap-1'>
+                                        <span className='md:text-2xl text-base font-medium text-darkBlue'>
+                                            {_item.ans}
+                                        </span>
+                                        <span className='md:text-sm text-xs font-medium text-darkBlue/50'>
+                                           {_item.meta}
+                                        </span>
+                                    </p>
+                                    <p className='flex gap-5'>
+                                        <span className='flex gap-2 md:text-sm text-xs font-medium text-darkBlue/50'>
+                                            <Image src={View_icon} alt="view-icon" />
+                                            {_item.view}
+                                        </span>
+                                        <span className='flex gap-2 md:text-sm text-xs font-medium text-darkBlue/50'>
+                                            <Image src={Cmnt_icon} alt="cmnt-icon" />
+                                           {_item.cmnt}
+                                        </span>
+                                    </p>
+                                </li>
+                            })}
+
+                        </ul>
+                    })}
 
                 </div>
             </div>
@@ -174,6 +100,30 @@ export const Question_Data = [
                 view: "4688",
                 cmnt: '0',
             },
+            {
+                ans: "Issue with simply Sync PW v3.7",
+                meta: "Created by Raphael. Post at 3/14/2017.",
+                view: "4688",
+                cmnt: '0',
+            },
+            {
+                ans: "Issue with simply Sync PW v3.7",
+                meta: "Created by Raphael. Post at 3/14/2017.",
+                view: "4688",
+                cmnt: '0',
+            },
+            {
+                ans: "Issue with simply Sync PW v3.7",
+                meta: "Created by Raphael. Post at 3/14/2017.",
+                view: "4688",
+                cmnt: '0',
+            },
+            {
+                ans: "Issue with simply Sync PW v3.7",
+                meta: "Created by Raphael. Post at 3/14/2017.",
+                view: "4688",
+                cmnt: '0',
+            },
         ],
     },
     {
@@ -187,6 +137,18 @@ export const Question_Data = [
                 view: "5657",
                 cmnt: '0',
             },
+            {
+                ans: "Issue with simply Sync PW v3.7",
+                meta: "Created by Raphael. Post at 3/14/2017.",
+                view: "5657",
+                cmnt: '0',
+            },
+            {
+                ans: "Issue with simply Sync PW v3.7",
+                meta: "Created by Raphael. Post at 3/14/2017.",
+                view: "1234",
+                cmnt: '0',
+            },
         ],
     },
     {
@@ -194,6 +156,12 @@ export const Question_Data = [
         title: "Simply Exchange Transport Agent",
         color: "darkGreen",
         answers: [
+            {
+                ans: "Issue with simply Sync PW v3.7",
+                meta: "Created by Raphael. Post at 3/14/2017.",
+                view: "1234",
+                cmnt: '0',
+            },
             {
                 ans: "Issue with simply Sync PW v3.7",
                 meta: "Created by Raphael. Post at 3/14/2017.",
