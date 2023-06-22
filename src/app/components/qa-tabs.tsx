@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import View_icon from '../../../public/images/view-icon.png';
 import Cmnt_icon from '../../../public/images/comnt-icon.png';
+import Link from 'next/link';
 
 
 const QA_Tabs = () => {
@@ -43,9 +44,9 @@ const QA_Tabs = () => {
                             {item.answers?.map((_item: any, _idx: number) => {
                                 return <li key={_idx} className={`hover:bg-[#F6FAFE] flex md:flex-row flex-col gap-1 justify-between md:items-center border-l-2 md:px-5 px-[5px] `}>
                                     <p className='grid gap-1'>
-                                        <span className='md:text-2xl text-base font-medium text-darkBlue'>
+                                        <Link href="/question-answer-detail" className='md:text-2xl text-base font-medium text-darkBlue'>
                                             {_item.ans}
-                                        </span>
+                                        </Link>
                                         <span className='md:text-sm text-xs font-medium text-darkBlue/50'>
                                            {_item.meta}
                                         </span>
