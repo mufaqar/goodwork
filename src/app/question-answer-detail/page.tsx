@@ -19,7 +19,7 @@ const Question_Answer_Detail = () => {
             <section className="py-16">
                 <div className='container mx-auto px-4'>
                     <div className='flex gap-1 justify-between mb-5'>
-                        <Link href="/question-answer" className='bg-darkGreen hover:bg-white md:px-[30px] px-1 md:py-[10px] py-0 rounded-[40px] md:text-lg text-xs font-medium text-white hover:text-darkGreen border border-darkGreen'>
+                        <Link href="/question-answer" className='bg-darkGreen hover:bg-white md:px-[30px] px-4 py-[10px] rounded-[40px] md:text-lg text-xs font-medium text-white hover:text-darkGreen border border-darkGreen'>
                             Back to List
                         </Link>
                     </div>
