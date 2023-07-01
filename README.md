@@ -12,7 +12,9 @@ Milestone2
 
 2. https://igoodwork.vercel.app/download-software
 3. https://igoodwork.vercel.app/download-document
-4. https://igoodwork.vercel.app/faqs 5. https://igoodwork.vercel.app/contact-us 6. https://igoodwork.vercel.app/login 7. https://igoodwork.vercel.app/register
+4. https://igoodwork.vercel.app/faqs
+5. https://igoodwork.vercel.app/contact-us
+6. https://igoodwork.vercel.app/login 7. https://igoodwork.vercel.app/register
 
 Milestone3
 
