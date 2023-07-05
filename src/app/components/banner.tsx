@@ -13,7 +13,7 @@ interface IPageBanner {
 
 const Banner = ({ title, subTitle, buttontext, buttonLink, buttontext2, buttonLink2, image }: IPageBanner) => {
     return (
-        <section className='bg-top bg-cover bg-no-repeat pt-52 pb-20 -mt-36'
+        <section className='bg-top bg-cover bg-no-repeat pt-52 pb-20 -mt-36 h-screen flex items-center'
             style={{ backgroundImage: `url(${image})` }}>
             <div className='container mx-auto px-4'>
                 <div className='max-w-[929px] mx-auto'>
