@@ -31,3 +31,21 @@ Milestone4
 14. https://igoodwork.vercel.app/customers
 15. https://igoodwork.vercel.app/partner-with-us
 16. https://igoodwork.vercel.app/question-answer-detail
+
+
+
+Issues
+
+
+it's better but still not behaving exactly as i would like. please see first pic. it looks ok. 
+but if i increase the width, the image resizes and large portions of it gets cut off. (see 2nd image)
+
+
+Second issue. it looks like the image height for the product pages is too large:
+
+according to figma file, image height on those pages should be approx. 450px
+
+https://igoodwork.vercel.app/products
+https://igoodwork.vercel.app/simply-sync
+https://igoodwork.vercel.app/simply-transport-agent
+https://igoodwork.vercel.app/simply-simp-agent
