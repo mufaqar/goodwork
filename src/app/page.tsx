@@ -1,5 +1,4 @@
 "use client"
-import Banner from './components/banner';
 import Trusted from './components/trusted';
 import TabsRender from './components/tabs';
 import User_censrio from './components/scensrio';
@@ -8,12 +7,13 @@ import Forum from './components/forum';
 import Faqs_Sec from './components/faqs';
 import Header from './components/header';
 import Footer from './components/footer';
+import Main from './components/main';
 
 export default function Home() {
   return (
     <main>
       <Header />
-      <Banner
+      <Main
         title="Simply Sync"
         subTitle="For Fast, Secure Synchronization of your users between multiple directories such as Active Directory, Azure, LDAP, and Google"
         buttontext="Try for Free"
