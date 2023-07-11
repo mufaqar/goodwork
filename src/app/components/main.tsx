@@ -14,7 +14,7 @@ interface IPageBanner {
 const Banner = ({ title, subTitle, buttontext, buttonLink, buttontext2, buttonLink2, image }: IPageBanner) => {
     return (
         <section className='relative -mt-28'>
-                <img src={image} alt="image" className='w-full min-h-[470px]  2xl:min-h-[599px] object-cover'/>
+                <img src={image} alt="Banner Image" className='w-full min-h-[470px]  2xl:min-h-[599px] object-cover'/>
             <div className='container mx-auto px-4'>
                 <div className='max-w-[929px] mx-auto w-full px-4 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
                     {title && (
