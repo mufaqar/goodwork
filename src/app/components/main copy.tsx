@@ -13,10 +13,10 @@ interface IPageBanner {
 
 const Banner = ({ title, subTitle, buttontext, buttonLink, buttontext2, buttonLink2, image }: IPageBanner) => {
     return (
-        <section className='relative -mt-28'>
-                <img src={image} alt="image" className='w-full min-h-[600px] object-cover'/>
+        <section className='bg-top bg-cover bg-no-repeat pt-52 pb-20 -mt-[102px] min-h-[450px] 2xl:min-h-[680px] h-[70vh] flex items-center'
+            style={{ backgroundImage: `url(${image})` }}>
             <div className='container mx-auto px-4'>
-                <div className='max-w-[929px] mx-auto w-full px-4 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+                <div className='max-w-[929px] mx-auto'>
                     {title && (
                         <h1 className='md:text-6xl text-5xl font-semibold text-center text-white mb-5'>
                             {title}
@@ -28,7 +28,7 @@ const Banner = ({ title, subTitle, buttontext, buttonLink, buttontext2, buttonLi
                         </p>
                     )}
                     {buttontext && (
-                        <div className='mt-10 text-center flex gap-4 justify-center'>
+                        <div className='mt-10 mb-20 text-center flex gap-4 justify-center'>
                             <Link href={buttonLink} className='text-lg font-medium px-[30px] py-[14px] bg-Orange text-white hover:bg-white hover:text-Orange border border-Orange hover:border-white rounded-[40px]'>
                                 {buttontext}
                             </Link>
