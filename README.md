@@ -34,18 +34,16 @@ Milestone4
 
 
 
-Issues
+Lastly we have 4 pages
+13. question-answer
+14. question-answer-detail
+15. customers
+16. partner-with-us
 
 
-it's better but still not behaving exactly as i would like. please see first pic. it looks ok. 
-but if i increase the width, the image resizes and large portions of it gets cut off. (see 2nd image)
 
+- a functional contact us form
 
-Second issue. it looks like the image height for the product pages is too large:
+- password protection for downloadables
 
-according to figma file, image height on those pages should be approx. 450px
-
-https://igoodwork.vercel.app/products
-https://igoodwork.vercel.app/simply-sync
-https://igoodwork.vercel.app/simply-transport-agent
-https://igoodwork.vercel.app/simply-simp-agent
+- assist in publishing to production site

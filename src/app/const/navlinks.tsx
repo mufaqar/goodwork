@@ -47,11 +47,11 @@ export const NavLinks = [
 
             {
                 name: 'Partner with Us',
-                link: '#',
+                link: '/partner-with-us',
             },
             {
                 name: 'Customers',
-                link: '#',
+                link: '/customers',
             }
 
         ]
