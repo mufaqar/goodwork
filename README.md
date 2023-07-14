@@ -34,11 +34,6 @@ Milestone4
 
 
 
-Lastly we have 4 pages
-13. question-answer
-14. question-answer-detail
-15. customers
-16. partner-with-us
 
 
 
