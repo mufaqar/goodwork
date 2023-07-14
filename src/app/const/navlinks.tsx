@@ -59,7 +59,7 @@ export const NavLinks = [
     {
         id: 4,
         name: ' Q&A',
-        link: '#',
+        link: '/question-answer',
     },
     {
         id: 5,
