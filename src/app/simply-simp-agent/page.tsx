@@ -136,7 +136,7 @@ const Simply_Simp_Agent = () => {
                             </div>
                         </div>
                         <div className='mt-7'>
-                            <Link href="#" className='text-lgfont-medium px-[30px] py-[14px] bg-Orange text-white hover:bg-transparent hover:text-Orange border border-Orange rounded-[40px]'>
+                            <Link href="/download-software" className='text-lgfont-medium px-[30px] py-[14px] bg-Orange text-white hover:bg-transparent hover:text-Orange border border-Orange rounded-[40px]'>
                                 See more download
                             </Link>
                         </div>

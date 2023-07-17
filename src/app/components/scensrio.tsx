@@ -23,7 +23,7 @@ const User_censrio = () => {
                                     <h3 className='text-2xl font-medium text-center text-white my-5'>
                                         {item.title}
                                     </h3>
-                                    <Link href="#" className='text-base font-normal text-center text-lightBlue hover:text-white'>
+                                    <Link href="/download-software" className='text-base font-normal text-center text-lightBlue hover:text-white'>
                                         {item.btn_txt}
                                     </Link>
                                 </div>

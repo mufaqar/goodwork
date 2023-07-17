@@ -26,10 +26,10 @@ const Get_Started = () => {
                     {/* <Image src={Video} alt="thumbnail" className='mx-auto mt-12' /> */}
 
                     <div className='my-7 text-center flex gap-4 justify-center'>
-                        <Link href="#" className='text-lg font-medium px-[30px] py-[14px] bg-Orange text-white hover:bg-transparent hover:text-Orange border border-Orange rounded-[40px] '>
+                        <Link href="/download-software" className='text-lg font-medium px-[30px] py-[14px] bg-Orange text-white hover:bg-transparent hover:text-Orange border border-Orange rounded-[40px] '>
                             Download
                         </Link>
-                        <Link href="#" className='text-lg font-medium px-[30px] py-[14px] bg-transparent text-darkBlue hover:bg-darkBlue hover:text-white border border-darkBlue rounded-[40px] '>
+                        <Link href="/contact-us" className='text-lg font-medium px-[30px] py-[14px] bg-transparent text-darkBlue hover:bg-darkBlue hover:text-white border border-darkBlue rounded-[40px] '>
                             Contact Us
                         </Link>
                     </div>

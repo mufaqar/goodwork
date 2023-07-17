@@ -56,10 +56,10 @@ const Tabs = () => {
                           </p>
                         })}
                         <div className='my-7 text-center flex gap-4'>
-                          <Link href="#" className='text-lg font-medium px-[30px] py-[14px] bg-Orange text-white hover:bg-transparent hover:text-Orange border border-Orange rounded-[40px] '>
+                          <Link href="/register" className='text-lg font-medium px-[30px] py-[14px] bg-Orange text-white hover:bg-transparent hover:text-Orange border border-Orange rounded-[40px] '>
                             Try for Free
                           </Link>
-                          <Link href="#" className='text-lg font-medium px-[30px] py-[14px] bg-transparent text-darkBlue hover:bg-darkBlue hover:text-white rounded-[40px] border border-darkBlue'>
+                          <Link href={item.link} className='text-lg font-medium px-[30px] py-[14px] bg-transparent text-darkBlue hover:bg-darkBlue hover:text-white rounded-[40px] border border-darkBlue'>
                             Learn More
                           </Link>
                         </div>
@@ -88,12 +88,14 @@ export default function TabsRender() {
 }
 
 
+
 export const Tabs_Data = [
   {
     id: 1,
     title1: "Simply Sync",
     title2: "to Active Directory",
     img: Article1,
+    link: "/simply-sync",
     content: [
       {
         para: "Simply Sync allows you to sync your Active Directory Passwords and other attributes to remote systems such as Office 365, LDAP, or other AD's.",
@@ -108,6 +110,7 @@ export const Tabs_Data = [
     title1: "Simply Sync",
     title2: "for Services Providers Components",
     img: Article1,
+    link: "/simply-simp-agent",
     content: [
       {
         para: "Simply Sync allows you to sync your Active Directory Passwords and other attributes to remote systems such as Office 365, LDAP, or other AD's.",
@@ -122,6 +125,7 @@ export const Tabs_Data = [
     title1: "Simply Sync",
     title2: "for Office 365",
     img: Article1,
+    link: "/simply-transport-agent",
     content: [
       {
         para: "Simply Sync allows you to sync your Active Directory Passwords and other attributes to remote systems such as Office 365, LDAP, or other AD's.",
