@@ -145,7 +145,7 @@ const Simply_Transport_Agent = () => {
                         </div>
                     </div>
                     <div className='mt-14 text-center'>
-                        <Link href="#" className='text-lg font-medium px-[30px] py-[10px] bg-Orange text-white hover:bg-transparent hover:text-Orange border border-Orange rounded-[40px]'>
+                        <Link href="/download-software" className='text-lg font-medium px-[30px] py-[10px] bg-Orange text-white hover:bg-transparent hover:text-Orange border border-Orange rounded-[40px]'>
                             See more download
                         </Link>
                     </div>
