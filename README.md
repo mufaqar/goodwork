@@ -34,11 +34,6 @@ Milestone4
 
 
 
-
-
-
-- a functional contact us form
-
 - password protection for downloadables
 
 - assist in publishing to production site
