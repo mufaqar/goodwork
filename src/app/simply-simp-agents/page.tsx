@@ -16,7 +16,7 @@ const Simply_Simp_Agent = () => {
         <main>
             <Header />
             <Banner
-                title="Simply SIMP Agent"
+                title="Simply SNMP Agent"
                 subTitle='Simply SNMP Agent for Windows. Enable windows performance monitoring utilizing SNMP.'
                 image="/images/snmp-bg.png"
             />
