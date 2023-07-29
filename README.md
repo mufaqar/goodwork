@@ -32,7 +32,11 @@ Milestone4
 15. https://igoodwork.vercel.app/partner-with-us
 16. https://igoodwork.vercel.app/question-answer-detail
 
+Milestone 5
 
+Sanity
+Password
+Auth
 
 - password protection for downloadables
 
