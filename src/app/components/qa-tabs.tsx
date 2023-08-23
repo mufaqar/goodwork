@@ -36,7 +36,7 @@ const QA_Tabs = () => {
             setCategories(Cres)
         }
         f()
-    },[])
+    },[faqs])
 
     return (
         <div className='container mx-auto px-4'>
