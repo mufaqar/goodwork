@@ -9,23 +9,24 @@ import { QCategories, QFaqs } from '../../../sanity/lib/queries'
 const QA_Tabs = () => {
 
     const [openTab, setOpenTab] = useState('All Discussions');
-    const [faqs, setFaqs] = useState()
+    const [faqs, setFaqs] = useState([])
+    const [categories, setCategories] = useState([])
+    var filteredFaqs = faqs;
 
-    const [categories, setCategories] = useState()
+    if (openTab !== 'All Discussions') {
+        filteredFaqs = faqs.filter((f:any) => f.ctegory.name === openTab);
+    }
 
     const handleFaq = (name: any) => {
-        
         if (openTab === name) {
             return (
                 setOpenTab(name)
-
             )
         }
-        
+        setOpenTab(name)
     }
     
     
-    console.log("🚀 ~ file: qa-tabs.tsx:20 ~ faqs:", faqs)
 
     useEffect(()=>{
         const f = async () => {
@@ -35,7 +36,6 @@ const QA_Tabs = () => {
             setCategories(Cres)
         }
         f()
-        
     },[])
 
     return (
@@ -68,7 +68,8 @@ const QA_Tabs = () => {
 
                     
                         <ul className={`grid gap-4 [&>*:nth-child(1)]:border-Orange [&>*:nth-child(2)]:border-darkGreen [&>*:nth-child(3)]:border-Orange [&>*:nth-child(4)]:border-lightBlue [&>*:nth-child(5)]:border-Orange`}>
-                            {faqs?.filter((f:any) => f.ctegory.name === openTab)?.map((_item:any, _idx:any) => {
+                            {
+                            filteredFaqs?.map((_item:any, _idx:any) => {
                                 return <li key={_idx} className={`hover:bg-[#F6FAFE] flex md:flex-row flex-col gap-1 justify-between md:items-center border-l-2 md:px-5 px-[5px] `} style={{ borderColor: `${_item.ctegory.color}` }}>
                                     <p className='grid gap-1'>
                                         <Link href="/question-answer-detail" className='md:text-2xl text-base font-medium text-darkBlue'>
