@@ -12,6 +12,7 @@ const QA_Tabs = () => {
     const [faqs, setFaqs] = useState([])
     const [categories, setCategories] = useState([])
     var filteredFaqs = faqs;
+    console.log("🚀 ~ file: qa-tabs.tsx:15 ~ filteredFaqs:", filteredFaqs)
 
     if (openTab !== 'All Discussions') {
         filteredFaqs = faqs.filter((f:any) => f.ctegory.name === openTab);
