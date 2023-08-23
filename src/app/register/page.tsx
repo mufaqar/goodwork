@@ -1,4 +1,6 @@
-import React from 'react';
+"use client"
+
+import React, { useState } from 'react';
 import Header from '../components/header';
 import Link from 'next/link';
 import Fb from '../../../public/images/facebook.png';
@@ -6,8 +8,30 @@ import Gogl from '../../../public/images/google.png';
 import Twitr from '../../../public/images/twitter.png';
 import Lnkdn from '../../../public/images/linkedin.png';
 import Image from 'next/image';
+import { useForm, SubmitHandler } from "react-hook-form";
+import { registor } from '@/config/helper';
+
+type Inputs = {
+    displayName: string,
+    email: string,
+    password: string,
+    confirmPassword: string,
+};
 
 const Register = () => {
+
+    const [matchPassword, setMatchPassword] = useState(false);
+    const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
+
+    const onSubmit: SubmitHandler<Inputs> = data => {
+        if(data.password === data.confirmPassword){
+            setMatchPassword(false)
+            registor(data)
+        }else{
+            setMatchPassword(true)
+        }
+    };
+  
     return (
         <main className='bg-darkBlue bg-[url("/images/register-bg.png")] bg-blend-multiply bg-center bg-cover bg-no-repeat min-h-screen'>
             <Header />
@@ -20,24 +44,28 @@ const Register = () => {
                         <p className='text-lg font-normal text-darkBlue/50 text-center'>
                             Use the form below to create a new account.
                         </p>
-                        <form action="#" className='mt-7'>
+                        <form onSubmit={handleSubmit(onSubmit)} className='mt-7'>
                             <div className="grid gap-4">
                                 <div className="w-full">
                                     <label htmlFor="name" className="hidden mb-2">Display Name</label>
-                                    <input className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="Display Name" type="text" id="name" required />
+                                    <input {...register("displayName")} className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="Display Name" type="text" id="name"  />
                                 </div>
                                 <div className="w-full">
                                     <label htmlFor="email" className="hidden mb-2">Email</label>
-                                    <input className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="Email" type="email" id="email" required />
+                                    <input {...register("email", { required: true })} className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="Email" type="email" id="email"  />
                                 </div>
+                                {errors.email && <span className='text-red-400'>Email is required</span>}
                                 <div className="w-full">
                                     <label htmlFor="password" className="hidden mb-2">Password</label>
-                                    <input className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="Password" type="password" id="password" required />
+                                    <input {...register("password", { required: true })} className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="Password" type="password" id="password"  />
                                 </div>
+                                {errors.email && <span className='text-red-400'>Password is required</span>}
                                 <div className="w-full">
                                     <label htmlFor="confirm-password" className="hidden mb-2">Confirm Password</label>
-                                    <input className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="Confirm Password" type="password" id="confirm-password" required />
+                                    <input {...register("confirmPassword", { required: true })} className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="Confirm Password" type="password" id="confirm-password"  />
                                 </div>
+                                {errors.email && <span className='text-red-400'>Confirm Password is required</span>}
+                                {matchPassword && <span className='text-red-400'>Password & confirm Password are not matched!</span>}
                                 <div className="max-w-[265px] mx-auto w-full">
                                     <p className='text-sm font-normal text-darkBlue/50 text-center'>
                                         Passwords are required to be a minimum of 6 characters in length.

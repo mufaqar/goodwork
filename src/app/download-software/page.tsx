@@ -52,17 +52,17 @@ const Download_Software = () => {
                         <IconBox
                             title="Simply sync password server 64 bit"
                             Img_url="/images/file-blu.png"
-                            link="#"
+                            link="/dummy-pdf.pdf"
                             custm_class="text-lg" />
                         <IconBox
                             title="Simply sync password capture agen 64 bit"
                             Img_url="/images/file-blu.png"
-                            link="#"
+                            link="/dummy-pdf.pdf"
                             custm_class="text-lg" />
                         <IconBox
                             title="Simply sync AD Plug-In64 bit"
                             Img_url="/images/file-blu.png"
-                            link="#"
+                            link="/dummy-pdf.pdf"
                             custm_class="text-lg" />
                     </div>
                     <div className='grid md:grid-cols-3 grid-cols-1 justify-between gap-9 items-end mt-16'>

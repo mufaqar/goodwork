@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import Header from '../components/header';
 import Link from 'next/link';
@@ -6,8 +8,23 @@ import Gogl from '../../../public/images/google.png';
 import Twitr from '../../../public/images/twitter.png';
 import Lnkdn from '../../../public/images/linkedin.png';
 import Image from 'next/image';
+import { login, loginWithGoogle } from '@/config/helper'
+import { useForm, SubmitHandler } from "react-hook-form";
+
+type Inputs = {
+    email: string,
+    password: string,
+};
 
 const Login = () => {
+
+    const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
+    const onSubmit: SubmitHandler<Inputs> = data => {
+        login(data) 
+    };
+
+
+
     return (
         <main className='bg-darkBlue bg-[url("/images/login-bg.png")] bg-blend-multiply bg-center bg-cover bg-no-repeat min-h-screen'>
             <Header />
@@ -15,29 +32,24 @@ const Login = () => {
                 <div className='container mx-auto px-4'>
                     <div className='max-w-[499px] m-auto bg-white md:p-[50px] p-5 rounded-[20px]  shadow-[0_15px_30px_rgba(0,0,0,0.05)]'>
                         <h1 className='md:text-[32px] text-2xl font-semibold text-center text-darkBlue mb-2'>
-                            Login
+                            Login - <p>Welcome, </p>
                         </h1>
                         <p className='text-lg font-normal text-darkBlue/50 text-center'>
                             Please enter your user name and password.  <Link href="/login" className='font-medium text-lightBlue'>
                                 Register
                             </Link> if you don't have an account.
                         </p>
-                        <form action="#" className='mt-7'>
+                        <form onSubmit={handleSubmit(onSubmit)} className='mt-7'>
                             <div className="grid gap-4">
                                 <div className="w-full">
                                     <label htmlFor="email" className="hidden mb-2">User ID (Email)</label>
-                                    <input className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="User ID (Email)" type="email" id="email" required />
+                                    <input {...register("email", { required: true })} className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="User ID (Email)" type="email" id="email" />
                                 </div>
                                 <div className="w-full">
                                     <label htmlFor="password" className="hidden mb-2">Password</label>
-                                    <input className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="Password" type="password" id="password" required />
+                                    <input {...register("password", { required: true })} className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="Password" type="password" id="password" />
                                 </div>
-                                <div className='w-full my-7'>
-                                    <button type="submit" className="text-lg font-medium px-[20px] py-[14px] bg-Orange text-white hover:bg-white hover:text-Orange border border-Orange rounded-[40px] w-full">
-                                        Login
-                                    </button>
-                                </div>
-                                <div className='flex items-center gap-3'>
+                                <div className='flex items-center mt-2 gap-3'>
                                     <input
                                         className="relative h-6 w-6 border border-[#F0F0F0] outline-0 focus:outline-0 hover:outline-0"
                                         type="checkbox"
@@ -49,8 +61,19 @@ const Login = () => {
                                         Remember me?
                                     </label>
                                 </div>
+                                <div className='w-full my-5'>
+                                    <input type="submit" value={`Login`} className="text-lg font-medium px-[20px] py-[14px] bg-Orange text-white hover:bg-white hover:text-Orange border border-Orange rounded-[40px] w-full" />
+                                        
+                                </div>
+
                             </div>
                         </form>
+                        <button onClick={loginWithGoogle} className="text-lg -mt-2 font-medium px-[20px] py-[14px] bg-blue-500 text-white hover:bg-white hover:text-blue-500 border border-blue-500 rounded-[40px] w-full">
+                            Login With Google
+                        </button>
+                        <button type="submit" className="text-lg mt-3 font-medium px-[20px] py-[14px] bg-gray-800 text-white hover:bg-white hover:text-gray-800 border border-gray-800 rounded-[40px] w-full">
+                            Login With Microsoft
+                        </button>
                     </div>
                 </div>
             </section>

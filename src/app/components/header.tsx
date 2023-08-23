@@ -1,13 +1,16 @@
 "use client"
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { BiChevronDown } from 'react-icons/bi';
 import { FiLogIn } from 'react-icons/fi';
 import { NavLinks, NavLinksType } from '../const/navlinks';
+import { logout } from '@/config/helper';
+import { SettingsContext } from '@/context/setting-context';
 
 const Header = () => {
 
+    const { user } = useContext(SettingsContext)
     const [open, setOpen] = useState(false);
     const [dropdown, setDropdown] = useState(null);
     const handleMenu = (id: any) => {
@@ -83,12 +86,21 @@ const Header = () => {
                 </div>
                 <div className="w-3/12 md:block hidden">
                     <ul className='flex justify-end items-center"'>
-                        <li>
-                            <Link href="/login"
-                                className='flex gap-1 items-center text-base font-medium py-2 px-5 bg-transparent text-lightBlue hover:bg-transparent hover:text-white border border-transparent rounded-[30px]'>
-                                <FiLogIn /> Login
-                            </Link>
-                        </li>
+
+                        {
+                            user?.accessToken ? <li>
+                                <button onClick={() => logout()}
+                                    className='flex gap-1 items-center text-base font-medium py-2 px-5 bg-transparent text-lightBlue hover:bg-transparent hover:text-white border border-transparent rounded-[30px]'>
+                                    <FiLogIn /> Logout
+                                </button>
+                            </li> : <li>
+                                <Link href="/login"
+                                    className='flex gap-1 items-center text-base font-medium py-2 px-5 bg-transparent text-lightBlue hover:bg-transparent hover:text-white border border-transparent rounded-[30px]'>
+                                    <FiLogIn /> Login
+                                </Link>
+                            </li>
+                        }
+
                         <li>
                             <Link href="/register"
                                 className='flex gap-1 items-center text-base font-medium py-2 px-5 bg-Orange text-white hover:bg-white hover:text-Orange border border-Orange hover:border-white rounded-[30px]'>
