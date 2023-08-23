@@ -28,15 +28,20 @@ const QA_Tabs = () => {
     
     
 
-    useEffect(()=>{
-        const f = async () => {
-            const res = await client.fetch(QFaqs)
-            const Cres = await client.fetch(QCategories)
-            setFaqs(res)
-            setCategories(Cres)
-        }
-        f()
-    },[faqs, categories, filteredFaqs])
+    // useEffect(()=>{
+    //     const f = async () => {
+    //         const res = await client.fetch(QFaqs)
+    //         const Cres = await client.fetch(QCategories)
+    //         setFaqs(res)
+    //         setCategories(Cres)
+    //     }
+    //     f()
+    // },[faqs, categories, filteredFaqs])
+
+    useEffect(() => {    
+        client.fetch(QFaqs).then((data) => setFaqs(data))
+        client.fetch(QCategories).then((data) => setCategories(data))
+      },[faqs, categories, filteredFaqs])
 
     return (
         <div className='container mx-auto px-4'>
@@ -52,7 +57,7 @@ const QA_Tabs = () => {
                         </li>
                         {categories?.map((item:any, idx:number) => {
                             return <li key={idx} onClick={() => handleFaq(item.name)}
-                                className={`${openTab === item.id ? "bg-[#F6FAFE] text-lightBlue " : "  hover:bg-[#F6FAFE] hover:text-lightBlue bg-transparent text-darkBlue/50"}  md:px-5 px-[6px] md:py-[13px] py-[5px] rounded-[50px] cursor-pointer flex md:gap-3 gap-1 items-center md:text-lg text-[10px] font-semibold  `}>
+                                className={`${openTab === item.name ? "bg-[#F6FAFE] text-lightBlue " : "  hover:bg-[#F6FAFE] hover:text-lightBlue bg-transparent text-darkBlue/50"}  md:px-5 px-[6px] md:py-[13px] py-[5px] rounded-[50px] cursor-pointer flex md:gap-3 gap-1 items-center md:text-lg text-[10px] font-semibold  `}>
                                 <div className={`md:p-2 p-1 rounded-[3px] bg-${item.color}`} style={{ backgroundColor : `${item.color}`}}/> {item.name}
                             </li>
                         })}
