@@ -1,11 +1,17 @@
 "use client" 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import Page_Banner from '../components/page-banner'
 import QA_Tabs from '../components/qa-tabs'
 
-const Question_Answer = () => {
+
+
+
+const Question_Answer = async () => {
+    
+
+
     return (
         <main>
             <Header />

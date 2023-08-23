@@ -1,19 +1,42 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import View_icon from '../../../public/images/view-icon.png';
 import Cmnt_icon from '../../../public/images/comnt-icon.png';
 import Link from 'next/link';
-
+import { client } from '../../../sanity/lib/client'
+import { QCategories, QFaqs } from '../../../sanity/lib/queries'
 
 const QA_Tabs = () => {
 
-    const [openTab, setOpenTab] = React.useState(1);
-    const handleFaq = (id: any) => {
-        if (openTab === id) {
-            return setOpenTab(id)
+    const [openTab, setOpenTab] = useState('All Discussions');
+    const [faqs, setFaqs] = useState()
+
+    const [categories, setCategories] = useState()
+
+    const handleFaq = (name: any) => {
+        
+        if (openTab === name) {
+            return (
+                setOpenTab(name)
+
+            )
         }
-        setOpenTab(id)
+        
     }
+    
+    
+    console.log("🚀 ~ file: qa-tabs.tsx:20 ~ faqs:", faqs)
+
+    useEffect(()=>{
+        const f = async () => {
+            const res = await client.fetch(QFaqs)
+            const Cres = await client.fetch(QCategories)
+            setFaqs(res)
+            setCategories(Cres)
+        }
+        f()
+        
+    },[])
 
     return (
         <div className='container mx-auto px-4'>
@@ -23,10 +46,14 @@ const QA_Tabs = () => {
                         Categories
                     </h2>
                     <ul className='grid gap-2'>
-                        {Question_Data?.map((item: any, idx: any) => {
-                            return <li key={idx} onClick={() => handleFaq(item.id)}
+                        <li onClick={() => handleFaq('All Discussions')}
+                                className={`${openTab === 'All Discussions' ? "bg-[#F6FAFE] text-lightBlue " : "  hover:bg-[#F6FAFE] hover:text-lightBlue bg-transparent text-darkBlue/50"}  md:px-5 px-[6px] md:py-[13px] py-[5px] rounded-[50px] cursor-pointer flex md:gap-3 gap-1 items-center md:text-lg text-[10px] font-semibold  `}>
+                                <div className={`md:p-2 p-1 rounded-[3px] bg-blue-900`} /> All Discussions
+                        </li>
+                        {categories?.map((item:any, idx:number) => {
+                            return <li key={idx} onClick={() => handleFaq(item.name)}
                                 className={`${openTab === item.id ? "bg-[#F6FAFE] text-lightBlue " : "  hover:bg-[#F6FAFE] hover:text-lightBlue bg-transparent text-darkBlue/50"}  md:px-5 px-[6px] md:py-[13px] py-[5px] rounded-[50px] cursor-pointer flex md:gap-3 gap-1 items-center md:text-lg text-[10px] font-semibold  `}>
-                                <div className={`md:p-2 p-1 rounded-[3px] bg-${item.color}`}></div> {item.title}
+                                <div className={`md:p-2 p-1 rounded-[3px] bg-${item.color}`} style={{ backgroundColor : `${item.color}`}}/> {item.name}
                             </li>
                         })}
                     </ul>
@@ -39,33 +66,32 @@ const QA_Tabs = () => {
                         </button>
                     </div>
 
-                    {Question_Data?.map((item: any, idx: any) => {
-                        return <ul key={idx} className={`grid gap-4 ${openTab === item.id ? "block" : "hidden"}   [&>*:nth-child(1)]:border-Orange [&>*:nth-child(2)]:border-darkGreen [&>*:nth-child(3)]:border-Orange [&>*:nth-child(4)]:border-lightBlue [&>*:nth-child(5)]:border-Orange`}>
-                            {item.answers?.map((_item: any, _idx: number) => {
-                                return <li key={_idx} className={`hover:bg-[#F6FAFE] flex md:flex-row flex-col gap-1 justify-between md:items-center border-l-2 md:px-5 px-[5px] `}>
+                    
+                        <ul className={`grid gap-4 [&>*:nth-child(1)]:border-Orange [&>*:nth-child(2)]:border-darkGreen [&>*:nth-child(3)]:border-Orange [&>*:nth-child(4)]:border-lightBlue [&>*:nth-child(5)]:border-Orange`}>
+                            {faqs?.filter((f:any) => f.ctegory.name === openTab)?.map((_item:any, _idx:any) => {
+                                return <li key={_idx} className={`hover:bg-[#F6FAFE] flex md:flex-row flex-col gap-1 justify-between md:items-center border-l-2 md:px-5 px-[5px] `} style={{ borderColor: `${_item.ctegory.color}` }}>
                                     <p className='grid gap-1'>
                                         <Link href="/question-answer-detail" className='md:text-2xl text-base font-medium text-darkBlue'>
-                                            {_item.ans}
+                                            {_item.question}
                                         </Link>
                                         <span className='md:text-sm text-xs font-medium text-darkBlue/50'>
-                                           {_item.meta}
+                                            Created by {_item.createdby}. Post at {_item._createdAt} 
                                         </span>
                                     </p>
                                     <p className='flex gap-5'>
                                         <span className='flex gap-2 md:text-sm text-xs font-medium text-darkBlue/50'>
                                             <Image src={View_icon} alt="view-icon" />
-                                            {_item.view}
+                                             233
                                         </span>
                                         <span className='flex gap-2 md:text-sm text-xs font-medium text-darkBlue/50'>
                                             <Image src={Cmnt_icon} alt="cmnt-icon" />
-                                           {_item.cmnt}
+                                           23
                                         </span>
                                     </p>
                                 </li>
                             })}
-
                         </ul>
-                    })}
+                   
 
                 </div>
             </div>

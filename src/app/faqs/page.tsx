@@ -5,7 +5,11 @@ import Page_Banner from '../components/page-banner'
 import Header from '../components/header'
 import Footer from '../components/footer'
 
-const Faqs = () => {
+
+
+const Faqs = async () => {
+    
+    
     return (
         <main>
             <Header />
