@@ -5,6 +5,7 @@ import Cmnt_icon from '../../../public/images/comnt-icon.png';
 import Link from 'next/link';
 import { client } from '../../../sanity/lib/client'
 import { QCategories, QFaqs } from '../../../sanity/lib/queries'
+import { dateFormate } from '@/lib';
 
 const QA_Tabs = () => {
 
@@ -26,23 +27,11 @@ const QA_Tabs = () => {
         }
         setOpenTab(name)
     }
-    
-    
-
-    // useEffect(()=>{
-    //     const f = async () => {
-    //         const res = await client.fetch(QFaqs)
-    //         const Cres = await client.fetch(QCategories)
-    //         setFaqs(res)
-    //         setCategories(Cres)
-    //     }
-    //     f()
-    // },[faqs, categories, filteredFaqs])
 
     useEffect(() => {    
         client.fetch(QFaqs).then((data) => setFaqs(data))
         client.fetch(QCategories).then((data) => setCategories(data))
-      },[faqs, categories, filteredFaqs])
+      },[])
 
     return (
         <div className='container mx-auto px-4'>
@@ -78,11 +67,11 @@ const QA_Tabs = () => {
                             filteredFaqs?.map((_item:any, _idx:any) => {
                                 return <li key={_idx} className={`hover:bg-[#F6FAFE] flex md:flex-row flex-col gap-1 justify-between md:items-center border-l-2 md:px-5 px-[5px] `} style={{ borderColor: `${_item.ctegory.color}` }}>
                                     <p className='grid gap-1'>
-                                        <Link href="/question-answer-detail" className='md:text-2xl text-base font-medium text-darkBlue'>
+                                        <Link href={`/${_item?.slug.current}`} className='md:text-2xl text-base font-medium text-darkBlue'>
                                             {_item.question}
                                         </Link>
                                         <span className='md:text-sm text-xs font-medium text-darkBlue/50'>
-                                            Created by {_item.createdby}. Post at {_item._createdAt} 
+                                            Created by {_item.createdby}. Post at {dateFormate(_item?._createdAt)} 
                                         </span>
                                     </p>
                                     <p className='flex gap-5'>
