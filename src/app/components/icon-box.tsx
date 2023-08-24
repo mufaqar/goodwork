@@ -20,7 +20,7 @@ const IconBox = ({ title, Img_url, link, custm_class }: any) => {
                 {title}
             </p>
             {
-                user?.accessToken ? <Link href={ link } className='text-lg font-medium px-[30px] py-[10px] bg-Orange text-white hover:bg-transparent hover:text-Orange border border-Orange rounded-[40px]' download={user?.accessToken ? true : false}>
+                user?.accessToken ? <Link href={ link } target="_blank" className='text-lg font-medium px-[30px] py-[10px] bg-Orange text-white hover:bg-transparent hover:text-Orange border border-Orange rounded-[40px]' download={user?.accessToken ? true : false}>
                     Download
                 </Link> : <Link href='/login' className='text-lg font-medium px-[30px] py-[10px] bg-Orange text-white hover:bg-transparent hover:text-Orange border border-Orange rounded-[40px]' >
                     Download
