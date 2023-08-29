@@ -30,6 +30,7 @@ const Header = () => {
         router.push('/login')
     }
 
+    const token  = localStorage.getItem('authToken')
     return (
         <header className='relative z-50'>
             <nav className="flex  px-4 py-4 items-center container mx-auto">
@@ -96,7 +97,7 @@ const Header = () => {
                     <ul className='flex justify-end items-center"'>
 
                         {
-                            user?.accessToken ? <li>
+                            token ? <li>
                                 <button onClick={() => handleLogout()}
                                     className='flex gap-1 items-center text-base font-medium py-2 px-5 bg-transparent text-lightBlue hover:bg-transparent hover:text-white border border-transparent rounded-[30px]'>
                                     <FiLogIn /> Logout
@@ -110,7 +111,7 @@ const Header = () => {
                         }
 
                         {
-                            user?.accessToken ? '' : <li>
+                            token ? '' : <li>
                                 <Link href="/register"
                                     className='flex gap-1 items-center text-base font-medium py-2 px-5 bg-Orange text-white hover:bg-white hover:text-Orange border border-Orange hover:border-white rounded-[30px]'>
                                     Sign Up

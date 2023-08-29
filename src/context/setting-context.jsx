@@ -18,7 +18,7 @@ export const SettingsProvider = ({ children }) => {
   
   useEffect(()=>{
     const token = localStorage.getItem('authToken')
-    if(token.length > 10){
+    if(token?.length > 10){
       pathname === '/register' || pathname === '/login' && router.push('/')
     }
   })
