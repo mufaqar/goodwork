@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../components/header';
 import Link from 'next/link';
 import Fb from '../../../public/images/facebook.png';
@@ -8,21 +8,41 @@ import Gogl from '../../../public/images/google.png';
 import Twitr from '../../../public/images/twitter.png';
 import Lnkdn from '../../../public/images/linkedin.png';
 import Image from 'next/image';
-import { login, loginWithGoogle } from '@/config/helper'
 import { useForm, SubmitHandler } from "react-hook-form";
+import { auth } from '@/config/firebase';
+import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { useRouter } from 'next/navigation'
 
 type Inputs = {
     email: string,
     password: string,
 };
 
-const Login = () => {
 
+const Login = () => {
+    const router = useRouter()
     const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
-    const onSubmit: SubmitHandler<Inputs> = data => {
-        login(data) 
+    const onSubmit: SubmitHandler<Inputs> = async (data) => {
+        await signInWithEmailAndPassword(auth, data.email, data.password).then((userCredential) => {
+            const user = userCredential.user;
+            localStorage.setItem('authToken', user?.accessToken)
+            localStorage.setItem('tokenExpiration', user?.metadata.createdAt)
+            router.push('/')
+        }).catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+       });
     };
 
+    const loginWithGoogle = async () => {
+        const googleProvider = new GoogleAuthProvider();
+        const {user} = await signInWithPopup(auth, googleProvider);
+        if(user?.accessToken.length > 10){
+            localStorage.setItem('authToken', user?.accessToken)
+            localStorage.setItem('tokenExpiration', user?.metadata.createdAt)
+            router.push('/')
+        }        
+    }
 
 
     return (
@@ -111,3 +131,5 @@ const Login = () => {
 }
 
 export default Login
+
+

@@ -9,7 +9,9 @@ import Twitr from '../../../public/images/twitter.png';
 import Lnkdn from '../../../public/images/linkedin.png';
 import Image from 'next/image';
 import { useForm, SubmitHandler } from "react-hook-form";
-import { registor } from '@/config/helper';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '@/config/firebase';
+import { useRouter } from 'next/navigation'
 
 type Inputs = {
     displayName: string,
@@ -19,6 +21,7 @@ type Inputs = {
 };
 
 const Register = () => {
+    const router = useRouter()
 
     const [matchPassword, setMatchPassword] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
@@ -31,6 +34,17 @@ const Register = () => {
             setMatchPassword(true)
         }
     };
+
+    const registor = async (data:any) => {
+        try {
+             const {user} = await createUserWithEmailAndPassword(auth, data.email, data.password, data.displayName)
+             localStorage.setItem('authToken', user?.accessToken)
+             localStorage.setItem('tokenExpiration', user?.metadata.createdAt)
+             router.push('/')   
+        } catch (error) {
+             console.log('error', error?.message);
+        }
+   }
   
     return (
         <main className='bg-darkBlue bg-[url("/images/register-bg.png")] bg-blend-multiply bg-center bg-cover bg-no-repeat min-h-screen'>
