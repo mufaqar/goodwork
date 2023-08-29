@@ -11,7 +11,6 @@ export function withAuth(WrappedComponent) {
 
      useEffect(()=>{
           const user = JSON.parse(localStorage.getItem('user'))
-          console.log("🚀 ~ file: withAuth.js:14 ~ useEffect ~ user:", user)
           if(user?.apiKey){
             pathname === '/register' || pathname === '/login' && router.push('/')
           }

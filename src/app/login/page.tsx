@@ -28,7 +28,8 @@ const Login = () => {
         await signInWithEmailAndPassword(auth, data.email, data.password).then((userCredential) => {
             const user = userCredential.user;
             localStorage.setItem('user', JSON.stringify(user))
-            router.push('/')
+            // router.push('/')
+            window.location.href = '/';
         }).catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;

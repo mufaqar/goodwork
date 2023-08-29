@@ -39,7 +39,8 @@ const Register = () => {
         try {
              const {user} = await createUserWithEmailAndPassword(auth, data.email, data.password)
              localStorage.setItem('user', JSON.stringify(user))
-             router.push('/')   
+            //  router.push('/')  
+            window.location.href = '/'; 
         } catch (error) {
              console.log('error', error);
         }
