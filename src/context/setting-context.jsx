@@ -19,11 +19,10 @@ export const SettingsProvider = ({ children }) => {
   
   useEffect(()=>{
     const user = JSON.parse(localStorage.getItem('user'))
-    console.log("🚀 ~ file: setting-context.jsx:22 ~ useEffect ~ user:", user)
     lsSetUser(user)
-    if(user?.apiKey){
-      pathname === '/register' || pathname === '/login' && router.push('/')
-    }
+    // if(user?.apiKey){
+    //   pathname === '/register' || pathname === '/login' && router.push('/')
+    // }
   },[])
   
   

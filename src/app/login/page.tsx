@@ -12,6 +12,8 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { auth } from '@/config/firebase';
 import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { useRouter } from 'next/navigation'
+import {withAuth} from '@/lib/withAuth'
+
 
 type Inputs = {
     email: string,
@@ -128,6 +130,6 @@ const Login = () => {
     )
 }
 
-export default Login
+export default withAuth(Login)
 
 
