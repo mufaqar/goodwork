@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Header from '../components/header';
 import Link from 'next/link';
 import Fb from '../../../public/images/facebook.png';
@@ -13,6 +13,7 @@ import { auth } from '@/config/firebase';
 import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { useRouter } from 'next/navigation'
 import {withAuth} from '@/lib/withAuth'
+import { SettingsContext } from '@/context/setting-context';
 
 
 type Inputs = {
@@ -24,10 +25,12 @@ type Inputs = {
 const Login = () => {
     const router = useRouter()
     const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
+    const {lsSetUser } = useContext(SettingsContext)
     const onSubmit: SubmitHandler<Inputs> = async (data) => {
         await signInWithEmailAndPassword(auth, data.email, data.password).then((userCredential) => {
             const user = userCredential.user;
             localStorage.setItem('user', JSON.stringify(user))
+            lsSetUser(user)
             // router.push('/')
             window.location.href = '/';
         }).catch((error) => {
@@ -41,7 +44,10 @@ const Login = () => {
         const {user} = await signInWithPopup(auth, googleProvider);
         if(user){
             localStorage.setItem('user', JSON.stringify(user))
-            router.push('/')
+            lsSetUser(user)
+            window.location.href = '/';
+
+            // router.push('/')
         }        
     }
 

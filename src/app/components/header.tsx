@@ -12,7 +12,7 @@ import { useRouter } from 'next/navigation'
 
 const Header = () => {
     const router = useRouter()
-    const { lsuser } = useContext(SettingsContext)
+    const { lsuser, lsSetUser } = useContext(SettingsContext)
     const [open, setOpen] = useState(false);
     const [dropdown, setDropdown] = useState(null);
     const handleMenu = (id: any) => {
@@ -26,6 +26,7 @@ const Header = () => {
     const handleLogout=()=>{
         signOut(auth);
         localStorage.removeItem('user')
+        lsSetUser()
         router.push('/login')
     }
 

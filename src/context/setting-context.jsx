@@ -13,6 +13,7 @@ export const SettingsProvider = ({ children }) => {
 
   const [user, setUser] = useState(null)
   const [lsuser, lsSetUser] = useState(null)
+    console.log("🚀 ~ file: setting-context.jsx:16 ~ SettingsProvider ~ lsuser:", lsuser)
     const router = useRouter()
     const pathname = usePathname()
 
