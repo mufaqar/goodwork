@@ -37,12 +37,11 @@ const Register = () => {
 
     const registor = async (data:any) => {
         try {
-             const {user} = await createUserWithEmailAndPassword(auth, data.email, data.password, data.displayName)
-             localStorage.setItem('authToken', user?.accessToken)
-             localStorage.setItem('tokenExpiration', user?.metadata.createdAt)
+             const {user} = await createUserWithEmailAndPassword(auth, data.email, data.password)
+             localStorage.setItem('user', JSON.stringify(user))
              router.push('/')   
         } catch (error) {
-             console.log('error', error?.message);
+             console.log('error', error);
         }
    }
   

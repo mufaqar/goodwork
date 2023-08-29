@@ -12,13 +12,15 @@ export const SettingsContext = createContext();
 export const SettingsProvider = ({ children }) => {
 
   const [user, setUser] = useState(null)
+  const [lsuser, lsSetUser] = useState(null)
     const router = useRouter()
     const pathname = usePathname()
 
   
   useEffect(()=>{
-    const token = localStorage.getItem('authToken')
-    if(token?.length > 10){
+    const user = JSON.parse(localStorage.getItem('user'))
+    lsSetUser(user)
+    if(user?.apiKey?.length > 10){
       pathname === '/register' || pathname === '/login' && router.push('/')
     }
   })
@@ -30,7 +32,7 @@ export const SettingsProvider = ({ children }) => {
   return (
     <SettingsContext.Provider
       value={{
-        user, setUser
+        user, setUser, lsuser, lsSetUser
       }}
     >
       {children}

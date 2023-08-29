@@ -25,8 +25,7 @@ const Login = () => {
     const onSubmit: SubmitHandler<Inputs> = async (data) => {
         await signInWithEmailAndPassword(auth, data.email, data.password).then((userCredential) => {
             const user = userCredential.user;
-            localStorage.setItem('authToken', user?.accessToken)
-            localStorage.setItem('tokenExpiration', user?.metadata.createdAt)
+            localStorage.setItem('user', JSON.stringify(user))
             router.push('/')
         }).catch((error) => {
             const errorCode = error.code;
@@ -37,9 +36,8 @@ const Login = () => {
     const loginWithGoogle = async () => {
         const googleProvider = new GoogleAuthProvider();
         const {user} = await signInWithPopup(auth, googleProvider);
-        if(user?.accessToken.length > 10){
-            localStorage.setItem('authToken', user?.accessToken)
-            localStorage.setItem('tokenExpiration', user?.metadata.createdAt)
+        if(user){
+            localStorage.setItem('user', JSON.stringify(user))
             router.push('/')
         }        
     }
