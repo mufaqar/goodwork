@@ -12,7 +12,7 @@ import { useRouter } from 'next/navigation'
 
 const Header = () => {
     const router = useRouter()
-    const { user, lsuser } = useContext(SettingsContext)
+    const { lsuser } = useContext(SettingsContext)
     const [open, setOpen] = useState(false);
     const [dropdown, setDropdown] = useState(null);
     const handleMenu = (id: any) => {
