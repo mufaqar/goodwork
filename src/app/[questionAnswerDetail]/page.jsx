@@ -16,16 +16,23 @@ import BlockContent from "@sanity/block-content-to-react";
 import { projectId } from '../../../sanity/env';
 
 
-const Question_Answer_Detail = () => {
 
+
+
+const Question_Answer_Detail = async () => {
     const params = useParams()
-    const slug = params?.questionAnswerDetail
-    const [detail, setDetail] = useState()
-    console.log("🚀 ~ file: page.tsx:20 ~ detail:", detail)
+   
+    const [detail, setDetail] = useState()    
+    console.log("🚀 ~ file: page.jsx:23 ~ constQuestion_Answer_Detail= ~ detail:", detail)
 
-    useEffect(() => {    
-       client.fetch(QSingleFaq, { slug }).then((data) => setDetail(data))
-    },[])
+    useEffect(() => {  
+        const slug = params?.questionAnswerDetail 
+        const fetch = async () => {
+            const res = await client.fetch(QSingleFaq, { slug })
+            setDetail(res)
+        }
+        fetch()
+    },[detail])
 
     return (
         <main>
