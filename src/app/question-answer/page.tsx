@@ -10,8 +10,6 @@ import QA_Tabs from '../components/qa-tabs'
 
 const Question_Answer = async () => {
     
-
-
     return (
         <main>
             <Header />

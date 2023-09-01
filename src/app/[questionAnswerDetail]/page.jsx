@@ -19,7 +19,6 @@ import { SettingsContext } from '@/context/setting-context';
 
 const Question_Answer_QAdetail = () => {
     const {QAdetail} = useContext(SettingsContext)
-    console.log("🚀 ~ file: page.jsx:22 ~ constQuestion_Answer_QAdetail= ~ QAdetail:", QAdetail)
 
     return (
         <div>
