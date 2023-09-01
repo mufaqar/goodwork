@@ -15,12 +15,12 @@ export const SettingsProvider = ({ children }) => {
   const [lsuser, lsSetUser] = useState(null)
   const params = useParams()
   const [QAdetail, setQADetail] = useState()  
+  const slug = params?.questionAnswerDetail 
 
   useEffect(()=>{
     const user = JSON.parse(localStorage.getItem('user'))
     lsSetUser(user)
     
-    const slug = params?.questionAnswerDetail 
     if(slug){
         const fetch = async () => {
             const res = await client.fetch(QSingleFaq, { slug })
@@ -28,7 +28,7 @@ export const SettingsProvider = ({ children }) => {
         }
         fetch()
     }
-  },[])
+  },[slug])
   
     
 
