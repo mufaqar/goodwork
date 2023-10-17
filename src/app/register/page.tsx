@@ -25,6 +25,7 @@ const Register = () => {
 
     const [matchPassword, setMatchPassword] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
+    const [errorMessage, setErrorMessage] = useState('')
 
     const onSubmit: SubmitHandler<Inputs> = data => {
         if(data.password === data.confirmPassword){
@@ -37,12 +38,15 @@ const Register = () => {
 
     const registor = async (data:any) => {
         try {
-             const {user} = await createUserWithEmailAndPassword(auth, data.email, data.password)
-             localStorage.setItem('user', JSON.stringify(user))
-            //  router.push('/')  
-            window.location.href = '/'; 
-        } catch (error) {
-             console.log('error', error);
+            const { user } = await createUserWithEmailAndPassword(auth, data.email, data.password);
+            localStorage.setItem('user', JSON.stringify(user));
+            window.location.href = '/';
+        } catch (error:any) {
+            if (error.code === 'auth/email-already-in-use') {
+                setErrorMessage('Email is already in use. Please choose a different email address.');
+            } else {
+                console.log('Error:', error.message);
+            }
         }
    }
   
@@ -79,12 +83,14 @@ const Register = () => {
                                     <input {...register("confirmPassword", { required: true })} className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="Confirm Password" type="password" id="confirm-password"  />
                                 </div>
                                 {errors.email && <span className='text-red-400'>Confirm Password is required</span>}
-                                {matchPassword && <span className='text-red-400'>Password & confirm Password are not matched!</span>}
+                                {matchPassword && <span className='text-red-400 text-center'>Password & confirm Password are not matched!</span>}
+                                <span className="text-center text-red-400">{errorMessage}</span>
                                 <div className="max-w-[265px] mx-auto w-full">
                                     <p className='text-sm font-normal text-darkBlue/50 text-center'>
                                         Passwords are required to be a minimum of 6 characters in length.
                                     </p>
                                 </div>
+                                
                                 <div className='w-full mt-7'>
                                     <button type="submit" className="text-lg font-medium px-[20px] py-[14px] bg-Orange text-white hover:bg-white hover:text-Orange border border-Orange rounded-[40px] w-full">
                                         Register

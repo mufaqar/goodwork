@@ -12,8 +12,9 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { auth } from '@/config/firebase';
 import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { useRouter } from 'next/navigation'
-import {withAuth} from '@/lib/withAuth'
+import { withAuth } from '@/lib/withAuth'
 import { SettingsContext } from '@/context/setting-context';
+import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
 
 
 type Inputs = {
@@ -25,7 +26,10 @@ type Inputs = {
 const Login = () => {
     const router = useRouter()
     const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
-    const {lsSetUser } = useContext(SettingsContext)
+    const { lsSetUser } = useContext(SettingsContext)
+    const [errorMessage, setErrorMessage] = useState('')
+    const [resetPassword, setResetPassword] = useState(false)
+
     const onSubmit: SubmitHandler<Inputs> = async (data) => {
         await signInWithEmailAndPassword(auth, data.email, data.password).then((userCredential) => {
             const user = userCredential.user;
@@ -36,20 +40,33 @@ const Login = () => {
         }).catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-       });
+            setErrorMessage('Wrong credentials! Try Again')
+        });
     };
 
     const loginWithGoogle = async () => {
         const googleProvider = new GoogleAuthProvider();
-        const {user} = await signInWithPopup(auth, googleProvider);
-        if(user){
+        const { user } = await signInWithPopup(auth, googleProvider);
+        if (user) {
             localStorage.setItem('user', JSON.stringify(user))
             lsSetUser(user)
             window.location.href = '/';
-
             // router.push('/')
-        }        
+        }
     }
+
+
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+    const auth = getAuth();
+    const handleResetPassword = async () => {
+        try {
+            await sendPasswordResetEmail(auth, email);
+            setMessage('Password reset email sent successfully. Check your email to reset your password.');
+        } catch (error: any) {
+            setMessage('Error sending password reset email: ' + error.message);
+        }
+    };
 
 
     return (
@@ -57,51 +74,80 @@ const Login = () => {
             <Header />
             <section className="min-h-screen flex items-center justify-center mt-12">
                 <div className='container mx-auto px-4'>
-                    <div className='max-w-[499px] m-auto bg-white md:p-[50px] p-5 rounded-[20px]  shadow-[0_15px_30px_rgba(0,0,0,0.05)]'>
-                        <h1 className='md:text-[32px] text-2xl font-semibold text-center text-darkBlue mb-2'>
-                            Login - <p>Welcome, </p>
-                        </h1>
-                        <p className='text-lg font-normal text-darkBlue/50 text-center'>
-                            Please enter your user name and password.  <Link href="/login" className='font-medium text-lightBlue'>
-                                Register
-                            </Link> if you don't have an account.
-                        </p>
-                        <form onSubmit={handleSubmit(onSubmit)} className='mt-7'>
-                            <div className="grid gap-4">
-                                <div className="w-full">
-                                    <label htmlFor="email" className="hidden mb-2">User ID (Email)</label>
-                                    <input {...register("email", { required: true })} className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="User ID (Email)" type="email" id="email" />
-                                </div>
-                                <div className="w-full">
-                                    <label htmlFor="password" className="hidden mb-2">Password</label>
-                                    <input {...register("password", { required: true })} className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="Password" type="password" id="password" />
-                                </div>
-                                <div className='flex items-center mt-2 gap-3'>
-                                    <input
-                                        className="relative h-6 w-6 border border-[#F0F0F0] outline-0 focus:outline-0 hover:outline-0"
-                                        type="checkbox"
-                                        value=""
-                                        id="remember" />
-                                    <label
-                                        className="hover:cursor-pointer"
-                                        htmlFor="remember">
-                                        Remember me?
-                                    </label>
-                                </div>
-                                <div className='w-full my-5'>
-                                    <input type="submit" value={`Login`} className="text-lg font-medium px-[20px] py-[14px] bg-Orange text-white hover:bg-white hover:text-Orange border border-Orange rounded-[40px] w-full" />
-                                        
-                                </div>
+                    {
+                        resetPassword ?
+                            <div className='max-w-[499px] m-auto bg-white md:p-[50px] p-5 rounded-[20px]  shadow-[0_15px_30px_rgba(0,0,0,0.05)]'>
+                                <h1 className='md:text-[32px] text-2xl font-semibold text-center text-darkBlue mb-2'>
+                                    Forget <p>Password </p>
+                                </h1>
+                                <p className='text-lg font-normal text-darkBlue/50 text-center'>
+                                    Please enter your email to reset password
+                                </p>
+                                <form onSubmit={handleSubmit(onSubmit)} className='mt-7'>
+                                    <div className="grid gap-4">
+                                        <div className="w-full">
+                                            <label htmlFor="email" className="hidden mb-2">Email</label>
+                                            <input value={email} type="email" placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)} className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" id="email" />
+                                        </div>
+                                        <span className="text-center text-red-400">{message}</span>
+                                        <div className='w-full my-5' mt-0>
+                                            <button onClick={handleResetPassword} className="text-lg font-medium px-[20px] py-[14px] bg-Orange text-white hover:bg-white hover:text-Orange border border-Orange rounded-[40px] w-full" > Reset Password </button>
+                                        </div>
+                                    </div>
+                                </form>
 
+                                <button className="text-center mt-5 w-full text-blue-500 hover:underline" onClick={() => setResetPassword(false)}>Back To Login</button>
                             </div>
-                        </form>
-                        <button onClick={loginWithGoogle} className="text-lg -mt-2 font-medium px-[20px] py-[14px] bg-blue-500 text-white hover:bg-white hover:text-blue-500 border border-blue-500 rounded-[40px] w-full">
-                            Login With Google
-                        </button>
-                        <button type="submit" className="text-lg mt-3 font-medium px-[20px] py-[14px] bg-gray-800 text-white hover:bg-white hover:text-gray-800 border border-gray-800 rounded-[40px] w-full">
-                            Login With Microsoft
-                        </button>
-                    </div>
+                            :
+                            <div className='max-w-[499px] m-auto bg-white md:p-[50px] p-5 rounded-[20px]  shadow-[0_15px_30px_rgba(0,0,0,0.05)]'>
+                                <h1 className='md:text-[32px] text-2xl font-semibold text-center text-darkBlue mb-2'>
+                                    Login - <p>Welcome, </p>
+                                </h1>
+                                <p className='text-lg font-normal text-darkBlue/50 text-center'>
+                                    Please enter your user name and password.  <Link href="/login" className='font-medium text-lightBlue'>
+                                        Register
+                                    </Link> if you don't have an account.
+                                </p>
+                                <form onSubmit={handleSubmit(onSubmit)} className='mt-7'>
+                                    <div className="grid gap-4">
+                                        <div className="w-full">
+                                            <label htmlFor="email" className="hidden mb-2">User ID (Email)</label>
+                                            <input {...register("email", { required: true })} className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="User ID (Email)" type="email" id="email" />
+                                        </div>
+                                        <div className="w-full">
+                                            <label htmlFor="password" className="hidden mb-2">Password</label>
+                                            <input {...register("password", { required: true })} className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="Password" type="password" id="password" />
+                                        </div>
+                                        <div className='flex items-center mt-2 gap-3'>
+                                            <input
+                                                className="relative h-6 w-6 border border-[#F0F0F0] outline-0 focus:outline-0 hover:outline-0"
+                                                type="checkbox"
+                                                value=""
+                                                id="remember" />
+                                            <label
+                                                className="hover:cursor-pointer"
+                                                htmlFor="remember">
+                                                Remember me?
+                                            </label>
+                                        </div>
+                                        <span className="text-center text-red-400">{errorMessage}</span>
+                                        <div className='w-full my-5'>
+                                            <input type="submit" value={`Login`} className="text-lg font-medium px-[20px] py-[14px] bg-Orange text-white hover:bg-white hover:text-Orange border border-Orange rounded-[40px] w-full" />
+                                        </div>
+
+                                    </div>
+                                </form>
+                                <button onClick={loginWithGoogle} className="text-lg -mt-2 font-medium px-[20px] py-[14px] bg-blue-500 text-white hover:bg-white hover:text-blue-500 border border-blue-500 rounded-[40px] w-full">
+                                    Login With Google
+                                </button>
+                                <button type="submit" className="text-lg mt-3 font-medium px-[20px] py-[14px] bg-gray-800 text-white hover:bg-white hover:text-gray-800 border border-gray-800 rounded-[40px] w-full">
+                                    Login With Microsoft
+                                </button>
+                                <button className="text-center mt-5 w-full text-blue-500 hover:underline" onClick={() => setResetPassword(true)}>Forget Password</button>
+                            </div>
+                    }
+
+
                 </div>
             </section>
             <footer>
