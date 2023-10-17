@@ -12,6 +12,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '@/config/firebase';
 import { useRouter } from 'next/navigation'
+import ReCAPTCHA from "react-google-recaptcha";
 
 type Inputs = {
     displayName: string,
@@ -28,28 +29,32 @@ const Register = () => {
     const [errorMessage, setErrorMessage] = useState('')
 
     const onSubmit: SubmitHandler<Inputs> = data => {
-        if(data.password === data.confirmPassword){
+        if (data.password === data.confirmPassword) {
             setMatchPassword(false)
             registor(data)
-        }else{
+        } else {
             setMatchPassword(true)
         }
     };
 
-    const registor = async (data:any) => {
+    const registor = async (data: any) => {
         try {
             const { user } = await createUserWithEmailAndPassword(auth, data.email, data.password);
             localStorage.setItem('user', JSON.stringify(user));
             window.location.href = '/';
-        } catch (error:any) {
+        } catch (error: any) {
             if (error.code === 'auth/email-already-in-use') {
                 setErrorMessage('Email is already in use. Please choose a different email address.');
             } else {
                 console.log('Error:', error.message);
             }
         }
-   }
-  
+    }
+
+    function onChangeCaptcha(value:any) {
+        console.log("Captcha value:", value);
+    }
+
     return (
         <main className='bg-darkBlue bg-[url("/images/register-bg.png")] bg-blend-multiply bg-center bg-cover bg-no-repeat min-h-screen'>
             <Header />
@@ -66,21 +71,21 @@ const Register = () => {
                             <div className="grid gap-4">
                                 <div className="w-full">
                                     <label htmlFor="name" className="hidden mb-2">Display Name</label>
-                                    <input {...register("displayName")} className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="Display Name" type="text" id="name"  />
+                                    <input {...register("displayName")} className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="Display Name" type="text" id="name" />
                                 </div>
                                 <div className="w-full">
                                     <label htmlFor="email" className="hidden mb-2">Email</label>
-                                    <input {...register("email", { required: true })} className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="Email" type="email" id="email"  />
+                                    <input {...register("email", { required: true })} className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="Email" type="email" id="email" />
                                 </div>
                                 {errors.email && <span className='text-red-400'>Email is required</span>}
                                 <div className="w-full">
                                     <label htmlFor="password" className="hidden mb-2">Password</label>
-                                    <input {...register("password", { required: true })} className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="Password" type="password" id="password"  />
+                                    <input {...register("password", { required: true })} className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="Password" type="password" id="password" />
                                 </div>
                                 {errors.email && <span className='text-red-400'>Password is required</span>}
                                 <div className="w-full">
                                     <label htmlFor="confirm-password" className="hidden mb-2">Confirm Password</label>
-                                    <input {...register("confirmPassword", { required: true })} className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="Confirm Password" type="password" id="confirm-password"  />
+                                    <input {...register("confirmPassword", { required: true })} className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" placeholder="Confirm Password" type="password" id="confirm-password" />
                                 </div>
                                 {errors.email && <span className='text-red-400'>Confirm Password is required</span>}
                                 {matchPassword && <span className='text-red-400 text-center'>Password & confirm Password are not matched!</span>}
@@ -90,7 +95,10 @@ const Register = () => {
                                         Passwords are required to be a minimum of 6 characters in length.
                                     </p>
                                 </div>
-                                
+                                <ReCAPTCHA
+                                    sitekey="6LcH_KooAAAAAKZzNN8ML3n3F3DHOctlKOHt8If5"
+                                    onChange={onChangeCaptcha}
+                                />
                                 <div className='w-full mt-7'>
                                     <button type="submit" className="text-lg font-medium px-[20px] py-[14px] bg-Orange text-white hover:bg-white hover:text-Orange border border-Orange rounded-[40px] w-full">
                                         Register
