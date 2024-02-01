@@ -17,7 +17,7 @@ export async function POST(request) {
   try {
     await transporter.sendMail({
       from: email,
-      to: process.env.EMAIL_TO,
+      to: `sales@igoodworks.com, ${process.env.EMAIL_TO}`,
       subject: `Contact form submission from`,
       html: `<p>You have a contact form submission</p>
       <p>Full Name:  ${name}</p>

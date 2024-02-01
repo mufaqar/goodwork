@@ -1,10 +1,8 @@
 
 import './globals.css'
-import { Inter } from 'next/font/google'
 import { SettingsProvider } from '@/context/setting-context'
 
 
-const inter = Inter({ subsets: ['latin'] })
 
 // export const metadata = {
 //   title: 'GoodWorks ',
@@ -18,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         <SettingsProvider>
           {children}
         </SettingsProvider>

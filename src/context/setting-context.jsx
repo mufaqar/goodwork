@@ -1,57 +1,45 @@
 
 'use client'
 
-import { auth } from "@/config/firebase";
-import { onAuthStateChanged } from "firebase/auth";
+
+import { useParams } from "next/navigation";
 import { createContext, useEffect, useState } from "react";
+import { client } from "../../sanity/lib/client";
+import { QSingleFaq } from "../../sanity/lib/queries";
 
 
 export const SettingsContext = createContext();
 
 export const SettingsProvider = ({ children }) => {
 
-    const [user, setUser] = useState(null)
-  
-    useEffect(() => {
-      // Check if the user is already authenticated
-      const unsubscribe = onAuthStateChanged(auth, (authUser) => {
-      if (authUser) {
-          setUser(authUser);
-          // Check the token's expiration time (optional)
-          // const expirationTime = new Date().getTime() + 3600 * 1000; // 1 hour
-          // localStorage.setItem('tokenExpiration', expirationTime);
+  const [lsuser, lsSetUser] = useState(null)
+  const params = useParams()
+  const [QAdetail, setQADetail] = useState()  
+  const slug = params?.questionAnswerDetail 
 
-          // const tokenExpirationTime = JSON.parse(localStorage.getItem('tokenExpiration'))
-          // console.log("🚀 ~ file: setting-context.jsx:27 ~ unsubscribe ~ tokenExpirationTime:", tokenExpirationTime)
-          // const isExpired = tokenExpirationTime ? authUser.metadata.a : null;
-
-          // console.log("🚀 ~ file: setting-context.jsx:22 ~ unsubscribe ~ tokenExpirationTime:", tokenExpirationTime)
-          // if (tokenExpirationTime) {
-          //   const currentTime = new Date().getTime();
-          //   setTokenValid(currentTime < tokenExpirationTime);
-          // } else {
-          //   setTokenValid(false); // No expiration time, consider it invalid
-          // }
-        } else {
-          setUser(null);
+  useEffect(()=>{
+    const user = JSON.parse(localStorage.getItem('user'))
+    lsSetUser(user)
+    
+    if(slug){
+        const fetch = async () => {
+            const res = await client.fetch(QSingleFaq, { slug })
+            setQADetail(res)
         }
-      });
+        fetch()
+    }
+  },[slug])
   
-      return () => unsubscribe(); // Unsubscribe when the component unmounts
-    }, []);
+    
 
-
-  
-  
-  
-  
+   
 
 
 
   return (
     <SettingsContext.Provider
       value={{
-        user, setUser
+         lsuser, lsSetUser, QAdetail, setQADetail
       }}
     >
       {children}

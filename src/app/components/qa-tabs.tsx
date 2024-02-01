@@ -13,7 +13,6 @@ const QA_Tabs = () => {
     const [faqs, setFaqs] = useState([])
     const [categories, setCategories] = useState([])
     var filteredFaqs = faqs;
-    console.log("🚀 ~ file: qa-tabs.tsx:15 ~ filteredFaqs:", filteredFaqs)
 
     if (openTab !== 'All Discussions') {
         filteredFaqs = faqs.filter((f:any) => f.ctegory.name === openTab);
@@ -57,7 +56,7 @@ const QA_Tabs = () => {
                     <div className='flex gap-1 justify-between mb-5'>
                         <QA_Filters />
                         <button className='bg-darkGreen hover:bg-white md:px-[30px] px-1 md:py-[10px] py-0 rounded-[40px] md:text-lg text-xs font-medium text-white hover:text-darkGreen border border-darkGreen'>
-                            Create a New Thread
+                        Create new thread
                         </button>
                     </div>
 
@@ -74,7 +73,7 @@ const QA_Tabs = () => {
                                             Created by {_item.createdby}. Post at {dateFormate(_item?._createdAt)} 
                                         </span>
                                     </p>
-                                    <p className='flex gap-5'>
+                                    {/* <p className='flex gap-5'>
                                         <span className='flex gap-2 md:text-sm text-xs font-medium text-darkBlue/50'>
                                             <Image src={View_icon} alt="view-icon" />
                                              233
@@ -83,7 +82,7 @@ const QA_Tabs = () => {
                                             <Image src={Cmnt_icon} alt="cmnt-icon" />
                                            23
                                         </span>
-                                    </p>
+                                    </p> */}
                                 </li>
                             })}
                         </ul>

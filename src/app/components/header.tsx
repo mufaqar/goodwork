@@ -5,12 +5,14 @@ import React, { useContext, useState } from 'react';
 import { BiChevronDown } from 'react-icons/bi';
 import { FiLogIn } from 'react-icons/fi';
 import { NavLinks, NavLinksType } from '../const/navlinks';
-import { logout } from '@/config/helper';
 import { SettingsContext } from '@/context/setting-context';
+import { signOut } from 'firebase/auth';
+import { auth } from '@/config/firebase';
+import { useRouter } from 'next/navigation'
 
 const Header = () => {
-
-    const { user } = useContext(SettingsContext)
+    const router = useRouter()
+    const { lsuser, lsSetUser } = useContext(SettingsContext)
     const [open, setOpen] = useState(false);
     const [dropdown, setDropdown] = useState(null);
     const handleMenu = (id: any) => {
@@ -19,7 +21,13 @@ const Header = () => {
         }
         setDropdown(id)
         //setDropdown(!dropdown)
-
+    }
+    
+    const handleLogout=()=>{
+        signOut(auth);
+        localStorage.removeItem('user')
+        lsSetUser()
+        router.push('/login')
     }
 
     return (
@@ -88,8 +96,8 @@ const Header = () => {
                     <ul className='flex justify-end items-center"'>
 
                         {
-                            user?.accessToken ? <li>
-                                <button onClick={() => logout()}
+                            lsuser?.apiKey?.length > 10 ? <li>
+                                <button onClick={() => handleLogout()}
                                     className='flex gap-1 items-center text-base font-medium py-2 px-5 bg-transparent text-lightBlue hover:bg-transparent hover:text-white border border-transparent rounded-[30px]'>
                                     <FiLogIn /> Logout
                                 </button>
@@ -101,12 +109,15 @@ const Header = () => {
                             </li>
                         }
 
-                        <li>
-                            <Link href="/register"
-                                className='flex gap-1 items-center text-base font-medium py-2 px-5 bg-Orange text-white hover:bg-white hover:text-Orange border border-Orange hover:border-white rounded-[30px]'>
-                                Sign Up
-                            </Link>
-                        </li>
+                        {
+                            lsuser?.apiKey?.length > 10 ? '' : <li>
+                                <Link href="/register"
+                                    className='flex gap-1 items-center text-base font-medium py-2 px-5 bg-Orange text-white hover:bg-white hover:text-Orange border border-Orange hover:border-white rounded-[30px]'>
+                                    Sign Up
+                                </Link>
+                            </li>
+                        }
+
                     </ul>
                 </div>
             </nav>

@@ -18,6 +18,7 @@ export default {
                  slugify: input => input
                                       .toLowerCase()
                                       .replace(/\s+/g, '-')
+                                      .replace(/\?+/g, '')
                                       .slice(0, 200)
                }
              },
