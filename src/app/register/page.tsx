@@ -12,7 +12,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth';
 import { auth } from '@/config/firebase';
 import { useRouter } from 'next/navigation'
-import ReCAPTCHA from "react-google-recaptcha";
+import ReCAPTCHA from 'react-google-recaptcha';
 import SuccessMessage from '../components/success-messag';
 
 type Inputs = {
@@ -103,7 +103,7 @@ const Register = () => {
                                         </p>
                                     </div>
                                     <ReCAPTCHA
-                                        sitekey="6LcH_KooAAAAAKZzNN8ML3n3F3DHOctlKOHt8If5"
+                                        sitekey="6Lc4T3kpAAAAAEl-IPNAPFYGnKrQU_HubwyeEbR1"
                                         onChange={onChangeCaptcha}
                                     />
                                     <div className='w-full mt-7'>
