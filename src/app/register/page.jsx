@@ -52,7 +52,7 @@ const Register = () => {
                 }
             }
         } else {
-            alert('Please varify you are not robot.!');
+            setErrorMessage('Please varify you are not robot.!');
         }
         
     }
