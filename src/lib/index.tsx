@@ -11,3 +11,5 @@ export const dateFormate = (isoDate:any) => {
      const formattedDate = `${month}/${day}/${year}`;
      return formattedDate
 }
+
+
