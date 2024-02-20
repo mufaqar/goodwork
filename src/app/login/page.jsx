@@ -34,7 +34,7 @@ const Login = () => {
         }).catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            setErrorMessage('Wrong credentials! Try Again')
+            setErrorMessage({message: errorMessage, statusCode: errorCode})
         });
     };
 
@@ -131,7 +131,12 @@ const Login = () => {
                                                 Remember me?
                                             </label>
                                         </div>
-                                        <span className="text-center text-red-400">{errorMessage}</span>
+                                        {
+                                            errorMessage && <span className="text-center text-red-400">{
+                                                errorMessage?.message?.includes('user-not-found')  ? <span>User Not Found</span> : <span>Password Incorrect!</span>
+                                            }</span>
+                                        }
+                                        
                                         <div className='w-full my-5'>
                                             <input type="submit" value={`Login`} className="text-lg font-medium px-[20px] py-[14px] bg-Orange text-white hover:bg-white hover:text-Orange border border-Orange rounded-[40px] w-full" />
                                         </div>
