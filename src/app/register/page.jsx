@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Header from '../components/header';
 import Link from 'next/link';
 import Fb from '../../../public/images/facebook.png';
@@ -8,7 +8,7 @@ import Gogl from '../../../public/images/google.png';
 import Twitr from '../../../public/images/twitter.png';
 import Lnkdn from '../../../public/images/linkedin.png';
 import Image from 'next/image';
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth';
 import { auth } from '@/config/firebase';
 import { useRouter } from 'next/navigation'
@@ -17,11 +17,13 @@ import SuccessMessage from '../components/success-messag';
 
 const Register = () => {
     const router = useRouter()
+    const captcha = useRef(null);
 
     const [matchPassword, setMatchPassword] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [errorMessage, setErrorMessage] = useState('')
     const [success, setSuccess] = useState(false)
+    const [isVarified, setIsVarified] = useState(false);
 
     const onSubmit = data => {
         if (data.password === data.confirmPassword) {
@@ -33,26 +35,36 @@ const Register = () => {
     };
 
     const registor = async (data) => {
-        try {
-            const { user } = await createUserWithEmailAndPassword(auth, data.email, data.password);
-            // localStorage.setItem('user', JSON.stringify(user));
-            // Send email verification
-            await sendEmailVerification(user.auth.currentUser);
-            auth.signOut();
-            // Redirect to a confirmation page or display a success message
-            setSuccess(true);
-        } catch (error) {
-            if (error.code === 'auth/email-already-in-use') {
-                setErrorMessage('Email is already in use. Please choose a different email address.');
-            } else {
-                console.log('Error:', error.message);
+        if (captcha.current.getValue()) {
+            try {
+                const { user } = await createUserWithEmailAndPassword(auth, data.email, data.password);
+                // localStorage.setItem('user', JSON.stringify(user));
+                // Send email verification
+                await sendEmailVerification(user.auth.currentUser);
+                auth.signOut();
+                // Redirect to a confirmation page or display a success message
+                setSuccess(true);
+            } catch (error) {
+                if (error.code === 'auth/email-already-in-use') {
+                    setErrorMessage('Email is already in use. Please choose a different email address.');
+                } else {
+                    console.log('Error:', error.message);
+                }
             }
+        } else {
+            alert('Please varify you are not robot.!');
         }
+        
     }
 
-    function onChangeCaptcha(value) {
-        console.log("Captcha value:", value);
-    }
+    const onChangeCaptcha = () => {
+        if (captcha.current.getValue()) {
+            console.log('captcha value');
+            setIsVarified(true);
+        } else {
+            setIsVarified(false);
+        }
+    };
 
     return (
         <main className='bg-darkBlue bg-[url("/images/register-bg.png")] bg-blend-multiply bg-center bg-cover bg-no-repeat min-h-screen'>
@@ -96,6 +108,7 @@ const Register = () => {
                                         </p>
                                     </div>
                                     <ReCAPTCHA
+                                        ref={captcha}
                                         sitekey="6Lc4T3kpAAAAAJed0weYXJyGi2W3f7Gcntptl98P"
                                         onChange={onChangeCaptcha}
                                     />
