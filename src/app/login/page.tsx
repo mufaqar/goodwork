@@ -62,7 +62,7 @@ const Login = () => {
     const handleResetPassword = async () => {
         try {
             await sendPasswordResetEmail(auth, email);
-            setMessage('Password reset email sent successfully. Check your email to reset your password.');
+            setMessage("Thanks! If we find a matching account, we'll send you an email. Please check your inbox.");
         } catch (error: any) {
             setMessage('Error sending password reset email: ' + error.message);
         }
@@ -80,21 +80,28 @@ const Login = () => {
                                 <h1 className='md:text-[32px] text-2xl font-semibold text-center text-darkBlue mb-2'>
                                     Forget <p>Password </p>
                                 </h1>
-                                <p className='text-lg font-normal text-darkBlue/50 text-center'>
-                                    Please enter your email to reset password
-                                </p>
-                                <form onSubmit={handleSubmit(onSubmit)} className='mt-7'>
-                                    <div className="grid gap-4">
-                                        <div className="w-full">
-                                            <label htmlFor="email" className="hidden mb-2">Email</label>
-                                            <input value={email} type="email" placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)} className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" id="email" />
-                                        </div>
-                                        <span className="text-center text-red-400">{message}</span>
-                                        <div className='w-full my-5' mt-0>
-                                            <button onClick={handleResetPassword} className="text-lg font-medium px-[20px] py-[14px] bg-Orange text-white hover:bg-white hover:text-Orange border border-Orange rounded-[40px] w-full" > Reset Password </button>
-                                        </div>
+                                {message ?
+                                    <p className="text-lg font-normal text-center text-darkGreen"><span className='text-darkBlue'>✔ </span> {message}</p>
+                                    :
+                                    <div>
+                                        <p className='text-lg font-normal text-darkBlue/50 text-center'>
+                                            Please enter your email to reset password
+                                        </p>
+                                        <form onSubmit={handleSubmit(onSubmit)} className='mt-7'>
+                                            <div className="grid gap-4">
+                                                <div className="w-full">
+                                                    <label htmlFor="email" className="hidden mb-2">Email</label>
+                                                    <input value={email} type="email" placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)} className="px-5 py-4 rounded-[30px] text-sm font-normal placeholder:text-darkBlue text-darkBlue focus:outline-none w-full border border-[#DFE3ED]" id="email" />
+                                                </div>
+                                                <span className="text-center text-red-400">{message}</span>
+                                                <div className='w-full my-5'>
+                                                    <button onClick={handleResetPassword} className="text-lg font-medium px-[20px] py-[14px] bg-Orange text-white hover:bg-white hover:text-Orange border border-Orange rounded-[40px] w-full" > Reset Password </button>
+                                                </div>
+                                            </div>
+                                        </form>
                                     </div>
-                                </form>
+                                }
+
 
                                 <button className="text-center mt-5 w-full text-blue-500 hover:underline" onClick={() => setResetPassword(false)}>Back To Login</button>
                             </div>

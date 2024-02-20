@@ -55,9 +55,9 @@ const QA_Tabs = () => {
                 <div className='md:w-3/4 w-[65%]'>
                     <div className='flex gap-1 justify-between mb-5'>
                         <QA_Filters />
-                        <button className='bg-darkGreen hover:bg-white md:px-[30px] px-1 md:py-[10px] py-0 rounded-[40px] md:text-lg text-xs font-medium text-white hover:text-darkGreen border border-darkGreen'>
+                        {/* <button className='bg-darkGreen hover:bg-white md:px-[30px] px-1 md:py-[10px] py-0 rounded-[40px] md:text-lg text-xs font-medium text-white hover:text-darkGreen border border-darkGreen'>
                         Create new thread
-                        </button>
+                        </button> */}
                     </div>
 
                     
