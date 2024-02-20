@@ -17,7 +17,7 @@ import { auth } from "@/config/firebase";
 import { useRouter } from "next/navigation";
 import SuccessMessage from "../components/success-messag";
 import { SettingsContext } from "@/context/setting-context";
-import Captcha from "../components/captcha";
+import CaptchaCom from "../components/captcha";
 
 const Register = () => {
   const { captcha } = useContext(SettingsContext)
@@ -209,7 +209,7 @@ const Register = () => {
                       length.
                     </p>
                   </div>
-                  <Captcha/>
+                  <CaptchaCom/>
                   <div className="w-full mt-5">
                     <button
                       type="submit"

@@ -10,7 +10,7 @@ import Image from "next/image";
 import { useForm } from "react-hook-form";
 import SuccessMessage from "../components/success-messag";
 import { SettingsContext } from "@/context/setting-context";
-import Captcha from "../components/captcha";
+import CaptchaCom from "../components/captcha";
 
 const Contact_Us = () => {
   const {
@@ -203,8 +203,8 @@ const Contact_Us = () => {
                       {...register("message", { required: true })}
                     ></textarea>
                   </div>
-                  <div className="grid md:grid-cols-2 grid-cols-1 md:gap-8 gap-4">
-                    <div className="max-w-[259px] w-full flex items-center gap-3">
+                  <div className=" md:gap-8 gap-4">
+                    <div className="max-w-[259px] w-full flex items-center gap-3 mb-4">
                       <input
                         className={`relative h-6 w-6 border border-[#F0F0F0] outline-0 focus:outline-0 hover:outline-0 `}
                         type="checkbox"
@@ -228,10 +228,11 @@ const Contact_Us = () => {
                           Terms of Service.
                         </Link>
                       </p>
+                      
                     </div>
-                    <Captcha/>
+                    <CaptchaCom/>
                     <span className="text-sm mt-2 text-red-500">{errorMessage}</span>
-                    <div className="max-w-[200px] ml-auto md:mr-0 mr-auto w-full text-right">
+                    <div className="max-w-[200px] ml-auto md:mr-0 mt-4 mr-auto w-full text-right">
                       <button
                         type="submit"
                         className="text-lg font-medium px-[20px] py-[14px] bg-Orange text-white hover:bg-white hover:text-Orange border border-Orange rounded-[40px] w-full"
@@ -239,6 +240,7 @@ const Contact_Us = () => {
                         {status ? "Sending..." : "Send"}
                       </button>
                     </div>
+                    
                   </div>
                 </div>
               </form>

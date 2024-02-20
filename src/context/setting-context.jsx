@@ -3,7 +3,7 @@
 
 
 import { useParams } from "next/navigation";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useRef, useState } from "react";
 import { client } from "../../sanity/lib/client";
 import { QSingleFaq } from "../../sanity/lib/queries";
 

@@ -3,7 +3,7 @@ import { SettingsContext } from "@/context/setting-context";
 import React, { useContext } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
-const Captcha = () => {
+const CaptchaCom = () => {
   const { captcha } = useContext(SettingsContext);
   return (
     <>
@@ -18,4 +18,4 @@ const Captcha = () => {
   );
 };
 
-export default Captcha;
+export default CaptchaCom;
