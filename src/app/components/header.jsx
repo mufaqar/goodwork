@@ -15,7 +15,7 @@ const Header = () => {
     const { lsuser, lsSetUser } = useContext(SettingsContext)
     const [open, setOpen] = useState(false);
     const [dropdown, setDropdown] = useState(null);
-    const handleMenu = (id: any) => {
+    const handleMenu = (id) => {
         if (dropdown === id) {
             return setDropdown(null)
         }
@@ -53,7 +53,7 @@ const Header = () => {
                     </div>
 
                     <ul className={`flex md:flex-row flex-col gap-7 ${open ? "absolute top-[90px] left-0 h-screen w-screen bg-darkBlue py-8 px-4" : "md:flex hidden"} transition-transform duration-300 ease-in-out `}>
-                        {NavLinks.map((item: NavLinksType, idx: number) => {
+                        {NavLinks.map((item, idx) => {
                             return <li key={idx}>
                                 <span className="flex items-center justify-between ">
                                     <Link href={item.link}
@@ -74,7 +74,7 @@ const Header = () => {
                                 {
                                     item.sub_menu ? (
                                         <ul onMouseLeave={() => setDropdown(null)} className={` flex-col md:absolute md:px-5 md:pb-5 pb-0 pt-5 2xl:top-[81px] top-[71px] gap-4 bg-darkBlue ${dropdown === item.id ? 'flex' : 'hidden'} `}>
-                                            {item.sub_menu?.map((sub_item: any, _idx: any) => {
+                                            {item.sub_menu?.map((sub_item, _idx) => {
                                                 return <li key={_idx}>
                                                     <Link
                                                         onClick={() => { setDropdown(null), setOpen(false) }}

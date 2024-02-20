@@ -17,20 +17,14 @@ import { SettingsContext } from '@/context/setting-context';
 import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
 
 
-type Inputs = {
-    email: string,
-    password: string,
-};
-
-
 const Login = () => {
     const router = useRouter()
-    const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const { lsSetUser } = useContext(SettingsContext)
     const [errorMessage, setErrorMessage] = useState('')
     const [resetPassword, setResetPassword] = useState(false)
 
-    const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    const onSubmit = async (data) => {
         await signInWithEmailAndPassword(auth, data.email, data.password).then((userCredential) => {
             const user = userCredential.user;
             localStorage.setItem('user', JSON.stringify(user))
@@ -63,7 +57,7 @@ const Login = () => {
         try {
             await sendPasswordResetEmail(auth, email);
             setMessage("Thanks! If we find a matching account, we'll send you an email. Please check your inbox.");
-        } catch (error: any) {
+        } catch (error) {
             setMessage('Error sending password reset email: ' + error.message);
         }
     };

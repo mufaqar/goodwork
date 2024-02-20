@@ -15,22 +15,15 @@ import { useRouter } from 'next/navigation'
 import ReCAPTCHA from 'react-google-recaptcha';
 import SuccessMessage from '../components/success-messag';
 
-type Inputs = {
-    displayName: string,
-    email: string,
-    password: string,
-    confirmPassword: string,
-};
-
 const Register = () => {
     const router = useRouter()
 
     const [matchPassword, setMatchPassword] = useState(false);
-    const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const [errorMessage, setErrorMessage] = useState('')
     const [success, setSuccess] = useState(false)
 
-    const onSubmit: SubmitHandler<Inputs> = data => {
+    const onSubmit = data => {
         if (data.password === data.confirmPassword) {
             setMatchPassword(false)
             registor(data)
@@ -39,7 +32,7 @@ const Register = () => {
         }
     };
 
-    const registor = async (data: any) => {
+    const registor = async (data) => {
         try {
             const { user } = await createUserWithEmailAndPassword(auth, data.email, data.password);
             // localStorage.setItem('user', JSON.stringify(user));
@@ -48,7 +41,7 @@ const Register = () => {
             auth.signOut();
             // Redirect to a confirmation page or display a success message
             setSuccess(true);
-        } catch (error: any) {
+        } catch (error) {
             if (error.code === 'auth/email-already-in-use') {
                 setErrorMessage('Email is already in use. Please choose a different email address.');
             } else {
@@ -57,7 +50,7 @@ const Register = () => {
         }
     }
 
-    function onChangeCaptcha(value: any) {
+    function onChangeCaptcha(value) {
         console.log("Captcha value:", value);
     }
 
