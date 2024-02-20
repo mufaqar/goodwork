@@ -96,7 +96,7 @@ const Register = () => {
                                         </p>
                                     </div>
                                     <ReCAPTCHA
-                                        sitekey="6Lc4T3kpAAAAAEl-IPNAPFYGnKrQU_HubwyeEbR1"
+                                        sitekey="6Lc4T3kpAAAAAJed0weYXJyGi2W3f7Gcntptl98P"
                                         onChange={onChangeCaptcha}
                                     />
                                     <div className='w-full mt-7'>
