@@ -16,6 +16,7 @@ export const SettingsProvider = ({ children }) => {
   const params = useParams()
   const [QAdetail, setQADetail] = useState()  
   const slug = params?.questionAnswerDetail 
+  const captcha = useRef(null);
 
   useEffect(()=>{
     const user = JSON.parse(localStorage.getItem('user'))
@@ -39,7 +40,8 @@ export const SettingsProvider = ({ children }) => {
   return (
     <SettingsContext.Provider
       value={{
-         lsuser, lsSetUser, QAdetail, setQADetail
+         lsuser, lsSetUser, QAdetail, setQADetail,
+         captcha
       }}
     >
       {children}

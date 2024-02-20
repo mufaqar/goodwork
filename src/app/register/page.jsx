@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import Header from "../components/header";
 import Link from "next/link";
 import Fb from "../../../public/images/facebook.png";
@@ -15,12 +15,12 @@ import {
 } from "firebase/auth";
 import { auth } from "@/config/firebase";
 import { useRouter } from "next/navigation";
-import ReCAPTCHA from "react-google-recaptcha";
 import SuccessMessage from "../components/success-messag";
+import { SettingsContext } from "@/context/setting-context";
+import Captcha from "../components/captcha";
 
 const Register = () => {
-  const captcha = useRef(null);
-
+  const { captcha } = useContext(SettingsContext)
   const [matchPassword, setMatchPassword] = useState(false);
   const {
     register,
@@ -209,13 +209,7 @@ const Register = () => {
                       length.
                     </p>
                   </div>
-                  <div className="flex justify-center">
-                    <ReCAPTCHA
-                      ref={captcha}
-                      sitekey="6Lc4T3kpAAAAAJed0weYXJyGi2W3f7Gcntptl98P"
-                      onChange={console.log("captcha value")}
-                    />
-                  </div>
+                  <Captcha/>
                   <div className="w-full mt-5">
                     <button
                       type="submit"

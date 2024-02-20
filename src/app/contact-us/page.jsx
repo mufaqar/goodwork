@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Header from "../components/header";
 import Link from "next/link";
 import Fb from "../../../public/images/facebook.png";
@@ -9,6 +9,8 @@ import Lnkdn from "../../../public/images/linkedin.png";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import SuccessMessage from "../components/success-messag";
+import { SettingsContext } from "@/context/setting-context";
+import Captcha from "../components/captcha";
 
 const Contact_Us = () => {
   const {
@@ -19,28 +21,35 @@ const Contact_Us = () => {
   } = useForm();
   const [status, setStatus] = useState(false);
   const [success, setSuccess] = useState(false);
+  const { captcha } = useContext(SettingsContext)
+  const [errorMessage, setErrorMessage] = useState("");
+
 
   const onSubmit = (data) => {
-    if (data.remember) {
-      setStatus(true);
-      fetch("/api/sendmail", {
-        method: "POST",
-        headers: {
-          Accept: "application/json, text/plain, */*",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      }).then((res) => {
-        console.log("Response received");
-        if (res.status === 200) {
-          console.log("Response succeeded!");
-          reset();
-          setStatus(false);
-          setSuccess(true);
-        }
-      });
-    } else {
-      alert("Please select Terms & condition");
+    if (captcha.current.getValue()) {
+      if (data.remember) {
+        setStatus(true);
+        fetch("/api/sendmail", {
+          method: "POST",
+          headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }).then((res) => {
+          console.log("Response received");
+          if (res.status === 200) {
+            console.log("Response succeeded!");
+            reset();
+            setStatus(false);
+            setSuccess(true);
+          }
+        });
+      } else {
+        alert("Please select Terms & condition");
+      }
+    }else {
+      setErrorMessage("Please varify you are not robot.!");
     }
   };
 
@@ -220,6 +229,8 @@ const Contact_Us = () => {
                         </Link>
                       </p>
                     </div>
+                    <Captcha/>
+                    <span className="text-sm mt-2 text-red-500">{errorMessage}</span>
                     <div className="max-w-[200px] ml-auto md:mr-0 mr-auto w-full text-right">
                       <button
                         type="submit"

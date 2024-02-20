@@ -19,6 +19,7 @@ import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
 
 const Login = () => {
     const router = useRouter()
+    
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { lsSetUser } = useContext(SettingsContext)
     const [errorMessage, setErrorMessage] = useState('')
