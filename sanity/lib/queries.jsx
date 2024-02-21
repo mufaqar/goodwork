@@ -27,3 +27,12 @@ export const QSingleFaq = `*[_type == 'faqs' && slug.current == $slug][0]{
      answer,
      issue
 }`
+
+export const QSoftwares = `*[_type == "software" && category == $category ] | order(_createdAt desc){
+     title,
+     file{
+          asset->{
+               url
+          }
+     }
+}`

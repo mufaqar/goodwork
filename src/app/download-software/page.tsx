@@ -7,8 +7,29 @@ import { AiOutlineClose } from 'react-icons/ai'
 import Simp_Filters from '../components/simp-filters'
 import IconBox from '../components/icon-box'
 import { Filter_Item, Filter_type } from '../const/simpfilters'
+import { client } from '../../../sanity/lib/client'
+import { QSoftwares } from '../../../sanity/lib/queries'
 
-const Download_Software = () => {
+
+async function fetchData() {
+
+    const passwordtool = await client.fetch(QSoftwares, {
+        category: 'passwordtool'
+    })
+    const transportagent = await client.fetch(QSoftwares, {
+        category: 'transportagent'
+    })
+    const agentforwindows = await client.fetch(QSoftwares, {
+        category: 'agentforwindows'
+    })
+
+    return {
+        passwordtool, transportagent, agentforwindows
+    }
+}
+
+const Download_Software = async () => {
+    const { passwordtool, transportagent, agentforwindows } = await fetchData()
     return (
         <main>
             <Header />
@@ -49,64 +70,23 @@ const Download_Software = () => {
                         The Simply Sync Tool Version 3.8 - latest
                     </h3>
                     <div className='grid md:grid-cols-3 grid-cols-1 justify-between gap-9 mt-6'>
-                        <IconBox
-                            title="Simply sync password server 64 bit"
-                            Img_url="/images/file-blu.png"
-                            link="/dummy-pdf.pdf"
-                            custm_class="text-lg" />
-                        <IconBox
-                            title="Simply sync password capture agen 64 bit"
-                            Img_url="/images/file-blu.png"
-                            link="/dummy-pdf.pdf"
-                            custm_class="text-lg" />
-                        <IconBox
-                            title="Simply sync AD Plug-In64 bit"
-                            Img_url="/images/file-blu.png"
-                            link="/dummy-pdf.pdf"
-                            custm_class="text-lg" />
+                        {
+                            passwordtool?.map((item: any, idx: number) => {
+                                return (
+                                    <IconBox
+                                        title={item.title}
+                                        Img_url="/images/file-blu.png"
+                                        link={item.file.asset.url || '#'}
+                                        custm_class="text-lg"
+                                        key={idx}
+                                    />
+                                )
+                            })
+                        }
+
+
                     </div>
-                    <div className='grid md:grid-cols-3 grid-cols-1 justify-between gap-9 items-end mt-16'>
-                        <div>
-                            <h3 className='text-2xl font-semibold text-darkGreen mb-6'>
-                                Office 365 Agent
-                            </h3>
-                            <IconBox
-                                title="Simply sync password Office 365 Agent 64 bit"
-                                Img_url="/images/file-blu.png"
-                                link="#"
-                                custm_class="text-lg" />
-                        </div>
-                        <div>
-                            <h3 className='text-2xl font-semibold text-darkGreen mb-6'>
-                                Open Ldap Agent
-                            </h3>
-                            <IconBox
-                                title="Simply sync password Open Ldap Agent 64 bit"
-                                Img_url="/images/file-blu.png"
-                                link="#"
-                                custm_class="text-lg" />
-                        </div>
-                        <div>
-                            <h3 className='text-2xl font-semibold text-darkGreen mb-6'>
-                                Google Agent
-                            </h3>
-                            <IconBox
-                                title="Simply sync password Google Agent 64 bit"
-                                Img_url="/images/file-blu.png"
-                                link="#"
-                                custm_class="text-lg" />
-                        </div>
-                        <div>
-                            <h3 className='text-2xl font-semibold text-darkGreen mb-6'>
-                                RDBMS Agent (ie. Microsoft SQL Server)
-                            </h3>
-                            <IconBox
-                                title="Simply sync password RDBMS Agent 64 bit"
-                                Img_url="/images/file-blu.png"
-                                link="#"
-                                custm_class="text-lg" />
-                        </div>
-                    </div>
+
                 </div>
             </section>
 
@@ -870,31 +850,19 @@ const Download_Software = () => {
                         Exchange 2010
                     </h3>
                     <div className='grid md:grid-cols-3 grid-cols-1 justify-between gap-9 mt-6'>
-                        <IconBox
-                            title="Simply Exchange Transport Agent Management 64 bit for Exchange 2010"
-                            Img_url="/images/file-gren.png"
-                            link="#"
-                            custm_class="text-lg" />
-                        <IconBox
-                            title="Simply Exchange Transport Agent 64 bit (Exchange 2010 SP1)"
-                            Img_url="/images/file-gren.png"
-                            link="#"
-                            custm_class="text-lg" />
-                        <IconBox
-                            title="Simply Exchange Transport Agent 64 bit (Exchange 2010 SP2)"
-                            Img_url="/images/file-gren.png"
-                            link="#"
-                            custm_class="text-lg" />
-                        <IconBox
-                            title="Simply Exchange Transport Agent 64 bit (Exchange 2010 SP3)"
-                            Img_url="/images/file-gren.png"
-                            link="#"
-                            custm_class="text-lg" />
-                        <IconBox
-                            title="Simply Exchange Transport Agent 64 bit (Exchange 2010 SP3-RollUp6)"
-                            Img_url="/images/file-gren.png"
-                            link="#"
-                            custm_class="text-lg" />
+                        {
+                            transportagent.map((item: any, idx: number) => {
+                                return (
+                                    <IconBox
+                                        title={item.title}
+                                        Img_url="/images/file-gren.png"
+                                        link={item.file.asset.url || '#'}
+                                        custm_class="text-lg"
+                                        key={idx}
+                                    />
+                                )
+                            })
+                        }
                     </div>
                 </div>
             </section>
@@ -918,31 +886,19 @@ const Download_Software = () => {
                         Windows 2012
                     </h3>
                     <div className='grid md:grid-cols-3 grid-cols-1 justify-between gap-9 mt-6'>
-                        <IconBox
-                            title="Simply SNMP Agent For Windows 2008 64 bit"
-                            Img_url="/images/file-blu.png"
-                            link="#"
-                            custm_class="text-lg" />
-                        <IconBox
-                            title="Simply SNMP Agent For Windows 2008 32 bit"
-                            Img_url="/images/file-blu.png"
-                            link="#"
-                            custm_class="text-lg" />
-                        <IconBox
-                            title="Simply Exchange Transport Agent 64 bit (Exchange 2010 SP2)"
-                            Img_url="/images/file-blu.png"
-                            link="#"
-                            custm_class="text-lg" />
-                        <IconBox
-                            title="Simply Exchange Transport Agent 64 bit (Exchange 2010 SP3)"
-                            Img_url="/images/file-blu.png"
-                            link="#"
-                            custm_class="text-lg" />
-                        <IconBox
-                            title="Simply Exchange Transport Agent 64 bit (Exchange 2010 SP3-RollUp6)"
-                            Img_url="/images/file-blu.png"
-                            link="#"
-                            custm_class="text-lg" />
+                        {
+                            agentforwindows?.map((item: any, idx: number) => {
+                                return (
+                                    <IconBox
+                                        title={item.title}
+                                        Img_url="/images/file-blu.png"
+                                        link={item.file.asset.url || '#'}
+                                        custm_class="text-lg"
+                                        key={idx}
+                                    />
+                                )
+                            })
+                        }
                     </div>
                 </div>
             </section>

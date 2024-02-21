@@ -22,6 +22,7 @@ import CaptchaCom from "../components/captcha";
 const Register = () => {
   const { captcha } = useContext(SettingsContext)
   const [matchPassword, setMatchPassword] = useState(false);
+  const router = useRouter()
   const {
     register,
     handleSubmit,
@@ -43,7 +44,7 @@ const Register = () => {
   };
 
   const registor = async (data) => {
-    if (captcha.current.getValue()) {
+    // if (captcha.current.getValue()) {
       try {
         const { user } = await createUserWithEmailAndPassword(
           auth,
@@ -52,9 +53,10 @@ const Register = () => {
         );
         // localStorage.setItem('user', JSON.stringify(user));
         // Send email verification
-        await sendEmailVerification(user.auth.currentUser);
         auth.signOut();
+        await sendEmailVerification(user.auth.currentUser);
         // Redirect to a confirmation page or display a success message
+        // router.push('/login')
         setSuccess(true);
       } catch (error) {
         if (error.code === "auth/email-already-in-use") {
@@ -65,9 +67,9 @@ const Register = () => {
           console.log("Error:", error.message);
         }
       }
-    } else {
-      setErrorMessage("Please varify you are not robot.!");
-    }
+    // } else {
+    //   setErrorMessage("Please varify you are not robot.!");
+    // }
   };
 
   const handleChange = (event) => {

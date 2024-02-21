@@ -2,10 +2,11 @@
 'use client'
 
 
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { createContext, useEffect, useRef, useState } from "react";
 import { client } from "../../sanity/lib/client";
 import { QSingleFaq } from "../../sanity/lib/queries";
+import { auth } from "@/config/firebase";
 
 
 export const SettingsContext = createContext();
@@ -17,10 +18,11 @@ export const SettingsProvider = ({ children }) => {
   const [QAdetail, setQADetail] = useState()  
   const slug = params?.questionAnswerDetail 
   const captcha = useRef(null);
+  const router = useRouter()
 
   useEffect(()=>{
-    const user = JSON.parse(localStorage.getItem('user'))
-    lsSetUser(user)
+    // const user = JSON.parse(localStorage.getItem('user'))
+    // lsSetUser(user)
     
     if(slug){
         const fetch = async () => {
@@ -31,6 +33,15 @@ export const SettingsProvider = ({ children }) => {
     }
   },[slug])
   
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      // if (!user || !user.emailVerified) {
+      //   router.push('/login');
+      // }
+      lsSetUser(user)
+    });
+    return () => unsubscribe();
+  }, [router]);
     
 
    
