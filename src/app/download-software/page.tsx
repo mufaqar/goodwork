@@ -83,8 +83,6 @@ const Download_Software = async () => {
                                 )
                             })
                         }
-
-
                     </div>
 
                 </div>

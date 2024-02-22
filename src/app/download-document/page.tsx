@@ -5,8 +5,31 @@ import Footer from '../components/footer'
 import Simp_Filters from '../components/simp-filters'
 import IconBox from '../components/icon-box'
 import { Filter_Item, Filter_type } from '../const/simpfilters'
+import { client } from '../../../sanity/lib/client'
+import { QDocuments } from '../../../sanity/lib/queries'
 
-const Download_Document = () => {
+
+async function fetchData() {
+
+    const passwordtool = await client.fetch(QDocuments, {
+        category: 'passwordtool'
+    })
+    const transportagent = await client.fetch(QDocuments, {
+        category: 'transportagent'
+    })
+    const agentforwindows = await client.fetch(QDocuments, {
+        category: 'agentforwindows'
+    })
+
+    return {
+        passwordtool, transportagent, agentforwindows
+    }
+}
+
+const Download_Document = async () => {
+    const { passwordtool, transportagent, agentforwindows } = await fetchData()
+    console.log("🚀 ~ constDownload_Document= ~ passwordtool:", passwordtool)
+
     return (
         <main>
             <Header />
@@ -34,56 +57,19 @@ const Download_Document = () => {
                         The Simply Sync Tool Version 3.8 [.NET Framework 4.7.2 required] - latest
                     </h3>
                     <div className='grid md:grid-cols-4 grid-cols-1 justify-between gap-9 mt-6'>
-                        <IconBox
-                            title="Simply Sync Password 3.8 Overview"
-                            Img_url="/images/eye-blu.png"
-                            link="#"
-                            custm_class="text-lg" />
-                        <IconBox
-                            title="Simply Sync Password Capture Agent 3.8 Installation"
-                            Img_url="/images/pdf-blu.png"
-                            link="#"
-                            custm_class="text-lg" />
-                        <IconBox
-                            title="Simply Sync AD Plug-In 3.8 Installation"
-                            Img_url="/images/pdf-blu.png"
-                            link="#"
-                            custm_class="text-lg" />
-                        <IconBox
-                            title="Simply Sync Password Server 3.8 Installation"
-                            Img_url="/images/pdf-blu.png"
-                            link="#"
-                            custm_class="text-lg" />
-                        <IconBox
-                            title="Simply Sync Password Upgrade Guide"
-                            Img_url="/images/pdf-blu.png"
-                            link="#"
-                            custm_class="text-lg" />
-                        <IconBox
-                            title="Simply Sync Password Capture Agent Deployment Guide for Hosting Provider"
-                            Img_url="/images/pdf-blu.png"
-                            link="#"
-                            custm_class="text-lg" />
-                        <IconBox
-                            title="Simply Sync Password Office 365 Agent 3.8 Installation"
-                            Img_url="/images/pdf-blu.png"
-                            link="#"
-                            custm_class="text-lg" />
-                        <IconBox
-                            title="Simply Sync Password OpenLdap Agent 3.8 Installation"
-                            Img_url="/images/pdf-blu.png"
-                            link="#"
-                            custm_class="text-lg" />
-                        <IconBox
-                            title="Simply Sync Password Google Agent 3.8 Installation"
-                            Img_url="/images/pdf-blu.png"
-                            link="#"
-                            custm_class="text-lg" />
-                        <IconBox
-                            title="Simply Sync Password RDBMS Agent 3.8 Installation"
-                            Img_url="/images/pdf-blu.png"
-                            link="#"
-                            custm_class="text-lg" />
+                        {
+                            passwordtool?.map((item: any, idx: number) => {
+                                return (
+                                    <IconBox
+                                        title={item.title}
+                                        Img_url={item.icon.asset.url}
+                                        link={item.file.asset.url || '#'}
+                                        custm_class="text-lg"
+                                        key={idx}
+                                    />
+                                )
+                            })
+                        }
                     </div>
                 </div>
             </section>
@@ -107,21 +93,19 @@ const Download_Document = () => {
                         Exchange 2010
                     </h3>
                     <div className='grid md:grid-cols-3 grid-cols-1 justify-between gap-9 mt-6'>
-                        <IconBox
-                            title="Simply Exchange Transport Agent Overview"
-                            Img_url="/images/eye-gren.png"
-                            link="#"
-                            custm_class="text-lg" />
-                        <IconBox
-                            title="Simply Exchange Transport Agent Installation"
-                            Img_url="/images/pdf-gren.png"
-                            link="#"
-                            custm_class="text-lg" />
-                        <IconBox
-                            title="Simply Exchange Transport Agent Administration"
-                            Img_url="/images/pdf-gren.png"
-                            link="#"
-                            custm_class="text-lg" />
+                        {
+                            transportagent.map((item: any, idx: number) => {
+                                return (
+                                    <IconBox
+                                        title={item.title}
+                                        Img_url="/images/file-gren.png"
+                                        link={item.file.asset.url || '#'}
+                                        custm_class="text-lg"
+                                        key={idx}
+                                    />
+                                )
+                            })
+                        }
                     </div>
                 </div>
             </section>
@@ -145,11 +129,19 @@ const Download_Document = () => {
                         Windows 2012
                     </h3>
                     <div className='grid md:grid-cols-3 grid-cols-1 justify-between gap-9 mt-6'>
-                        <IconBox
-                            title="Simply SNMP Agent Installation"
-                            Img_url="/images/pdf-blu.png"
-                            link="#"
-                            custm_class="text-lg" />
+                    {
+                            agentforwindows?.map((item: any, idx: number) => {
+                                return (
+                                    <IconBox
+                                        title={item.title}
+                                        Img_url="/images/file-blu.png"
+                                        link={item.file.asset.url || '#'}
+                                        custm_class="text-lg"
+                                        key={idx}
+                                    />
+                                )
+                            })
+                        }
                     </div>
                 </div>
             </section>

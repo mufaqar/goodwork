@@ -36,3 +36,17 @@ export const QSoftwares = `*[_type == "software" && category == $category ] | or
           }
      }
 }`
+
+export const QDocuments = `*[_type == "documents" && category == $category ] | order(_createdAt desc){
+     title,
+     file{
+          asset->{
+               url
+          }
+     },
+     icon{
+          asset->{
+               url
+          }
+     }
+}`
