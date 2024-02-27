@@ -7,12 +7,7 @@ export const Filter_Item = [
             {
                 value: 'Version 3.8 - latest',
             },
-            {
-                value: 'Version 3.8 - latest1',
-            },
-            {
-                value: 'Version 3.8 - latest2',
-            },
+            
         ]
     },
     {
