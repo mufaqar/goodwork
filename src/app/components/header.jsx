@@ -1,7 +1,7 @@
 "use client"
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { BiChevronDown } from 'react-icons/bi';
 import { FiLogIn } from 'react-icons/fi';
 import { NavLinks, NavLinksType } from '../const/navlinks';
@@ -13,6 +13,8 @@ import { useRouter } from 'next/navigation'
 const Header = () => {
     const router = useRouter()
     const { lsuser, lsSetUser } = useContext(SettingsContext)
+    const [state, setState] = useState(false) 
+
     const [open, setOpen] = useState(false);
     const [dropdown, setDropdown] = useState(null);
     const handleMenu = (id) => {
@@ -29,6 +31,12 @@ const Header = () => {
         lsSetUser()
         router.push('/login')
     }
+
+    useEffect(()=>{
+        setTimeout(()=>{
+            setState(true)
+        },1000)
+    },[])
 
     return (
         <header className='relative z-50'>
@@ -93,8 +101,8 @@ const Header = () => {
 
                 </div>
                 <div className="w-3/12 md:block hidden">
-                    <ul className='flex justify-end items-center"'>
-
+                    {
+                        state && <ul className='flex justify-end items-center"'>
                         {
                             lsuser?.accessToken ? <li>
                                 <button onClick={() => handleLogout()}
@@ -119,6 +127,8 @@ const Header = () => {
                         }
 
                     </ul>
+                    }
+                    
                 </div>
             </nav>
         </header>
