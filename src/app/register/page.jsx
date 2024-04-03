@@ -18,6 +18,7 @@ import { useRouter } from "next/navigation";
 import SuccessMessage from "../components/success-messag";
 import { SettingsContext } from "@/context/setting-context";
 import CaptchaCom from "../components/captcha";
+import { RxCross1 } from "react-icons/rx";
 
 const Register = () => {
   const { captcha } = useContext(SettingsContext)
@@ -99,6 +100,10 @@ const Register = () => {
     }
   };
 
+  const goBack = () => {
+    window.history.back();
+}
+
   return (
     <main className='bg-darkBlue bg-[url("/images/register-bg.png")] bg-blend-multiply bg-center bg-cover bg-no-repeat min-h-screen'>
       <Header />
@@ -107,7 +112,8 @@ const Register = () => {
       ) : (
         <section className="min-h-screen flex items-center justify-center mt-12">
           <div className="container mx-auto px-4">
-            <div className="max-w-[499px] m-auto bg-white md:p-[50px] p-5 rounded-[20px]  shadow-[0_15px_30px_rgba(0,0,0,0.05)]">
+            <div className="max-w-[499px] relative m-auto bg-white md:p-[50px] p-5 rounded-[20px]  shadow-[0_15px_30px_rgba(0,0,0,0.05)]">
+              <RxCross1 className='text-white text-2xl absolute -top-10 cursor-pointer right-3' onClick={goBack}/>
               <h1 className="md:text-[32px] text-2xl font-semibold text-center text-darkBlue mb-2">
                 Create a New Account
               </h1>

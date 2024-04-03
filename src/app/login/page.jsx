@@ -11,10 +11,11 @@ import Image from 'next/image';
 import { useForm, SubmitHandler } from "react-hook-form";
 import { auth } from '@/config/firebase';
 import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { withAuth } from '@/lib/withAuth'
 import { SettingsContext } from '@/context/setting-context';
 import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
+import { RxCross1 } from "react-icons/rx";
 
 
 const Login = () => {
@@ -54,6 +55,7 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const auth = getAuth();
+    
     const handleResetPassword = async () => {
         try {
             await sendPasswordResetEmail(auth, email);
@@ -63,15 +65,20 @@ const Login = () => {
         }
     };
 
+    const goBack = () => {
+        window.history.back();
+    }
 
     return (
         <main className='bg-darkBlue bg-[url("/images/login-bg.png")] bg-blend-multiply bg-center bg-cover bg-no-repeat min-h-screen'>
             <Header />
             <section className="min-h-screen flex items-center justify-center mt-12">
                 <div className='container mx-auto px-4'>
+                    
                     {
                         resetPassword ?
-                            <div className='max-w-[499px] m-auto bg-white md:p-[50px] p-5 rounded-[20px]  shadow-[0_15px_30px_rgba(0,0,0,0.05)]'>
+                            <div className='max-w-[499px] relative m-auto bg-white md:p-[50px] p-5 rounded-[20px]  shadow-[0_15px_30px_rgba(0,0,0,0.05)]'>
+                                <RxCross1 className='text-white text-2xl absolute -top-10 cursor-pointer right-3' onClick={goBack}/>
                                 <h1 className='md:text-[32px] text-2xl font-semibold text-center text-darkBlue mb-2'>
                                     Forget <p>Password </p>
                                 </h1>
@@ -101,7 +108,8 @@ const Login = () => {
                                 <button className="text-center mt-5 w-full text-blue-500 hover:underline" onClick={() => setResetPassword(false)}>Back To Login</button>
                             </div>
                             :
-                            <div className='max-w-[499px] m-auto bg-white md:p-[50px] p-5 rounded-[20px]  shadow-[0_15px_30px_rgba(0,0,0,0.05)]'>
+                            <div className='max-w-[499px] relative m-auto bg-white md:p-[50px] p-5 rounded-[20px]  shadow-[0_15px_30px_rgba(0,0,0,0.05)]'>
+                                <RxCross1 className='text-white text-2xl absolute -top-10 cursor-pointer right-3' onClick={goBack}/>
                                 <h1 className='md:text-[32px] text-2xl font-semibold text-center text-darkBlue mb-2'>
                                     Login - <p>Welcome, </p>
                                 </h1>
