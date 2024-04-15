@@ -35,7 +35,7 @@ const Header = () => {
     useEffect(()=>{
         setTimeout(()=>{
             setState(true)
-        },1000)
+        },1600)
     },[])
 
     return (
