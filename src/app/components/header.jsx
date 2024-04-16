@@ -13,7 +13,7 @@ import { useRouter } from 'next/navigation'
 const Header = () => {
     const router = useRouter()
     const { lsuser, lsSetUser } = useContext(SettingsContext)
-    const [state, setState] = useState(false) 
+    const [state, setState] = useState(false)
 
     const [open, setOpen] = useState(false);
     const [dropdown, setDropdown] = useState(null);
@@ -24,19 +24,27 @@ const Header = () => {
         setDropdown(id)
         //setDropdown(!dropdown)
     }
-    
-    const handleLogout=()=>{
+    const [subNav, setSubNav] = useState(null);
+    const handleSubNav = (id) => {
+        if (subNav === id) {
+            return setSubNav(null)
+        }
+        setSubNav(id)
+        //setSubNav(!subNav)
+    }
+
+    const handleLogout = () => {
         signOut(auth);
         localStorage.removeItem('user')
         lsSetUser()
         router.push('/login')
     }
 
-    useEffect(()=>{
-        setTimeout(()=>{
+    useEffect(() => {
+        setTimeout(() => {
             setState(true)
-        },1600)
-    },[])
+        }, 1600)
+    }, [])
 
     return (
         <header className='relative z-50'>
@@ -61,6 +69,7 @@ const Header = () => {
                     </div>
 
                     <ul className={`flex md:flex-row flex-col gap-7 ${open ? "absolute top-[90px] left-0 h-screen w-screen bg-darkBlue py-8 px-4" : "md:flex hidden"} transition-transform duration-300 ease-in-out `}>
+                        {/* main pages */}
                         {NavLinks.map((item, idx) => {
                             return <li key={idx}>
                                 <span className="flex items-center justify-between ">
@@ -79,16 +88,46 @@ const Header = () => {
                                             ''
                                     }
                                 </span>
+                                {/* sub pages */}
                                 {
                                     item.sub_menu ? (
                                         <ul onMouseLeave={() => setDropdown(null)} className={` flex-col md:absolute md:px-5 md:pb-5 pb-0 pt-5 2xl:top-[81px] top-[71px] gap-4 bg-darkBlue ${dropdown === item.id ? 'flex' : 'hidden'} `}>
                                             {item.sub_menu?.map((sub_item, _idx) => {
                                                 return <li key={_idx}>
-                                                    <Link
-                                                        onClick={() => { setDropdown(null), setOpen(false) }}
-                                                        href={sub_item.link} className="text-base font-normal text-white hover:text-Orange" >
-                                                        {sub_item.name}
-                                                    </Link>
+                                                    <span className="flex items-center justify-between group">
+                                                        <Link
+                                                            onMouseEnter={() => handleSubNav(item.id)}
+                                                            onClick={() => { setDropdown(null), setOpen(false) }}
+                                                            href={sub_item.link} className="text-base font-normal text-white hover:text-Orange" >
+                                                            {sub_item.name}
+                                                        </Link>
+                                                        {
+                                                            sub_item.sub_menu1 ? (
+                                                                <span className="cursor-pointer text-white group-hover:-rotate-90">
+                                                                    <BiChevronDown onMouseEnter={() => setSubNav(sub_item.id)} />
+                                                                </span>
+                                                            ) :
+                                                                ''
+                                                        }
+                                                    </span>
+                                                    {/* inner Sub pages */}
+                                                    {
+                                                        sub_item.sub_menu1 ? (
+                                                            <ul onMouseLeave={() => setSubNav(null)} className={` flex-col md:absolute md:px-5 md:pb-5 pb-0 pt-5 2xl:top-[81px] top-[71px] gap-4 bg-darkBlue md:w-full md:left-full ${subNav === sub_item.id ? 'flex' : 'hidden'} `}>
+                                                                {sub_item.sub_menu1?.map((_sub_item, _idx) => {
+                                                                    return <li key={_idx}>
+                                                                        <Link
+                                                                            onMouseEnter={() => handleSubNav(sub_item.id)}
+                                                                            onClick={() => { setDropdown(null), setOpen(false) }}
+                                                                            href={_sub_item.link} className="text-base font-normal text-white hover:text-Orange" >
+                                                                            {_sub_item.name}
+                                                                        </Link>
+                                                                    </li>
+                                                                })}
+                                                            </ul>
+                                                        ) :
+                                                            ''
+                                                    }
                                                 </li>
                                             })}
                                         </ul>
@@ -103,32 +142,32 @@ const Header = () => {
                 <div className="w-3/12 md:block hidden">
                     {
                         state && <ul className='flex justify-end items-center"'>
-                        {
-                            lsuser?.accessToken ? <li>
-                                <button onClick={() => handleLogout()}
-                                    className='flex gap-1 items-center text-base font-medium py-2 px-5 bg-transparent text-lightBlue hover:bg-transparent hover:text-white border border-transparent rounded-[30px]'>
-                                    <FiLogIn /> Logout
-                                </button>
-                            </li> : <li>
-                                <Link href="/login"
-                                    className='flex gap-1 items-center text-base font-medium py-2 px-5 bg-transparent text-lightBlue hover:bg-transparent hover:text-white border border-transparent rounded-[30px]'>
-                                    <FiLogIn /> Login
-                                </Link>
-                            </li>
-                        }
+                            {
+                                lsuser?.accessToken ? <li>
+                                    <button onClick={() => handleLogout()}
+                                        className='flex gap-1 items-center text-base font-medium py-2 px-5 bg-transparent text-lightBlue hover:bg-transparent hover:text-white border border-transparent rounded-[30px]'>
+                                        <FiLogIn /> Logout
+                                    </button>
+                                </li> : <li>
+                                    <Link href="/login"
+                                        className='flex gap-1 items-center text-base font-medium py-2 px-5 bg-transparent text-lightBlue hover:bg-transparent hover:text-white border border-transparent rounded-[30px]'>
+                                        <FiLogIn /> Login
+                                    </Link>
+                                </li>
+                            }
 
-                        {
-                            !lsuser?.accessToken && <li>
-                                <Link href="/register"
-                                    className='flex gap-1 items-center text-base font-medium py-2 px-5 bg-Orange text-white hover:bg-white hover:text-Orange border border-Orange hover:border-white rounded-[30px]'>
-                                    Sign Up
-                                </Link>
-                            </li>
-                        }
+                            {
+                                !lsuser?.accessToken && <li>
+                                    <Link href="/register"
+                                        className='flex gap-1 items-center text-base font-medium py-2 px-5 bg-Orange text-white hover:bg-white hover:text-Orange border border-Orange hover:border-white rounded-[30px]'>
+                                        Sign Up
+                                    </Link>
+                                </li>
+                            }
 
-                    </ul>
+                        </ul>
                     }
-                    
+
                 </div>
             </nav>
         </header>

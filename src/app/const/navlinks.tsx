@@ -5,14 +5,28 @@ export const NavLinks = [
         link: '/products',
         sub_menu: [
             {
+                id: 1,
                 name: 'Simply Sync Password',
                 link: '/simply-sync',
             },
             {
+                id: 2,
                 name: 'Simply SIMP Agent',
                 link: '/simply-simp-agent',
+                sub_menu1: [
+                    {
+                        name: 'Install & Configuration',
+                        link: '/simply-transport-agent/install-and-configuration',
+                    },
+                    {
+                        name: 'Administration Guide',
+                        link: '/simply-transport-agent/administration-guide',
+                    }
+
+                ]
             },
             {
+                id: 3,
                 name: 'Simply Exhange Transport Agent',
                 link: '/simply-transport-agent',
             }
