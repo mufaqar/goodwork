@@ -94,16 +94,16 @@ const Header = () => {
                                         <ul onMouseLeave={() => setDropdown(null)} className={` flex-col md:absolute md:px-5 md:pb-5 pb-0 pt-5 2xl:top-[81px] top-[71px] gap-4 bg-darkBlue ${dropdown === item.id ? 'flex' : 'hidden'} `}>
                                             {item.sub_menu?.map((sub_item, _idx) => {
                                                 return <li key={_idx}>
-                                                    <span className="flex items-center justify-between group">
+                                                    <span className="flex items-center justify-between group cursor-pointer"  
+                                                    onMouseEnter={() => handleSubNav(sub_item.id)}>
                                                         <Link
-                                                            onMouseEnter={() => handleSubNav(item.id)}
                                                             onClick={() => { setDropdown(null), setOpen(false) }}
                                                             href={sub_item.link} className="text-base font-normal text-white hover:text-Orange" >
                                                             {sub_item.name}
                                                         </Link>
                                                         {
                                                             sub_item.sub_menu1 ? (
-                                                                <span className="cursor-pointer text-white group-hover:-rotate-90">
+                                                                <span className="cursor-pointer text-white">
                                                                     <BiChevronDown onMouseEnter={() => setSubNav(sub_item.id)} />
                                                                 </span>
                                                             ) :
@@ -117,7 +117,6 @@ const Header = () => {
                                                                 {sub_item.sub_menu1?.map((_sub_item, _idx) => {
                                                                     return <li key={_idx}>
                                                                         <Link
-                                                                            onMouseEnter={() => handleSubNav(sub_item.id)}
                                                                             onClick={() => { setDropdown(null), setOpen(false) }}
                                                                             href={_sub_item.link} className="text-base font-normal text-white hover:text-Orange" >
                                                                             {_sub_item.name}
