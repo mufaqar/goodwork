@@ -75,7 +75,7 @@ const Header = () => {
                                 <span className="flex items-center justify-between ">
                                     <Link href={item.link}
                                         onMouseEnter={() => handleMenu(item.id)}
-                                        onClick={() => { setDropdown(null), setOpen(false) }}
+                                        onClick={() => { setDropdown(null), setSubNav(null), setOpen(false) }}
                                         className='flex gap-1 items-center text-base font-normal text-white hover:font-bold'>
                                         {item.name}
                                     </Link>
@@ -97,7 +97,7 @@ const Header = () => {
                                                     <span className="flex items-center justify-between group cursor-pointer"  
                                                     onMouseEnter={() => handleSubNav(sub_item.id)}>
                                                         <Link
-                                                            onClick={() => { setDropdown(null), setOpen(false) }}
+                                                            onClick={() => { setDropdown(null), setSubNav(null), setOpen(false) }}
                                                             href={sub_item.link} className="text-base font-normal text-white hover:text-Orange" >
                                                             {sub_item.name}
                                                         </Link>
