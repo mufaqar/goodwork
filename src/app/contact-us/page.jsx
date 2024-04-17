@@ -12,6 +12,8 @@ import SuccessMessage from "../components/success-messag";
 import { SettingsContext } from "@/context/setting-context";
 import CaptchaCom from "../components/captcha";
 
+
+
 const Contact_Us = () => {
   const {
     register,
@@ -26,7 +28,7 @@ const Contact_Us = () => {
 
 
   const onSubmit = (data) => {
-    if (!captcha.current.getValue()) {
+    if (captcha.current.getValue()) {
       if (data.remember) {
         setStatus(true);
         fetch("/api/sendmail", {
