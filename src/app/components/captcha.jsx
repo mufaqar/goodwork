@@ -10,7 +10,7 @@ const CaptchaCom = () => {
       <div className="flex justify-center">
         <ReCAPTCHA
           ref={captcha}
-          sitekey="6LdTub0pAAAAALSp6nqfdIfPsnYZqLuJFWgFPlDy"
+          sitekey="6Leovb0pAAAAABIW34-kz2qFdGuAxBZwqjev-um5"
           onChange={console.log("captcha value")}
         />
       </div>
