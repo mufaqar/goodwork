@@ -11,8 +11,8 @@ export const NavLinks = [
             },
             {
                 id: 2,
-                name: 'Simply SIMP Agent',
-                link: '/simply-simp-agent',
+                name: 'Simply SNMP Agent',
+                link: '/simply-snmp-agent',
             },
             {
                 id: 3,
