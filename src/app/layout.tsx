@@ -4,10 +4,10 @@ import { SettingsProvider } from '@/context/setting-context'
 
 
 
-// export const metadata = {
-//   title: 'GoodWorks ',
-//   description: 'Simply Sync',
-// }
+export const metadata = {
+  title: 'GoodWorks ',
+  description: 'Simply Sync',
+}
 
 export default function RootLayout({
   children,
