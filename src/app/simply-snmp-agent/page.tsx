@@ -10,6 +10,12 @@ import Image from 'next/image';
 import Sn_Icon1 from '../../../public/images/sn-icon1.png';
 import Sn_Icon2 from '../../../public/images/sn-icon2.png';
 import SnmpTabs from '../components/snmp-tabs';
+import InstallSimplySNMPAgent from '../components/SimplySnmpAgent/Install-Simply-SNMP-Agent';
+import RegisterSimplySync from '../components/SimplySnmpAgent/Register Simply-Sync';
+import ChooseOIDTable from '../components/SimplySnmpAgent/Choose-OID-Table';
+import TestSimplySNMPAgent from '../components/SimplySnmpAgent/Test-Simply-SNMP-Agent';
+import MakeOIDTableForMySNMPManager from '../components/SimplySnmpAgent/Make-OID-Table-for-my-SNMP-Manager';
+import InstallandConfigureSNMPService from '../components/SimplySnmpAgent/Install-and-Configure-SNMP-Service';
 
 const Simply_Simp_Agent = () => {
     return (
@@ -22,22 +28,26 @@ const Simply_Simp_Agent = () => {
             />
             <section className="py-16">
                 <div className='container mx-auto px-4'>
-                    <div className='max-w-[645px] mx-auto mb-7'>
-                        <h2 className="md:text-[42px] md:leading-[49px] text-4xl font-semibold text-darkBlue text-center">
+                    <div className='mb-12 text-lightBlue'>
+                        <h2 className="md:text-[42px] md:leading-[49px] text-4xl font-semibold">
                             Simply SNMP Agent
                         </h2>
+                        <h2 className="md:text-3xl mt-6 text-2xl font-bold">
+                            Installation & Configuration for performance Monitoring
+                        </h2>
+                        <button className='bg-green-600 mt-2 text-white py-1.5 px-4 rounded-md'>Simply SNMP Agent Installation Download</button>
                     </div>
                     <div className='grid md:grid-cols-2 grid-cols-1 gap-7'>
                         <div>
-                            <h2 className="text-3xl font-semibold text-darkBlue mb-4">
+                            <h2 className="text-3xl font-semibold text-lightBlue mb-4">
                                 Simply-SNMP Agent for Windows
                             </h2>
                             <p className='text-lg font-normal text-darkBlue mb-7'>
                                 You are an administrator who currently maintains Windows servers and you need an SNMP Agent to integrate to an existing SNMP Manager so that you can overcome administrative difficulties and lower operating costs. Simply-SNMP Agent will allow you to deliver the functionality and simplicity you require in successfully monitoring a distributed environment.
                             </p>
-                            <Link href="#" className='md:text-lg text-sm font-medium md:px-[30px] px-[9px] py-[14px] bg-Orange text-white hover:bg-transparent hover:text-Orange border border-Orange rounded-[40px]'>
+                            {/* <Link href="#" className='md:text-lg text-sm font-medium md:px-[30px] px-[9px] py-[14px] bg-Orange text-white hover:bg-transparent hover:text-Orange border border-Orange rounded-[40px]'>
                                 Download Simply SNMP Agent Installation
-                            </Link>
+                            </Link> */}
                         </div>
                         <div>
                             <h2 className="text-3xl font-semibold text-lightBlue mb-4">
@@ -144,15 +154,20 @@ const Simply_Simp_Agent = () => {
                 </div>
             </section>
 
-            <section className='py-16'>
+            <section className='py-16 container mx-auto px-4'>
                 <div>
-                    <div className='mb-12'>
-                        <h2 className='md:text-[42px] md:leading-[49px] text-4xl font-medium text-center text-darkBlue'>
+                    <div className=''>
+                        <h2 className='md:text-[42px] md:leading-[49px] text-4xl font-medium  text-darkBlue'>
                             Installation & Configuration for Performace Monitoring
                         </h2>
                     </div>
-                    <div className='container mx-auto px-4'>
-                        <SnmpTabs />
+                    <div>
+                        <InstallSimplySNMPAgent/>
+                        <RegisterSimplySync/>
+                        <ChooseOIDTable/>
+                        <TestSimplySNMPAgent/>
+                        <MakeOIDTableForMySNMPManager/>
+                        <InstallandConfigureSNMPService/>
                     </div>
                 </div>
             </section>
