@@ -1,7 +1,9 @@
+'use client'
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
 import Article1 from '../../../public/images/article1.png';
+import { SettingsContext } from "@/context/setting-context";
 
 
 const Tabs = () => {
@@ -12,6 +14,8 @@ const Tabs = () => {
     }
     setOpenTab(id)
   }
+
+  const { lsuser } = useContext(SettingsContext)
 
   return (
     <>
@@ -56,7 +60,7 @@ const Tabs = () => {
                           </p>
                         })}
                         <div className='my-7 text-center flex gap-4'>
-                          <Link href="/register" className='text-lg font-medium px-[30px] py-[14px] bg-Orange text-white hover:bg-transparent hover:text-Orange border border-Orange rounded-[40px] '>
+                          <Link href={lsuser ? '/contact-us' : '/register' } className='text-lg font-medium px-[30px] py-[14px] bg-Orange text-white hover:bg-transparent hover:text-Orange border border-Orange rounded-[40px] '>
                             Try for Free
                           </Link>
                           <Link href={item.link} className='text-lg font-medium px-[30px] py-[14px] bg-transparent text-darkBlue hover:bg-darkBlue hover:text-white rounded-[40px] border border-darkBlue'>
