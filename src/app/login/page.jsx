@@ -46,8 +46,8 @@ const Login = () => {
         if (user) {
             localStorage.setItem('user', JSON.stringify(user))
             lsSetUser(user)
-            console.log(window.history.back())
-            // window.location.href = window.history.back()
+            console.log(router.back())
+            window.location.href = router.back()
             // router.push('/')
         }
     }
