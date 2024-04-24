@@ -46,7 +46,7 @@ const Login = () => {
         if (user) {
             localStorage.setItem('user', JSON.stringify(user))
             lsSetUser(user)
-            window.location.href = '/';
+            window.location.href = window.history.back()
             // router.push('/')
         }
     }
