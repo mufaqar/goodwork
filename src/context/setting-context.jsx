@@ -15,15 +15,16 @@ export const SettingsProvider = ({ children }) => {
 
   const [lsuser, lsSetUser] = useState(null)
   const [QAdetail, setQADetail] = useState()  
-  const [previousPath, setPreviousPath] = useState()
-  const path = useRouter()
-  console.log("🚀 ~ SettingsProvider ~ path:", path)
+  const [previousPath, setPreviousPath] = useState([])
+
+  console.log("🚀 ~ SettingsProvider ~ previousPath:", previousPath)
 
   const params = useParams()
   const slug = params?.questionAnswerDetail 
   const captcha = useRef(null);
   const router = useRouter()
-  
+  const currentPathname = usePathname()
+
   useEffect(()=>{
     // const user = JSON.parse(localStorage.getItem('user'))
     // lsSetUser(user)
@@ -47,6 +48,9 @@ export const SettingsProvider = ({ children }) => {
   }, [router]);
     
 
+  useEffect(()=>{
+    setPreviousPath([...previousPath, currentPathname])
+  },[currentPathname])
    
 
 
