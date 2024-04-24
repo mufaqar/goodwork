@@ -18,17 +18,6 @@ export const NavLinks = [
                 id: 3,
                 name: 'Simply Exhange Transport Agent',
                 link: '/simply-transport-agent',
-                sub_menu1: [
-                    {
-                        name: 'Install & Configuration',
-                        link: '/simply-transport-agent/install-and-configuration',
-                    },
-                    {
-                        name: 'Administration Guide',
-                        link: '/simply-transport-agent/administration-guide',
-                    }
-
-                ]
             }
 
         ]

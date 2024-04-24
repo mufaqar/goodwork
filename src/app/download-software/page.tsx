@@ -9,6 +9,8 @@ import IconBox from '../components/icon-box'
 import { Filter_Item, Filter_type } from '../const/simpfilters'
 import { client } from '../../../sanity/lib/client'
 import { QSoftwares } from '../../../sanity/lib/queries'
+import Image from 'next/image'
+import Link from 'next/link'
 
 
 async function fetchData() {
@@ -848,19 +850,16 @@ const Download_Software = async () => {
                         Exchange 2010
                     </h3>
                     <div className='grid md:grid-cols-3 grid-cols-1 justify-between gap-9 mt-6'>
-                        {
-                            transportagent.map((item: any, idx: number) => {
-                                return (
-                                    <IconBox
-                                        title={item.title}
-                                        Img_url="/images/file-gren.png"
-                                        link={item.file.asset.url || '#'}
-                                        custm_class="text-lg"
-                                        key={idx}
-                                    />
-                                )
-                            })
-                        }
+                        <div className='max-w-[354px]'>
+                            <Image src={`/images/file-gren.png`} alt='icon' width={50} height={50} />
+                            <p className={`font-medium text-darkBlue mt-6 mb-5 min-h-[56px] text-lg`}> Simply Transport Agent for Exchange 2013 </p>
+                            <Link href='/simply-transport-agent/install-and-configuration' className='text-lg font-medium px-[30px] py-[10px] bg-Orange text-white hover:bg-transparent hover:text-Orange border border-Orange rounded-[40px]' > Install & Configuration </Link>
+                        </div>
+                        <div className='max-w-[354px]'>
+                            <Image src={`/images/file-gren.png`} alt='icon' width={50} height={50} />
+                            <p className={`font-medium text-darkBlue mt-6 mb-5 text-lg`}> Simply Transport Agent Management for Exchange 2013</p>
+                            <Link href='/simply-transport-agent/administration-guide' className='text-lg font-medium px-[30px] py-[10px] bg-Orange text-white hover:bg-transparent hover:text-Orange border border-Orange rounded-[40px]' > Administration Guide </Link>
+                        </div>
                     </div>
                 </div>
             </section>
