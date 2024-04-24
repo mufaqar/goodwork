@@ -22,7 +22,7 @@ const Login = () => {
     const router = useRouter()
     
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const { lsSetUser, previousPath } = useContext(SettingsContext)
+    const { lsSetUser } = useContext(SettingsContext)
     
     const [errorMessage, setErrorMessage] = useState('')
     const [resetPassword, setResetPassword] = useState(false)
@@ -33,7 +33,7 @@ const Login = () => {
             localStorage.setItem('user', JSON.stringify(user))
             lsSetUser(user)
             // router.push('/')
-            window.location.href = previousPath;
+            window.location.href = '/';
         }).catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
@@ -46,9 +46,10 @@ const Login = () => {
         const { user } = await signInWithPopup(auth, googleProvider);
         if (user) {
             localStorage.setItem('user', JSON.stringify(user))
+            const pp = sessionStorage.getItem('previousPath')
+            console.log("🚀 ~ loginWithGoogle ~ pp:", pp)
             lsSetUser(user)
-            console.log("🚀 ~ loginWithGoogle ~ previousPath:", previousPath)
-            window.location.href = previousPath;
+            window.location.href = pp;
             // router.push('/')
         }
     }
