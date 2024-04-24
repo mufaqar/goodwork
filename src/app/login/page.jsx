@@ -32,8 +32,9 @@ const Login = () => {
             const user = userCredential.user;
             localStorage.setItem('user', JSON.stringify(user))
             lsSetUser(user)
+            const pp = sessionStorage.getItem('previousPath')
             // router.push('/')
-            window.location.href = '/';
+            window.location.href = pp;
         }).catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
@@ -47,7 +48,6 @@ const Login = () => {
         if (user) {
             localStorage.setItem('user', JSON.stringify(user))
             const pp = sessionStorage.getItem('previousPath')
-            console.log("🚀 ~ loginWithGoogle ~ pp:", pp)
             lsSetUser(user)
             window.location.href = pp;
             // router.push('/')
