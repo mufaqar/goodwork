@@ -15,9 +15,9 @@ export const SettingsProvider = ({ children }) => {
 
   const [lsuser, lsSetUser] = useState(null)
   const [QAdetail, setQADetail] = useState()  
-  const [previousPath, setPreviousPath] = useState([])
+  const [pathList, setPathList] = useState([])
+  const [previousPath, setPreviousPath] = useState()
 
-  console.log("🚀 ~ SettingsProvider ~ previousPath:", previousPath)
 
   const params = useParams()
   const slug = params?.questionAnswerDetail 
@@ -49,7 +49,9 @@ export const SettingsProvider = ({ children }) => {
     
 
   useEffect(()=>{
-    setPreviousPath([...previousPath, currentPathname])
+    setPathList([...pathList, currentPathname])
+    const p  = pathList.find((item,idx) => idx+1 === pathList.length)
+    setPreviousPath(p)
   },[currentPathname])
    
 
