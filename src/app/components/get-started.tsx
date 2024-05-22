@@ -17,7 +17,7 @@ const Get_Started = () => {
                     <div className="aspect-video mx-auto mt-12 max-w-[750px] rounded-[20px] drop-shadow-[0_0_15px_rgba(0,0,0,0.05)]">
                         <iframe
                             className="w-full h-full rounded-[20px]"
-                            src="https://www.youtube.com/embed/FF3fuYLnApQ"
+                            src="https://www.youtube.com/embed/IFFliAmJs4I"
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen>
