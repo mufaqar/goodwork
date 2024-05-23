@@ -22,8 +22,7 @@ const SuccessMessage = ({ contactus }: any) => {
             Resend
           </button>
         </> : <p className='text-lg font-normal text-darkBlue text-center my-10'>
-          Thanks for reaching out! We want to be rockstars at solving problems, and we can't wait to chat with you about how we can help. In the meantime, why not grab a coffee and check out our Q&A section? We've got answers to all your burning questions.
-        </p>
+        Thank you for reaching out! We are eager to solve problems, and we can't wait to chat with you about how we can help. We will respond as soon as we can (Typically, within 6 hours). In the meantime, please feel free to check out our Q&A section for related answers.        </p>
       }
     </div>
   )
