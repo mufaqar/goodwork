@@ -1,32 +1,30 @@
-
-import { openGraph, twitter } from '@/lib/seoMeta'
-import './globals.css'
-import { SettingsProvider } from '@/context/setting-context'
-
-
+import { openGraph, twitter } from "@/lib/seoMeta";
+import "./globals.css";
+import { SettingsProvider } from "@/context/setting-context";
+import GoogleAnalytics from "@bradgarropy/next-google-analytics";
 
 export const metadata = {
-  title: 'GoodWorks',
-  description: 'For Fast, Secure Synchronization of your users between multiple directories such as Active Directory, Azure, LDAP, and Google  ',
+  title: "GoodWorks",
+  description:
+    "For Fast, Secure Synchronization of your users between multiple directories such as Active Directory, Azure, LDAP, and Google  ",
   alternates: {
     canonical: `https://igoodworks.com/`,
   },
-  twitter: {...twitter},
-  openGraph: {...openGraph}
-}
+  twitter: { ...twitter },
+  openGraph: { ...openGraph },
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
+      <GoogleAnalytics measurementId="G-8L47HPDD0B" />
       <body>
-        <SettingsProvider>
-          {children}
-        </SettingsProvider>
+        <SettingsProvider>{children}</SettingsProvider>
       </body>
     </html>
-  )
+  );
 }
