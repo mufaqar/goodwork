@@ -40,13 +40,13 @@ export default async function Home() {
                 className="w-full h-[220px] object-cover rounded-[4px]"
               />
               </Link>
-              <div className="px-4 py-3">
+              <div className="px-4 my-3">
                 <Link href={`/blog/${item?.slug?.current}`}>
                 <h2 className=" font-[700] text-xl">
                   {item?.title}
                 </h2>
                 </Link>
-                <p className="py-2 text-[14px]">
+                <p className="my-2 text-[14px] line-clamp-5">
                   {item?.short_info}
                 </p>
                 <p>{item?.Content}</p>
