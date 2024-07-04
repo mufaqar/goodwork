@@ -3,7 +3,7 @@ import React from 'react'
 export const metadata = {
     title: "Customers | GoodWorks",
     description:
-      "For Fast, Secure Synchronization of your users between multiple directories such as Active Directory, Azure, LDAP, and Google",
+      "Explore Good Works's most trusted customers. Discover how leading companies rely on our software solutions to streamline workflows and enhance security.",
     alternates: {
       canonical: `https://igoodworks.com/customers`,
     },

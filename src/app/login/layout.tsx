@@ -1,9 +1,9 @@
 import React from 'react'
 
 export const metadata = {
-    title: "Login | GoodWorks",
+    title: "Simply Sync Passwords Tool | GoodWorks Software Solutions",
     description:
-      "For Fast, Secure Synchronization of your users between multiple directories such as Active Directory, Azure, LDAP, and Google",
+      "Securely log in to your Good Works account. Manage your software solutions, download tools, and access your customer dashboard easily.",
     alternates: {
       canonical: `https://igoodworks.com/login`,
     },

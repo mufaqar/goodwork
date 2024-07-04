@@ -3,7 +3,7 @@ import React from 'react'
 export const metadata = {
     title: "Question Answer | GoodWorks",
     description:
-      "For Fast, Secure Synchronization of your users between multiple directories such as Active Directory, Azure, LDAP, and Google",
+      "You can access the Good Works administration page to manage user accounts, configure settings, and oversee software solutions for optimal performance.",
     alternates: {
       canonical: `https://igoodworks.com/simply-transport-agent/administration-guide`,
     },

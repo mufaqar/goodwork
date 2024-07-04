@@ -1,12 +1,12 @@
-import Link from "next/link";
+// import Link from "next/link";
 import { client } from "../../../../sanity/lib/client";
 import Image from "next/image";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import Page_Banner from "../../components/page-banner";
-import { PortableText } from "@portabletext/react";
+import BlockContent from "@sanity/block-content-to-react";
 
-async function getData(slug: any) {
+async function getData(slug) {
   const fetchData =
     await client.fetch(`*[_type == 'blog' && slug.current == '${slug}'][0] {
     content,
@@ -24,7 +24,7 @@ async function getData(slug: any) {
   };
 }
 
-export default async function BlogArticle(props: any) {
+export default async function BlogArticle(props) {
   const { blog } = await getData(props.params.slug);
   console.log("🚀 ~ BlogArticle ~ blog", blog);
 
@@ -36,14 +36,18 @@ export default async function BlogArticle(props: any) {
       <section className="container px-4 py-4 mx-auto" id="PortableText">
         <div>
           <div className="card1">
-          <Image
+            <Image
               src={blog?.mainImage?.asset?.url}
               alt="Main image"
               width={500}
               height={500}
-              className="w-full  object-cover"
-            />  
-            <PortableText value={blog?.content} />
+              className="object-cover w-full"
+            />
+            <BlockContent
+              blocks={blog?.content}
+              projectId="4yd06oe7"
+              dataset="production"
+            />
           </div>
         </div>
       </section>

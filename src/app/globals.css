@@ -72,17 +72,17 @@ body {
 
 
 #PortableText h1, h2, h3 {
-  font-size: 30px;
-   font-weight: 800;
-   padding: 10px 0px;
+   font-size: 30px;
+   font-weight: 900;
+   padding-top: 10px;
 }
 #PortableText h4, h5, h6 {
-  font-size: 20px;
+   font-size: 20px;
    font-weight: 700;
-   padding: 10px 0px;
+   padding-top: 8px;
 }
- 
 #PortableText ul{
   list-style-type: disc;
   padding-left: 1.3rem;
+  
 }

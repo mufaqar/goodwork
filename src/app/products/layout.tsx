@@ -1,9 +1,9 @@
 import React from 'react'
 
 export const metadata = {
-    title: "Products | GoodWorks",
+    title: "Good Work Products: Streamline Your Workflow",
     description:
-      "Simply Sync Password allows organizations to synchronize their passwords from their local Active Directory site to external Active Directory sites or other external systems. Simply Sync Password is a great alternative for organizations that don’t want the added complexity and cost that comes with establishing a trust relationship between Active Directory or deploying an AD FS infrastructure.",
+      "Streamline your workflow with Good Work Products: Simply Sync Password, Simply Transport Agent, and Simply SNMP Agent. Enhance efficiency and security today!",
     alternates: {
       canonical: `https://igoodworks.com/products`,
     },
