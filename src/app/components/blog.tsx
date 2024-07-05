@@ -40,7 +40,7 @@ export default async function Home() {
               </Link>
               <div className="px-4 my-3">
                 <Link href={`/blog/${item?.slug?.current}`}>
-                  <h2 className=" font-[700] text-xl  ">
+                  <h2 className=" font-[700] text-xl line-clamp-2  ">
                     {item?.title}
                   </h2>
                 </Link>
