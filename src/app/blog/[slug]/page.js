@@ -1,10 +1,11 @@
-// import Link from "next/link";
+
 import { client } from "../../../../sanity/lib/client";
 import Image from "next/image";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import Page_Banner from "../../components/page-banner";
 import BlockContent from "@sanity/block-content-to-react";
+
 
 async function getData(slug) {
   const fetchData =
@@ -24,6 +25,7 @@ async function getData(slug) {
   };
 }
 
+
 export default async function BlogArticle(props) {
   const { blog } = await getData(props.params.slug);
   console.log("🚀 ~ BlogArticle ~ blog", blog);
@@ -42,6 +44,7 @@ export default async function BlogArticle(props) {
               width={500}
               height={500}
               className="object-cover w-full"
+              
             />
             <BlockContent
               blocks={blog?.content}
@@ -55,3 +58,4 @@ export default async function BlogArticle(props) {
     </>
   );
 }
+
