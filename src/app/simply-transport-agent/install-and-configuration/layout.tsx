@@ -3,7 +3,7 @@ import React from 'react'
 export const metadata = {
     title: "Install & Configuration | GoodWorks",
     description:
-      "Simply Transport Agent for Exchange 2010/2013. Extend Exchange mail routing based on sender domain or Group",
+      "Learn how to install and configure Good Works software. Follow step-by-step guides to ensure seamless setup and optimal performance of our solutions",
     alternates: {
       canonical: `https://igoodworks.com/simply-transport-agent/install-and-configuration`,
     },

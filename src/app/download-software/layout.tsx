@@ -3,7 +3,7 @@ import React from 'react'
 export const metadata = {
     title: "Download Software | GoodWorks",
     description:
-      "For Fast, Secure Synchronization of your users between multiple directories such as Active Directory, Azure, LDAP, and Google",
+      "Download the latest software from Good Works. Access our powerful tools to streamline your workflow and boost productivity with ease.",
     alternates: {
       canonical: `https://igoodworks.com/download-software`,
     },

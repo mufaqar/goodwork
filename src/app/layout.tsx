@@ -4,9 +4,8 @@ import { SettingsProvider } from "@/context/setting-context";
 import GoogleAnalytics from "@bradgarropy/next-google-analytics";
 
 export const metadata = {
-  title: "GoodWorks",
-  description:
-    "For Fast, Secure Synchronization of your users between multiple directories such as Active Directory, Azure, LDAP, and Google  ",
+  title: "GoodWorks: Your Trusted Software Solutions Provider",
+  description:" GoodWorks is your go-to destination for cutting-edge software solutions, helping businesses thrive with innovative technologies and expert support.",
   alternates: {
     canonical: `https://igoodworks.com/`,
   },
