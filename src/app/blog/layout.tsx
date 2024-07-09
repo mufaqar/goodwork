@@ -3,7 +3,7 @@ import React from 'react'
 export const metadata = {
     title: "Blogs on Tech Trends, Tips, and Innovations",
     description:
-      "Contact our team for inquiries, support, or collaborations regarding our software solutions and services.",
+      "Stay informed with our expert blogs on software solutions, industry trends, and innovations.Explore tips and insights today",
     alternates: {
       canonical: `https://igoodworks.com/blog`,
     },
