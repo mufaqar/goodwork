@@ -1,9 +1,9 @@
 import React from 'react'
 
 export const metadata = {
-    title: "Simply Transport Agent | GoodWorks",
+    title: "Simply Transport Agent | Optimize Your Data Transmission",
     description:
-      "Simply Transport Agent for Exchange 2010/2013. Extend Exchange mail routing based on sender domain or Group",
+      "Discover Simply Transport Agent by GoodWorks Software Solutions for efficient and reliable data transmission optimization",
     alternates: {
       canonical: `https://igoodworks.com/simply-transport-agent`,
     },

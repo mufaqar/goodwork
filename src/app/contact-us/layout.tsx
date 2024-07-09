@@ -1,11 +1,11 @@
 import React from 'react'
 
 export const metadata = {
-    title: "Contact Us | GoodWorks",
+    title: "Contact Us for Software Solutions and Support",
     description:
-      "GoodWorks Communications may amend this policy from time to time. If we make any substantial changes in the way we use your personal information we will update this page accordingly.",
+      "Stay informed with our expert blogs on software solutions, industry trends, and innovations.Explore tips and insights today.",
     alternates: {
-      canonical: `https://igoodworks.com/contact-us`,
+      canonical: `https://igoodworks.com/blog`,
     },
     twitter: {
       title: "igoodworks",

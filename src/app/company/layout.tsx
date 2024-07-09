@@ -1,9 +1,9 @@
 import React from 'react'
 
 export const metadata = {
-    title: "Company | GoodWorks",
+    title: "About Us: Innovators in Software Solutions",
     description:
-      "GoodWorks provides software solutions that extends and improve IT systemsfor businesses, schools, healthcare providers, and telecoms in over 12 countries. Our focus is to simplify enterprise level tasks and make them available to companies of all sizes at a fraction of the cost",
+      "Learn about our mission to provide innovative software solutions like Simply Sync Password and Simply Transport Agent.",
     alternates: {
       canonical: `https://igoodworks.com/company`,
     },

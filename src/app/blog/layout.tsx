@@ -1,16 +1,16 @@
 import React from 'react'
 
 export const metadata = {
-    title: "Simply SNMP Agent | Efficient Network Management Solution",
+    title: "Blogs on Tech Trends, Tips, and Innovations",
     description:
-      "Explore Simply SNMP Agent for streamlined network management solutions by GoodWorks Software Solutions. Enhance your network efficiency today",
+      "Contact our team for inquiries, support, or collaborations regarding our software solutions and services.",
     alternates: {
-      canonical: `https://igoodworks.com/simply-sync`,
+      canonical: `https://igoodworks.com/contact-us`,
     },
     twitter: {
       title: "igoodworks",
       description:
-        "Simply SNMP Agent for Windows. Enable windows performance monitoring utilizing SNMP",
+        "GoodWorks Communications may amend this policy from time to time. If we make any substantial changes in the way we use your personal information we will update this page accordingly.",
       creator: "@igoodworks",
       images: [
         "https://igoodworks.com/_next/image?url=%2Fimages%2Flogo.png&w=384&q=75",
@@ -19,7 +19,7 @@ export const metadata = {
     openGraph: {
       title: "igoodworks",
       description:
-        "Simply SNMP Agent for Windows. Enable windows performance monitoring utilizing SNMP",
+        "GoodWorks Communications may amend this policy from time to time. If we make any substantial changes in the way we use your personal information we will update this page accordingly.",
       siteName: "igoodworks",
       images: [
         {

@@ -1,9 +1,9 @@
 import React from 'react'
 
 export const metadata = {
-    title: "Q&A | GoodWorks",
+    title: "Frequently Asked Questions (FAQs)",
     description:
-      "For Fast, Secure Synchronization of your users between multiple directories such as Active Directory, Azure, LDAP, and Google",
+      "Find answers to common questions about our software solutions, including Simply Sync Password and Simply Transport Agent.",
     alternates: {
       canonical: `https://igoodworks.com/simply-sync`,
     },

@@ -1,10 +1,7 @@
 import { client } from "../../../../sanity/lib/client";
 
 export async function generateMetadata({ params, searchParams }) {
-    // read route params
     const slug = params.slug
-   
-    // fetch data
     const fetchData = await client.fetch(`*[_type == 'blog' && slug.current == '${slug}'][0] {
     content,
     title,

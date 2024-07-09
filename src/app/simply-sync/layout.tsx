@@ -1,9 +1,9 @@
 import React from 'react'
 
 export const metadata = {
-    title: "Simply Sync Tool | GoodWorks",
+    title: "Simply Sync Passwords Tool | GoodWorks Software Solutions",
     description:
-      "Simply Sync Password for Active Directory, Office 365, Google & More. Easy, Fast and Secure Sync for AD password.",
+      "Discover the efficiency of Simply Sync Passwords Tool, part of GoodWorks Software Solutions' innovative software lineup.",
     alternates: {
       canonical: `https://igoodworks.com/simply-sync`,
     },
