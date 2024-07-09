@@ -5,7 +5,7 @@ export const metadata = {
     description:
       "Contact our team for inquiries, support, or collaborations regarding our software solutions and services.",
     alternates: {
-      canonical: `https://igoodworks.com/contact-us`,
+      canonical: `https://igoodworks.com/blog`,
     },
     twitter: {
       title: "igoodworks",
