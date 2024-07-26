@@ -19,13 +19,13 @@ export async function generateMetadata({ params, searchParams }) {
 
     
 
-    return {
-      title: fetchData?.title,
-      description: fetchData?.short_info ,
-      alternates: {
-        canonical: `https://igoodworks.com/${slug}`,
-      },
-    }
+    // return {
+    //   title: fetchData?.title,
+    //   description: fetchData?.short_info ,
+    //   alternates: {
+    //     canonical: `https://igoodworks.com/${slug}`,
+    //   },
+    // }
   }
 
 export default function RootLayout({children}) {
