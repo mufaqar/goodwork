@@ -4,18 +4,18 @@ export async function generateMetadata({ params, searchParams }) {
     // read route params
     const slug = params.slug
    
-    // fetch data
-    const fetchData = await client.fetch(`*[_type == 'blog' && slug.current == '${slug}'][0] {
-    content,
-    title,
-    short_info,
-    mainImage {
-      asset->{
-        url
-      }
-    },
-  }`);
-  console.log("🚀 ~ generateMetadata ~ fetchData:", fetchData)
+  //   // fetch data
+  //   const fetchData = await client.fetch(`*[_type == 'blog' && slug.current == '${slug}'][0] {
+  //   content,
+  //   title,
+  //   short_info,
+  //   mainImage {
+  //     asset->{
+  //       url
+  //     }
+  //   },
+  // }`);
+  // console.log("🚀 ~ generateMetadata ~ fetchData:", fetchData)
 
     
 
