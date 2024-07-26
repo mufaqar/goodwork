@@ -49,7 +49,7 @@ const Header = () => {
     return (
         <header className='relative z-50'>
             <nav className="flex  px-4 py-4 items-center container mx-auto">
-                <div className="md:w-3/12 w-6/12 flex items-center">
+                <div className="lg:w-[18%] w-6/12 flex items-center">
                     <Link href="/">
                         <Image src="/images/logo.png" alt="logo"
                             width={166}
@@ -57,9 +57,9 @@ const Header = () => {
                             className='' />
                     </Link>
                 </div>
-                <div className="md:w-6/12 w-6/12 flex md:justify-center justify-end items-center">
+                <div className="lg:w-[64%] w-6/12 flex lg:justify-center justify-end items-center">
 
-                    <div className="z-50 flex relative w-8 h-8 flex-col justify-between items-center md:hidden" onClick={() => {
+                    <div className="z-50 flex relative w-8 h-8 flex-col justify-between items-center lg:hidden" onClick={() => {
                         setOpen(!open)
                     }}>
                         {/* hamburger button */}
@@ -68,7 +68,7 @@ const Header = () => {
                         <span className={`h-1 w-full bg-white rounded-lg transform transition duration-300 ease-in-out ${open ? "-rotate-45 -translate-y-3.5" : ""}`} />
                     </div>
 
-                    <ul className={`flex md:flex-row flex-col gap-7 ${open ? "absolute top-[90px] left-0 h-screen w-screen bg-darkBlue py-8 px-4" : "md:flex hidden"} transition-transform duration-300 ease-in-out `}>
+                    <ul className={`flex lg:flex-row flex-col gap-7 ${open ? "absolute top-[90px] left-0 h-screen w-screen bg-darkBlue py-8 px-4" : "lg:flex hidden"} transition-transform duration-300 ease-in-out `}>
                         {/* main pages */}
                         {NavLinks.map((item, idx) => {
                             return <li key={idx}>
@@ -91,7 +91,7 @@ const Header = () => {
                                 {/* sub pages */}
                                 {
                                     item.sub_menu ? (
-                                        <ul onMouseLeave={() => setDropdown(null)} className={` flex-col md:absolute md:px-5 md:pb-5 pb-0 pt-5 2xl:top-[81px] top-[71px] gap-4 bg-darkBlue ${dropdown === item.id ? 'flex' : 'hidden'} `}>
+                                        <ul onMouseLeave={() => setDropdown(null)} className={` flex-col lg:absolute lg:px-5 lg:pb-5 pb-0 pt-5 2xl:top-[81px] top-[71px] gap-4 bg-darkBlue ${dropdown === item.id ? 'flex' : 'hidden'} `}>
                                             {item.sub_menu?.map((sub_item, _idx) => {
                                                 return <li key={_idx}>
                                                     <span className="flex items-center justify-between group cursor-pointer"  
@@ -113,7 +113,7 @@ const Header = () => {
                                                     {/* inner Sub pages */}
                                                     {
                                                         sub_item.sub_menu1 ? (
-                                                            <ul onMouseLeave={() => setSubNav(null)} className={` flex-col md:absolute md:px-5 md:pb-5 pb-0 pt-5 2xl:top-[81px] top-[71px] gap-4 bg-darkBlue md:w-full md:left-full ${subNav === sub_item.id ? 'flex' : 'hidden'} `}>
+                                                            <ul onMouseLeave={() => setSubNav(null)} className={` flex-col lg:absolute lg:px-5 lg:pb-5 pb-0 pt-5 2xl:top-[81px] top-[71px] gap-4 bg-darkBlue lg:w-full lg:left-full ${subNav === sub_item.id ? 'flex' : 'hidden'} `}>
                                                                 {sub_item.sub_menu1?.map((_sub_item, _idx) => {
                                                                     return <li key={_idx}>
                                                                         <Link
@@ -138,7 +138,7 @@ const Header = () => {
                     </ul>
 
                 </div>
-                <div className="w-3/12 md:block hidden">
+                <div className="w-[18%] lg:block hidden">
                     {
                         state && <ul className='flex justify-end items-center"'>
                             {
