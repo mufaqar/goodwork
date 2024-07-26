@@ -66,7 +66,7 @@ export const NavLinks = [
     },
     {
         id:5,
-        name: 'Blogs',
+        name: 'Blog',
         link: '/blog',
     },
     {
