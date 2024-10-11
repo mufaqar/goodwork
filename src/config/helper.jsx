@@ -1,9 +1,6 @@
 import { GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
 import { auth } from '@/config/firebase'
 
-
-
-
 // export const login = async ({ email, password }) => {
 //      await signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
 //           const user = userCredential.user;
