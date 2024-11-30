@@ -26,7 +26,6 @@ const config = {
 let auth;
 const googleProvider = new GoogleAuthProvider();
 const microsoftProvider = new OAuthProvider('microsoft.com');
-
 function init(){
   const app = initializeApp(config);
   auth = getAuth(app);
