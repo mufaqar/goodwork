@@ -43,7 +43,7 @@ export default function Home() {
               Frequently Asked Questions
             </h2>
             <p className='mt-5 text-xl font-normal text-center text-darkBlue'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+              Lorem ipsum dolor sit amet, 
             </p>
           </div>
           <div className="grid gap-5">
