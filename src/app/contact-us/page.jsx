@@ -28,7 +28,7 @@ const Contact_Us = () => {
 
 
   const onSubmit = (data) => {
-    if (captcha.current.getValue()) {
+    if (!captcha.current.getValue()) {
       if (data.remember) {
         setStatus(true);
         fetch("/api/sendmail", {
