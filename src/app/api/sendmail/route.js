@@ -10,15 +10,15 @@ export async function POST(request) {
       ciphers: 'SSLv3'
     },
     auth: {
-      user: process.env.EMAIL_FROM,
-      pass: process.env.EMIAL_PASSWORD_TOKEN
+      user: "billing@igoodworks.com",
+      pass: "mdzzcvzwnjwdjymp"
     }
   });
 
   try {
     await transporter.sendMail({
-      from: process.env.EMAIL_FROM,
-      to: `sales@igoodworks.com, ${process.env.EMAIL_TO}`,
+      from:"billing@igoodworks.com",
+      to: `sales@igoodworks.com, dev.zunaair@gmail.com`,
       subject: `Contact form submission from`,
       replyTo: email,
       html: `<p>You have a contact form submission</p>
