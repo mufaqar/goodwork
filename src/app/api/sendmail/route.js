@@ -3,8 +3,8 @@ let nodemailer = require('nodemailer')
 export async function POST(request) {
   const {name, email, subject, phone, company, message} = await request.json()
   const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: process.env.SMTP_PORT,
+    host: "smtp.office365.com",
+    port: 587,
     secure: false,
     tls: {
       ciphers: 'SSLv3'
