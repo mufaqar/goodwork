@@ -18,8 +18,8 @@ export async function POST(request) {
   try {
     await transporter.sendMail({
       from:"billing@igoodworks.com",
-      to: `sales@igoodworks.com, dev.zunaair@gmail.com`,
-      subject: `Contact form submission from`,
+      to: `sales@igoodworks.com, mufaqar@gmail.com`,
+      subject: `Contact Form Submission Inquiry`,
       replyTo: email,
       html: `<p>You have a contact form submission</p>
       <p>Full Name:  ${name}</p>
