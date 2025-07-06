@@ -13,10 +13,6 @@ import BlockContent from "@sanity/block-content-to-react";
 import { projectId } from '../../../sanity/env';
 import { SettingsContext } from '@/context/setting-context';
 
-
-
-
-
 const Question_Answer_QAdetail = () => {
     const {QAdetail} = useContext(SettingsContext)
 
