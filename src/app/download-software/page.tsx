@@ -727,7 +727,7 @@ const Download_Software = async () => {
                            text-[9px]
                            font-normal
                            text-Orange">
-                                    <AiOutlineClose className='mx-auto' />
+                                     <BsFillCheckCircleFill className='mx-auto' />
                                 </td>
                             </tr>
                             <tr className="text-center w-full flex justify-between items-center sm:px-5 px-0 py-2">
