@@ -69,7 +69,7 @@ const Download_Software = async () => {
                 </div>
                 <div className='container mx-auto px-4 mt-12'>
                     <h3 className='text-2xl font-semibold text-Orange'>
-                        The Simply Sync Tool Version 3.8 - latest
+                        The Simply Sync Tool Version 3.9 - latest
                     </h3>
                     <div className='grid md:grid-cols-3 grid-cols-1 justify-between gap-9 mt-6'>
                         {
