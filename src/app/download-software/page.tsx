@@ -90,7 +90,7 @@ const Download_Software = async () => {
                 </div>
             </section>
 
-            <section className="py-16">
+               <section className="py-16">
                 <div className='container mx-auto px-4'>
                     <div>
                         <h3 className='text-2xl font-semibold text-Orange mb-7'>
@@ -174,7 +174,7 @@ const Download_Software = async () => {
                            text-[9px]
                            font-semibold
                            text-darkBlue">
-                                    Client 3.7
+                                    Client 3.8
                                 </th>
                                 <th
                                     className="
@@ -381,367 +381,366 @@ const Download_Software = async () => {
                            font-normal
                            text-darkBlue
                            border-l border-transparent">
-                                    Sync Server 2.5
-                                </td>
-                                <td className="
-                           w-[12%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                           text-Orange">
-                                    <BsFillCheckCircleFill className='mx-auto' />
-                                </td>
-                                <td
-                                    className="
-                           w-[12%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                           text-Orange">
-                                    <BsFillCheckCircleFill className='mx-auto' />
-                                </td>
-                                <td
-                                    className="
-                           w-[12%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                           text-Orange">
-                                    <BsFillCheckCircleFill className='mx-auto' />
-                                </td>
-                                <td
-                                    className="
-                           w-[12%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                           text-darkBlue/50">
-                                    <AiOutlineClose className='mx-auto' />
-                                </td>
-                                <td
-                                    className="
-                           w-[12%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                           text-darkBlue/50">
-                                    <AiOutlineClose className='mx-auto' />
-                                </td>
-                                <td
-                                    className="
-                           w-[12%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                           text-darkBlue/50">
-                                    <AiOutlineClose className='mx-auto' />
-                                </td>
-                                <td
-                                    className="
-                           w-[12%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                           text-darkBlue/50
-                           border-r border-transparent">
-                                    <AiOutlineClose className='mx-auto' />
-                                </td>
-                            </tr>
-                            <tr className="text-center w-full flex justify-between items-center sm:px-5 px-0 py-2">
-                                <td className="
-                           w-[15%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                           text-darkBlue
-                           border-l border-transparent">
-                                    Sync Server 2.5
-                                </td>
-                                <td className="
-                           w-[12%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                           text-Orange">
-                                    <BsFillCheckCircleFill className='mx-auto' />
-                                </td>
-                                <td
-                                    className="
-                           w-[12%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                           text-Orange">
-                                    <BsFillCheckCircleFill className='mx-auto' />
-                                </td>
-                                <td
-                                    className="
-                           w-[12%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                           text-Orange">
-                                    <BsFillCheckCircleFill className='mx-auto' />
-                                </td>
-                                <td
-                                    className="
-                           w-[12%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                           text-Orange">
-                                    <BsFillCheckCircleFill className='mx-auto' />
-                                </td>
-                                <td
-                                    className="
-                           w-[12%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                           text-darkBlue/50">
-                                    <AiOutlineClose className='mx-auto' />
-                                </td>
-                                <td
-                                    className="
-                           w-[12%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                           text-darkBlue/50">
-                                    <AiOutlineClose className='mx-auto' />
-                                </td>
-                                <td
-                                    className="
-                           w-[12%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                           text-darkBlue/50
-                           border-r border-transparent">
-                                    <AiOutlineClose className='mx-auto' />
-                                </td>
-                            </tr>
-                            <tr className="text-center w-full flex justify-between items-center sm:px-5 px-0 py-2">
-                                <td className="
-                           w-[15%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                           text-darkBlue
-                           border-l border-transparent">
-                                    Sync Server 2.5
-                                </td>
-                                <td className="
-                           w-[12%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                           text-Orange">
-                                    <BsFillCheckCircleFill className='mx-auto' />
-                                </td>
-                                <td
-                                    className="
-                           w-[12%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                          text-Orange">
-                                    <BsFillCheckCircleFill className='mx-auto' />
-                                </td>
-                                <td
-                                    className="
-                           w-[12%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                          text-Orange">
-                                    <BsFillCheckCircleFill className='mx-auto' />
-                                </td>
-                                <td
-                                    className="
-                           w-[12%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                          text-Orange">
-                                    <BsFillCheckCircleFill className='mx-auto' />
-                                </td>
-                                <td
-                                    className="
-                           w-[12%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                          text-Orange">
-                                    <BsFillCheckCircleFill className='mx-auto' />
-                                </td>
-                                <td
-                                    className="
-                           w-[12%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                           text-darkBlue/50">
-                                    <AiOutlineClose className='mx-auto' />
-                                </td>
-                                <td
-                                    className="
-                           w-[12%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                           text-darkBlue/50
-                           border-r border-transparent">
-                                    <AiOutlineClose className='mx-auto' />
-                                </td>
-                            </tr>
-                            <tr className="text-center w-full flex justify-between items-center sm:px-5 px-0 py-2">
-                                <td className="
-                           w-[15%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                           text-darkBlue
-                           border-l border-transparent">
-                                    Sync Server 2.5
-                                </td>
-                                <td className="
-                           w-[12%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                           text-Orange">
-                                    <BsFillCheckCircleFill className='mx-auto' />
-                                </td>
-                                <td
-                                    className="
-                           w-[12%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                           text-Orange">
-                                    <BsFillCheckCircleFill className='mx-auto' />
-                                </td>
-                                <td
-                                    className="
-                           w-[12%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                           text-Orange">
-                                    <BsFillCheckCircleFill className='mx-auto' />
-                                </td>
-                                <td
-                                    className="
-                           w-[12%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                           text-Orange">
-                                    <BsFillCheckCircleFill className='mx-auto' />
-                                </td>
-                                <td
-                                    className="
-                           w-[12%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                           text-Orange">
-                                    <BsFillCheckCircleFill className='mx-auto' />
-                                </td>
-                                <td
-                                    className="
-                           w-[12%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                           text-Orange">
-                                    <BsFillCheckCircleFill className='mx-auto' />
-                                </td>
-                                <td
-                                    className="
-                           w-[12%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                           text-darkBlue/50
-                           border-r border-transparent">
-                                    <AiOutlineClose className='mx-auto' />
-                                </td>
-                            </tr>
-                            <tr className="text-center w-full flex justify-between items-center sm:px-5 px-0 py-2">
-                                <td className="
-                           w-[15%]
-                           md:min-w-[78px]
-                           min-w-[30px]
-                           sm:text-lg
-                           text-[9px]
-                           font-normal
-                           text-darkBlue
-                           border-l border-transparent">
                                     Sync Server 3.4
+                                </td>
+                                <td className="
+                           w-[12%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                           text-Orange">
+                                    <BsFillCheckCircleFill className='mx-auto' />
+                                </td>
+                                <td
+                                    className="
+                           w-[12%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                           text-Orange">
+                                    <BsFillCheckCircleFill className='mx-auto' />
+                                </td>
+                                <td
+                                    className="
+                           w-[12%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                           text-Orange">
+                                    <BsFillCheckCircleFill className='mx-auto' />
+                                </td>
+                                <td
+                                    className="
+                           w-[12%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                           text-darkBlue/50">
+                                    <AiOutlineClose className='mx-auto' />
+                                </td>
+                                <td
+                                    className="
+                           w-[12%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                           text-darkBlue/50">
+                                    <AiOutlineClose className='mx-auto' />
+                                </td>
+                                <td
+                                    className="
+                           w-[12%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                           text-darkBlue/50">
+                                    <AiOutlineClose className='mx-auto' />
+                                </td>
+                                <td
+                                    className="
+                           w-[12%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                           text-darkBlue/50
+                           border-r border-transparent">
+                                    <AiOutlineClose className='mx-auto' />
+                                </td>
+                            </tr>
+                            <tr className="text-center w-full flex justify-between items-center sm:px-5 px-0 py-2">
+                                <td className="
+                           w-[15%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                           text-darkBlue
+                           border-l border-transparent">
+                                    Sync Server 3.5
+                                </td>
+                                <td className="
+                           w-[12%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                           text-Orange">
+                                    <BsFillCheckCircleFill className='mx-auto' />
+                                </td>
+                                <td
+                                    className="
+                           w-[12%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                           text-Orange">
+                                    <BsFillCheckCircleFill className='mx-auto' />
+                                </td>
+                                <td
+                                    className="
+                           w-[12%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                           text-Orange">
+                                    <BsFillCheckCircleFill className='mx-auto' />
+                                </td>
+                                <td
+                                    className="
+                           w-[12%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                           text-Orange">
+                                    <BsFillCheckCircleFill className='mx-auto' />
+                                </td>
+                                <td
+                                    className="
+                           w-[12%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                           text-darkBlue/50">
+                                    <AiOutlineClose className='mx-auto' />
+                                </td>
+                                <td
+                                    className="
+                           w-[12%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                           text-darkBlue/50">
+                                    <AiOutlineClose className='mx-auto' />
+                                </td>
+                                <td
+                                    className="
+                           w-[12%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                           text-darkBlue/50
+                           border-r border-transparent">
+                                    <AiOutlineClose className='mx-auto' />
+                                </td>
+                            </tr>
+                            <tr className="text-center w-full flex justify-between items-center sm:px-5 px-0 py-2">
+                                <td className="
+                           w-[15%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                           text-darkBlue
+                           border-l border-transparent">
+                                    Sync Server 3.6
+                                </td>
+                                <td className="
+                           w-[12%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                           text-Orange">
+                                    <BsFillCheckCircleFill className='mx-auto' />
+                                </td>
+                                <td
+                                    className="
+                           w-[12%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                          text-Orange">
+                                    <BsFillCheckCircleFill className='mx-auto' />
+                                </td>
+                                <td
+                                    className="
+                           w-[12%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                          text-Orange">
+                                    <BsFillCheckCircleFill className='mx-auto' />
+                                </td>
+                                <td
+                                    className="
+                           w-[12%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                          text-Orange">
+                                    <BsFillCheckCircleFill className='mx-auto' />
+                                </td>
+                                <td
+                                    className="
+                           w-[12%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                          text-Orange">
+                                    <BsFillCheckCircleFill className='mx-auto' />
+                                </td>
+                                <td
+                                    className="
+                           w-[12%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                           text-darkBlue/50">
+                                    <AiOutlineClose className='mx-auto' />
+                                </td>
+                                <td
+                                    className="
+                           w-[12%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                           text-darkBlue/50
+                           border-r border-transparent">
+                                    <AiOutlineClose className='mx-auto' />
+                                </td>
+                            </tr>
+                            <tr className="text-center w-full flex justify-between items-center sm:px-5 px-0 py-2">
+                                <td className="
+                           w-[15%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                           text-darkBlue
+                           border-l border-transparent">
+                                    Sync Server 3.8
+                                </td>
+                                <td className="
+                           w-[12%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                           text-Orange">
+                                    <BsFillCheckCircleFill className='mx-auto' />
+                                </td>
+                                <td
+                                    className="
+                           w-[12%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                           text-Orange">
+                                    <BsFillCheckCircleFill className='mx-auto' />
+                                </td>
+                                <td
+                                    className="
+                           w-[12%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                           text-Orange">
+                                    <BsFillCheckCircleFill className='mx-auto' />
+                                </td>
+                                <td
+                                    className="
+                           w-[12%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                           text-Orange">
+                                    <BsFillCheckCircleFill className='mx-auto' />
+                                </td>
+                                <td
+                                    className="
+                           w-[12%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                           text-Orange">
+                                    <BsFillCheckCircleFill className='mx-auto' />
+                                </td>
+                                <td
+                                    className="
+                           w-[12%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                           text-Orange">
+                                    <BsFillCheckCircleFill className='mx-auto' />
+                                </td>
+                                <td
+                                    className="
+                           w-[12%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                           text-Orange">
+                                    <AiOutlineClose className='mx-auto' />
+                                </td>
+                            </tr>
+                            <tr className="text-center w-full flex justify-between items-center sm:px-5 px-0 py-2">
+                                <td className="
+                           w-[15%]
+                           md:min-w-[78px]
+                           min-w-[30px]
+                           sm:text-lg
+                           text-[9px]
+                           font-normal
+                           text-darkBlue
+                           border-l border-transparent">
+                                    Sync Server 3.9
                                 </td>
                                 <td className="
                            w-[12%]
