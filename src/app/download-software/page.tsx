@@ -49,7 +49,7 @@ const Download_Software = async () => {
                         </h2>
                         <div className='max-w-[378px] bg-[#F0F0F0] p-4 rounded-[10px] border-l-[9px] border-[#219FFF]  shadow-[0_15px_30px_rgba(0,0,0,0.03)]'>
                             <p className='text-lg font-normal text-darkBlue mb-6'>
-                                Simply Sync Tool Version 3.8 new feature
+                                Simply Sync Tool Version 3.9 new feature
                             </p>
                             <ul className='list-disc list-inside marker:text-Orange'>
                                 <li className='text-lg font-normal text-lightBlue'>
@@ -130,7 +130,7 @@ const Download_Software = async () => {
                            text-[9px]
                            font-semibold
                            text-darkBlue">
-                                    Client 2.5
+                                    Client 3.0
                                 </th>
                                 <th
                                     className="
@@ -141,7 +141,7 @@ const Download_Software = async () => {
                            text-[9px]
                            font-semibold
                            text-darkBlue">
-                                    Client 2.5
+                                    Client 3.4
                                 </th>
                                 <th
                                     className="
@@ -152,7 +152,7 @@ const Download_Software = async () => {
                            text-[9px]
                            font-semibold
                            text-darkBlue">
-                                    Client 2.5
+                                    Client 3.5
                                 </th>
                                 <th
                                     className="
@@ -163,7 +163,7 @@ const Download_Software = async () => {
                            text-[9px]
                            font-semibold
                            text-darkBlue">
-                                    Client 2.5
+                                    Client 3.6
                                 </th>
                                 <th
                                     className="
@@ -174,7 +174,7 @@ const Download_Software = async () => {
                            text-[9px]
                            font-semibold
                            text-darkBlue">
-                                    Client 2.5
+                                    Client 3.7
                                 </th>
                                 <th
                                     className="
@@ -186,7 +186,7 @@ const Download_Software = async () => {
                            font-semibold
                            text-darkBlue
                            border-r border-transparent">
-                                    Client 2.5
+                                    Client 3.9
                                 </th>
                             </tr>
                         </thead>
@@ -291,7 +291,7 @@ const Download_Software = async () => {
                            font-normal
                            text-darkBlue
                            border-l border-transparent">
-                                    Sync Server 2.5
+                                    Sync Server 3.0
                                 </td>
                                 <td className="
                            w-[12%]
@@ -741,7 +741,7 @@ const Download_Software = async () => {
                            font-normal
                            text-darkBlue
                            border-l border-transparent">
-                                    Sync Server 2.5
+                                    Sync Server 3.4
                                 </td>
                                 <td className="
                            w-[12%]
