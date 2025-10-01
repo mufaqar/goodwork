@@ -8,6 +8,10 @@ export const Filter_Item = [
                 value: 'Version 3.8 - latest',
             },
             
+             {
+                value: 'Version 3.9',
+            },
+            
         ]
     },
     {
